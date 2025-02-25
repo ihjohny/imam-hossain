@@ -1,4 +1,4 @@
-package com.imamhossain.imam_hossain
+package com.imamhossain.portfolio
 
 import io.flutter.embedding.android.FlutterActivity
 
