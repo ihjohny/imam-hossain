@@ -9,7 +9,7 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.colorScheme.secondary,
+      backgroundColor: context.colorScheme.onPrimary,
       body: const SafeArea(
         child: Responsive(
           desktop: DashboardWidgetDesktop(),
