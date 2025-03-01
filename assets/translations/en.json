@@ -1,5 +1,10 @@
 {
   "name": "Md Imam Hossain",
-  "hello": "Hello, World!",
-  "welcome": "Welcome to our app"
+  "position": "Senior Software Engineer",
+  "subDescription": "Who loves to tinker with new technologies and build cool mobile apps from crafting seamless user experiences to architecting robust solutions.",
+  "resumeUrl": "https://drive.google.com/file/d/1UVBpzDWfOwwaZQb176yc8DGHHXkcnk47/view?usp=sharing",
+  "githubUrl": "https://github.com/ihjohny",
+  "linkedinUrl": "https://www.linkedin.com/in/ihjohny",
+  "emailUrl": "mailto:iimamhossain23@gmail.com",
+  "openUrlError": "Could not open the url"
 }

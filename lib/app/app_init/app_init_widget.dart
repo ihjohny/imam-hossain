@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
-import '../../utils/constants/sizes.dart';
 import 'app_init_service.dart';
 
 class AppInitWidget extends StatelessWidget {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Sizes {
+  static const px2 = 2.0;
   static const px4 = 4.0;
   static const px8 = 8.0;
   static const px12 = 12.0;

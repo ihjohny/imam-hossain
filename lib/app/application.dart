@@ -1,8 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/theme/app_theme.dart';
+import 'package:imam_hossain/features/dashboard/dashboard_screen.dart';
 
-import '../core/localization/generated/locale_keys.g.dart';
+import '../generated/localization/locale_keys.g.dart';
 import '../core/theme/app_theme_service.dart';
 import '../di/di_setup.dart';
 
@@ -27,7 +28,7 @@ class Application extends StatelessWidget {
           theme: AppTheme.light,
           darkTheme: AppTheme.dark,
           themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
-          home: const Text("Loaded"),
+          home: const DashboardScreen(),
         );
       },
     );
