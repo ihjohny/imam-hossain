@@ -24,7 +24,7 @@ class ItemChipWidget extends StatelessWidget {
         label,
         style: TextStyle(
           color: textColor,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.bold,
         ),
       ),
       style: ElevatedButton.styleFrom(

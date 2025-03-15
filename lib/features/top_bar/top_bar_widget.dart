@@ -34,6 +34,10 @@ class TopBarWidget extends StatelessWidget implements PreferredSizeWidget {
               onClick: () {},
             ),
             NavItemWidget(
+              text: context.tr(LocaleKeys.experienceTitleToolbar),
+              onClick: () {},
+            ),
+            NavItemWidget(
               text: context.tr(LocaleKeys.projectsTitleToolbar),
               onClick: () {},
             ),
