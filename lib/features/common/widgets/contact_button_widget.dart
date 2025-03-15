@@ -15,16 +15,7 @@ class ContactButtonWidget extends StatelessWidget {
     return IconButton(
       tooltip: url,
       onPressed: () async {
-        try {
-          await launchURL(url);
-        } catch (e) {
-          if (context.mounted) {
-            showLaunchUrlError(
-              context,
-              url: url,
-            );
-          }
-        }
+        safeLaunchURL(context, url);
       },
       style: ButtonStyle(
         padding: WidgetStateProperty.all(const EdgeInsets.all(Sizes.px16)),

@@ -6,5 +6,10 @@
   "githubUrl": "https://github.com/ihjohny",
   "linkedinUrl": "https://www.linkedin.com/in/ihjohny",
   "emailUrl": "mailto:iimamhossain23@gmail.com",
-  "openUrlError": "Could not open the url"
+  "openUrlError": "Could not open the url",
+  "aboutTitleToolbar": "About",
+  "skillsTitleToolbar": "Skills",
+  "projectsTitleToolbar": "Projects",
+  "credentialsTitleToolbar": "Credentials",
+  "contactTitleToolbar": "Contact"
 }

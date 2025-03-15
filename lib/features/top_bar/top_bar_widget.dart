@@ -1,8 +1,10 @@
 import 'dart:ui';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/features/top_bar/widgets/nav_item_widget.dart';
+import 'package:imam_hossain/generated/localization/locale_keys.g.dart';
 
 class TopBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const TopBarWidget({super.key});
@@ -24,23 +26,23 @@ class TopBarWidget extends StatelessWidget implements PreferredSizeWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             NavItemWidget(
-              text: 'About',
+              text: context.tr(LocaleKeys.aboutTitleToolbar),
               onClick: () {},
             ),
             NavItemWidget(
-              text: 'Skills',
+              text: context.tr(LocaleKeys.skillsTitleToolbar),
               onClick: () {},
             ),
             NavItemWidget(
-              text: 'Projects',
+              text: context.tr(LocaleKeys.projectsTitleToolbar),
               onClick: () {},
             ),
             NavItemWidget(
-              text: 'Credentials',
+              text: context.tr(LocaleKeys.credentialsTitleToolbar),
               onClick: () {},
             ),
             NavItemWidget(
-              text: 'Contact',
+              text: context.tr(LocaleKeys.contactTitleToolbar),
               onClick: () {},
             ),
           ],

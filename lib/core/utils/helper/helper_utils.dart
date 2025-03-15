@@ -21,3 +21,13 @@ Future<void> launchURL(String url) async {
     throw '${tr(LocaleKeys.openUrlError)} $url';
   }
 }
+
+Future<void> safeLaunchURL(BuildContext context, String url) async {
+  try {
+    await launchURL(url);
+  } catch (e) {
+    if (context.mounted) {
+      showLaunchUrlError(context, url: url);
+    }
+  }
+}
