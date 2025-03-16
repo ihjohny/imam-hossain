@@ -1,6 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/features/skills/data/model/skills_data.dart';
+import 'package:imam_hossain/features/skills/data/skills_data_service.dart';
+import 'package:imam_hossain/features/skills/widgets/skills_category_widget.dart';
 
+import '../../di/di_setup.dart';
 import '../../generated/localization/locale_keys.g.dart';
 
 class SkillsWidgetDesktop extends StatelessWidget {
@@ -8,6 +12,9 @@ class SkillsWidgetDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final skillsDataService = getIt<SkillsDataService>();
+    skillsDataService.fetchSkillsData(context.locale);
+
     return ConstrainedBox(
       constraints: const BoxConstraints(minWidth: double.infinity),
       child: Card(
@@ -29,13 +36,30 @@ class SkillsWidgetDesktop extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 4),
-              Text(
-                context.tr(LocaleKeys.aboutDetailsSection),
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey[700],
-                ),
+              StreamBuilder<SkillsData>(
+                stream: skillsDataService.skillsCategories,
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData ||
+                      snapshot.data!.skillsCategories.isEmpty) {
+                    return Center(
+                        child: Text(context.tr(LocaleKeys.noSkillsDataMSg)));
+                  }
+                  final skillsData = snapshot.data!;
+                  return Column(
+                    children: List.generate(skillsData.skillsCategories.length,
+                        (index) {
+                      return Column(
+                        children: [
+                          SkillsCategoryWidget(
+                            category: skillsData.skillsCategories[index],
+                          ),
+                          if (index < skillsData.skillsCategories.length - 1)
+                            const SizedBox(height: 12),
+                        ],
+                      );
+                    }),
+                  );
+                },
               ),
             ],
           ),

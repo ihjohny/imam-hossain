@@ -23,5 +23,86 @@
   "programmingLanguagesTitle": "Programming Languages",
   "frameworksTitle": "Frameworks",
   "techFrameworksTitle": "Technologies/Frameworks",
-  "toolsTitle": "Tools"
+  "toolsTitle": "Tools",
+  "noSkillsDataMSg": "No skills data available.",
+  "skillsData": [
+    {
+      "title": "Languages",
+      "colorTheme": "FFD5F5E3",
+      "data": [
+        {
+          "name": "Kotlin",
+          "type": "kotlin"
+        },
+        {
+          "name": "Java",
+          "type": "java"
+        },
+        {
+          "name": "Dart",
+          "type": "dart"
+        },
+        {
+          "name": "Swift",
+          "type": "swift"
+        }
+      ]
+    },
+    {
+      "title": "Frameworks",
+      "colorTheme": "FFD6EAF8",
+      "data": [
+        {
+          "name": "Android SDK",
+          "type": "android_sdk"
+        },
+        {
+          "name": "Flutter SDK",
+          "type": "flutter_sdk"
+        },
+        {
+          "name": "iOS SDK",
+          "type": "ios_sdk"
+        }
+      ]
+    },
+    {
+      "title": "Tools",
+      "colorTheme": "FFEEEEE4",
+      "data": [
+        {
+          "name": "Git",
+          "type": "git"
+        },
+        {
+          "name": "Gradle",
+          "type": "gradle"
+        },
+        {
+          "name": "Firebase",
+          "type": "firebase"
+        },
+        {
+          "name": "Fastlane",
+          "type": "fastlane"
+        },
+        {
+          "name": "Github Actions",
+          "type": "github_actions"
+        },
+        {
+          "name": "CI/CD",
+          "type": "ci_cd"
+        },
+        {
+          "name": "Jira",
+          "type": "jira"
+        },
+        {
+          "name": "Mockito",
+          "type": "mockito"
+        }
+      ]
+    }
+  ]
 }

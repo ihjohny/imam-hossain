@@ -41,13 +41,13 @@ class AboutWidgetDesktop extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               Wrap(
-                spacing: 12,
-                runSpacing: 12,
+                spacing: 8,
+                runSpacing: 8,
                 children: [
                   ItemChipWidget(
                     icon: Icons.mail_outline,
                     label: context.tr(LocaleKeys.emailTitle),
-                    backgroundColor: Color(0xFFF8D7D0),
+                    backgroundColor: const Color(0xFFF8D7D0),
                     textColor: Colors.black87,
                     onPressed: () {
                       safeLaunchURL(context, context.tr(LocaleKeys.emailUrl));
@@ -56,7 +56,7 @@ class AboutWidgetDesktop extends StatelessWidget {
                   ItemChipWidget(
                     icon: Icons.code,
                     label: context.tr(LocaleKeys.githubTitle),
-                    backgroundColor: Color(0xFFEEEEE4),
+                    backgroundColor: const Color(0xFFEEEEE4),
                     textColor: Colors.black87,
                     onPressed: () {
                       safeLaunchURL(context, context.tr(LocaleKeys.githubUrl));
@@ -65,7 +65,7 @@ class AboutWidgetDesktop extends StatelessWidget {
                   ItemChipWidget(
                     icon: Icons.person_outline,
                     label: context.tr(LocaleKeys.linkedinTitle),
-                    backgroundColor: Color(0xFFD6EAF8),
+                    backgroundColor: const Color(0xFFD6EAF8),
                     textColor: Colors.black87,
                     onPressed: () {
                       safeLaunchURL(
@@ -75,7 +75,7 @@ class AboutWidgetDesktop extends StatelessWidget {
                   ItemChipWidget(
                     icon: Icons.description_outlined,
                     label: context.tr(LocaleKeys.resumeTitle),
-                    backgroundColor: Color(0xFFD5F5E3),
+                    backgroundColor: const Color(0xFFD5F5E3),
                     textColor: Colors.black87,
                     onPressed: () {
                       safeLaunchURL(context, context.tr(LocaleKeys.resumeUrl));
