@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:imam_hossain/features/skills/data/model/skills_category.dart';
 import 'package:imam_hossain/features/skills/data/model/skills_data.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -16,11 +15,7 @@ class SkillsDataService {
 
   Future<void> fetchSkillsData(Locale locale) async {
     final jsonSkillsData = trList(locale, LocaleKeys.skillsData);
-    final skillsCategories = jsonSkillsData.map((skillsCategory) {
-      return SkillsCategory.fromJson(skillsCategory);
-    }).toList();
-
-    _skillsCategories.add(SkillsData(skillsCategories: skillsCategories));
+    _skillsCategories.add(SkillsData.fromJson(jsonSkillsData));
   }
 
   void dispose() {

@@ -22,7 +22,7 @@ class SkillsCategoryWidget extends StatelessWidget {
         children: [
           Text(
             category.title,
-            style: context.textTheme.bodyLarge?.copyWith(
+            style: context.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),

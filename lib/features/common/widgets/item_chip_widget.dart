@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 
 class ItemChipWidget extends StatelessWidget {
   final IconData? icon;
@@ -42,7 +43,7 @@ class ItemChipWidget extends StatelessWidget {
                   padding: EdgeInsets.only(left: icon != null ? 8.0 : 0),
                   child: Text(
                     label,
-                    style: TextStyle(
+                    style: context.textTheme.labelLarge?.copyWith(
                       color: textColor,
                       fontWeight: FontWeight.bold,
                     ),

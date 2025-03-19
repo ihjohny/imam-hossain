@@ -17,6 +17,7 @@ class PersonalInfoWidgetDesktop extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(
           left: 24,
+          right: 24,
           top: 100,
         ),
         child: Column(
@@ -27,7 +28,7 @@ class PersonalInfoWidgetDesktop extends StatelessWidget {
               backgroundColor: context.colorScheme.onSecondary,
               child: const CircleAvatar(
                 radius: 120,
-                backgroundImage: AssetImage('assets/images/profile-pic.png'),
+                backgroundImage: AssetImage('assets/images/profile_pic.png'),
               ),
             ),
             spaceH12,

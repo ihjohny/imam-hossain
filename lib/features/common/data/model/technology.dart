@@ -1,13 +1,13 @@
-class SkillItem {
+class Technology {
   final String name;
   final String type;
 
-  SkillItem({
+  Technology({
     required this.name,
     required this.type,
   });
 
-  factory SkillItem.fromJson(Map<String, dynamic> json) => SkillItem(
+  factory Technology.fromJson(Map<String, dynamic> json) => Technology(
         name: json["name"],
         type: json["type"],
       );

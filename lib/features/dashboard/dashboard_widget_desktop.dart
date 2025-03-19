@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/features/about/about_widget.dart';
+import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
+import 'package:imam_hossain/features/experience/experience_widget.dart';
 import 'package:imam_hossain/features/personal_info/personal_info_widget.dart';
 import 'package:imam_hossain/features/skills/skills_widget.dart';
 import 'package:imam_hossain/features/top_bar/top_bar_widget.dart';
@@ -27,10 +29,11 @@ class DashboardWidgetDesktop extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AboutWidget(),
-                        SizedBox(
-                          height: 16,
-                        ),
+                        VerticalSpacing(16),
                         SkillsWidget(),
+                        VerticalSpacing(16),
+                        ExperienceWidget(),
+                        VerticalSpacing(16),
                       ],
                     ),
                   ),

@@ -120,6 +120,46 @@ class CodegenLoader extends AssetLoader{
         }
       ]
     }
+  ],
+  "experienceTitleSection": "Experience",
+  "present": "Present",
+  "experienceData": [
+    {
+      "role": "Senior Software Engineer",
+      "company": "Brain Station 23",
+      "cover": {
+        "assetName": "assets/images/brain_station23_logo.jpeg"
+      },
+      "place": "(Dhaka, Bangladesh)",
+      "description": "o Led requirement analysis, time & cost estimation, and project planning to meet client needs.\no Revamped mobile app architecture, optimizing API server performance to support 30M+ monthly active users.\no Streamlined telecom app purchase and payment modules, increasing revenue.\no Mentored interns, providing technical guidance and fostering team growth.\no Gained expertise in native Android development, Flutter, and iOS development (Swift).\no Collaborated with cross-functional teams throughout the full software development lifecycle (SDLC), ensuring high-quality and timely releases.\no Integrated third-party services and improved app performance, including caching and API optimization for high-traffic scenarios.\n",
+      "isPresent": true,
+      "startYear": 2020,
+      "startMonth": 1,
+      "technologies": [
+        {
+          "name": "Jetpack Compose",
+          "type": "jetpackCompose"
+        },
+        {
+          "name": "Kotlin",
+          "type": "kotlin"
+        },
+        {
+          "name": "Dart",
+          "type": "dart"
+        },
+        {
+          "name": "Swift",
+          "type": "swift"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://brainstation-23.com/",
+          "display": "Brain Station 23"
+        }
+      ]
+    }
   ]
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": _en};

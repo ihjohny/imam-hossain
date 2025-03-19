@@ -1,9 +1,9 @@
-import 'package:imam_hossain/features/skills/data/model/skill_item.dart';
+import 'package:imam_hossain/features/common/data/model/technology.dart';
 
 class SkillsCategory {
   final String title;
   final String colorTheme;
-  final List<SkillItem> data;
+  final List<Technology> data;
 
   SkillsCategory({
     required this.title,
@@ -13,8 +13,8 @@ class SkillsCategory {
 
   factory SkillsCategory.fromJson(Map<String, dynamic> json) {
     var skillList = json['data'] as List;
-    List<SkillItem> dataList =
-        skillList.map((e) => SkillItem.fromJson(e)).toList();
+    List<Technology> dataList =
+        skillList.map((e) => Technology.fromJson(e)).toList();
     return SkillsCategory(
       title: json['title'] as String,
       colorTheme: json['colorTheme'] as String,

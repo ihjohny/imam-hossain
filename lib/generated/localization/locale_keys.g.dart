@@ -30,5 +30,8 @@ abstract class  LocaleKeys {
   static const toolsTitle = 'toolsTitle';
   static const noSkillsDataMSg = 'noSkillsDataMSg';
   static const skillsData = 'skillsData';
+  static const experienceTitleSection = 'experienceTitleSection';
+  static const present = 'present';
+  static const experienceData = 'experienceData';
 
 }

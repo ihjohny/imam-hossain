@@ -1,20 +1,20 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
-import 'package:imam_hossain/features/skills/data/model/skills_data.dart';
-import 'package:imam_hossain/features/skills/data/skills_data_service.dart';
-import 'package:imam_hossain/features/skills/widgets/skills_category_widget.dart';
+import 'package:imam_hossain/features/experience/data/experience_data_service.dart';
+import 'package:imam_hossain/features/experience/data/model/experience_data.dart';
+import 'package:imam_hossain/features/experience/widgets/experience_item_widget.dart';
 
 import '../../di/di_setup.dart';
 import '../../generated/localization/locale_keys.g.dart';
 
-class SkillsWidgetDesktop extends StatelessWidget {
-  const SkillsWidgetDesktop({super.key});
+class ExperienceWidgetDesktop extends StatelessWidget {
+  const ExperienceWidgetDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final skillsDataService = getIt<SkillsDataService>();
-    skillsDataService.fetchSkillsData(context.locale);
+    final experienceDataService = getIt<ExperienceDataService>();
+    experienceDataService.fetchExperienceData(context.locale);
 
     return ConstrainedBox(
       constraints: const BoxConstraints(minWidth: double.infinity),
@@ -29,7 +29,7 @@ class SkillsWidgetDesktop extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                context.tr(LocaleKeys.skillsTitleToolbar),
+                context.tr(LocaleKeys.experienceTitleSection),
                 style: const TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
@@ -37,24 +37,23 @@ class SkillsWidgetDesktop extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 4),
-              StreamBuilder<SkillsData>(
-                stream: skillsDataService.skillsCategories,
+              StreamBuilder<ExperienceData>(
+                stream: experienceDataService.experiences,
                 builder: (context, snapshot) {
-                  if (!snapshot.hasData ||
-                      snapshot.data!.skillsCategories.isEmpty) {
+                  if (!snapshot.hasData || snapshot.data!.experiences.isEmpty) {
                     return Center(
                         child: Text(context.tr(LocaleKeys.noSkillsDataMSg)));
                   }
                   final skillsData = snapshot.data!;
                   return Column(
-                    children: List.generate(skillsData.skillsCategories.length,
-                        (index) {
+                    children:
+                        List.generate(skillsData.experiences.length, (index) {
                       return Column(
                         children: [
-                          SkillsCategoryWidget(
-                            category: skillsData.skillsCategories[index],
+                          ExperienceItemWidget(
+                            experience: skillsData.experiences[index],
                           ),
-                          if (index < skillsData.skillsCategories.length - 1)
+                          if (index < skillsData.experiences.length - 1)
                             const VerticalSpacing(12),
                         ],
                       );
