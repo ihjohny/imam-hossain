@@ -3,6 +3,7 @@ import 'package:imam_hossain/features/about/about_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/experience/experience_widget.dart';
 import 'package:imam_hossain/features/personal_info/personal_info_widget.dart';
+import 'package:imam_hossain/features/projects/projects_widget.dart';
 import 'package:imam_hossain/features/skills/skills_widget.dart';
 import 'package:imam_hossain/features/top_bar/top_bar_widget.dart';
 
@@ -24,7 +25,7 @@ class DashboardWidgetDesktop extends StatelessWidget {
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(24),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -33,6 +34,8 @@ class DashboardWidgetDesktop extends StatelessWidget {
                         SkillsWidget(),
                         VerticalSpacing(16),
                         ExperienceWidget(),
+                        VerticalSpacing(16),
+                        ProjectsWidget(),
                         VerticalSpacing(16),
                       ],
                     ),

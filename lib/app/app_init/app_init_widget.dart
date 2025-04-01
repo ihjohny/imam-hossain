@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
 
 import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
@@ -41,7 +42,7 @@ class AppInitLoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox.shrink();
+    return const AppEmptyWidget();
   }
 }
 

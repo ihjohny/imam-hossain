@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-extension ResponsiveExtensions on BuildContext {
+extension ResponsiveExt on BuildContext {
   bool get isDesktop => MediaQuery.sizeOf(this).width >= 1024;
 
   bool get isTablet =>

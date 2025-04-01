@@ -22,7 +22,8 @@ Future<void> launchURL(String url) async {
   }
 }
 
-Future<void> safeLaunchURL(BuildContext context, String url) async {
+Future<void> safeLaunchURL(BuildContext context, String? url) async {
+  if (url == null || url.isEmpty) return;
   try {
     await launchURL(url);
   } catch (e) {

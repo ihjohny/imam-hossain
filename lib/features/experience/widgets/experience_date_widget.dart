@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:imam_hossain/core/utils/extension/localized_date_extension.dart';
-import 'package:imam_hossain/core/utils/extension/string_extension.dart';
+import 'package:imam_hossain/core/utils/extension/localized_date_ext.dart';
+import 'package:imam_hossain/core/utils/extension/string_ext.dart';
 
 import '../../../generated/localization/locale_keys.g.dart';
 import '../data/model/experience.dart';

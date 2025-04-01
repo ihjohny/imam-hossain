@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
+import 'package:imam_hossain/features/common/widgets/app_cursors_button_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_image_widget.dart';
 import 'package:imam_hossain/features/common/widgets/horizontal_spacing.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/experience/data/model/experience.dart';
 import 'package:imam_hossain/features/experience/widgets/experience_date_widget.dart';
+
+import '../../../core/utils/helper/helper_utils.dart';
 
 class ExperienceItemWidget extends StatelessWidget {
   final Experience experience;
@@ -24,10 +28,15 @@ class ExperienceItemWidget extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text(
-                    experience.company ?? "",
-                    style: context.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
+                  AppCursorsButtonWidget(
+                    onPressed: () {
+                      safeLaunchURL(context, experience.companyLink);
+                    },
+                    child: Text(
+                      experience.company ?? "",
+                      style: context.textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   const HorizontalSpacing(12),
@@ -60,11 +69,11 @@ class ExperienceItemWidget extends StatelessWidget {
             padding: const EdgeInsets.all(24.0),
             child: experience.cover?.assetName?.isNotEmpty == true
                 ? AppImageWidget(
-                appImage: experience.cover!,
-                height: 300,
-                width: 300,
-            )
-                : const SizedBox.shrink(),
+                    appImage: experience.cover!,
+                    height: 300,
+                    width: 300,
+                  )
+                : const AppEmptyWidget(),
           ),
         ),
       ],

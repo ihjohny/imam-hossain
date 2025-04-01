@@ -16,7 +16,6 @@
   "experienceTitleToolbar": "Experience",
   "projectsTitleToolbar": "Projects",
   "credentialsTitleToolbar": "Credentials",
-  "contactTitleToolbar": "Contact",
   "aboutTitleSection": "About Me",
   "aboutDetailsSection": "Experienced Senior Software Engineer with 5+ years of expertise in building high-performance, scalable mobile applications. Specializing in Android development, cross-platform solutions, and iOS development, I have successfully delivered apps across industries like e-commerce, food delivery, telecom, and ERP. Skilled in modern app architectures, optimizing performance, and leading end-to-end feature development, I collaborate with cross-functional teams to drive best practices and seamless user experiences. Passionate about crafting efficient, scalable mobile solutions that align with business goals and user needs.",
   "skillsTitleSection": "Skills",
@@ -111,6 +110,7 @@
     {
       "role": "Senior Software Engineer",
       "company": "Brain Station 23",
+      "companyLink": "https://brainstation-23.com/",
       "cover": {
         "assetName": "assets/images/brain_station23_logo.jpeg"
       },
@@ -136,11 +136,128 @@
           "name": "Swift",
           "type": "swift"
         }
-      ],
-      "links": [
+      ]
+    }
+  ],
+  "projectsTitleSection": "Projects",
+  "projectsData": [
+    {
+      "name": "MyGP - Offer, Recharge, Sports",
+      "projectUrl": "https://play.google.com/store/apps/details?id=com.portonics.mygp",
+      "cover": {
+        "assetName": "assets/images/project-mygp.jpg"
+      },
+      "descriptionTitle": "Description:",
+      "descriptionData": "MyGP is Grameenphone's all-in-one self-service telecommunications app with 50 million downloads on Play Store.",
+      "responsibilityTitle": "Responsibility:",
+      "responsibilityData": "As an Android Engineer, focused on developing features, conducting code reviews, and engaging in solution-oriented discussions. Played a key role in the R&D team, exploring and implementing best practices and innovative ideas to enhance the user experience.",
+      "technologyTitle": "Technology Used:",
+      "technologyData": "Android SDK, Multi-Module, MVVM Architecture, Kotlin, Java, Dagger Hilt, Coroutines, Jetpack Compose, Retrofit, Socket.IO, Room, Play Feature Delivery, JUnit, Mockito, Jenkins, Fastlane, etc.",
+      "tags": [
         {
-          "url": "https://brainstation-23.com/",
-          "display": "Brain Station 23"
+          "type": "android_apps",
+          "title": "Android Apps",
+          "cover": {
+            "assetName": "assets/images/android_logo.jpg"
+          }
+        },
+        {
+          "type": "play_store_link",
+          "title": "Link",
+          "link": "https://play.google.com/store/apps/details?id=com.portonics.mygp",
+          "cover": {
+            "assetName": "assets/images/play_store_logo.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Longshot",
+      "projectUrl": "https://www.longshotcameras.com/pages/longshotapp",
+      "cover": {
+        "assetName": "assets/images/project-longshot.jpg"
+      },
+      "descriptionTitle": "Description:",
+      "descriptionData": "Longshot app connects to Longshot cameras, providing live target viewing and tracking tools for precise shooting analysis.",
+      "responsibilityTitle": "Responsibility:",
+      "responsibilityData": "Implemented core features, including support for new camera models and camera detection through IP-based ping. Added a grid overlay option on the video feed to enhance precision in target tracking and analysis.",
+      "technologyTitle": "Technology Used:",
+      "technologyData": "Flutter, Bloc Architecture, Fijkplayer, Video Player, Screen Recording, Geolocator, Camera, etc.",
+      "tags": [
+        {
+          "type": "flutter_apps",
+          "title": "Flutter Apps",
+          "cover": {
+            "assetName": "assets/images/flutter_logo.jpg"
+          }
+        },
+        {
+          "type": "external_link",
+          "title": "Project Website",
+          "link": "https://www.longshotcameras.com/pages/longshotapp",
+          "cover": {
+            "assetName": "assets/images/link_icon.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "name": "My Robi: Offers, Usage & More!",
+      "projectUrl": "https://play.google.com/store/apps/details?id=net.omobio.robisc",
+      "cover": {
+        "assetName": "assets/images/project-myrobi.jpg"
+      },
+      "descriptionTitle": "Description:",
+      "descriptionData": "My Robi is a one-stop self-service app for telecommunications with 10 million downloads on Play Store.",
+      "responsibilityTitle": "Responsibility:",
+      "responsibilityData": "Part of the software engineering team that was responsible for redesigning the My Robi app with a new UI and architecture to accommodate a large user base.",
+      "technologyTitle": "Technology Used:",
+      "technologyData": "Android SDK, MVVM Architecture, Kotlin, Coroutines, Retrofit, WorkManager, Room, Datastore, Google Maps SDK, Material Design etc.",
+      "tags": [
+        {
+          "type": "android_apps",
+          "title": "Android Apps",
+          "cover": {
+            "assetName": "assets/images/android_logo.jpg"
+          }
+        },
+        {
+          "type": "play_store_link",
+          "title": "Link",
+          "link": "https://play.google.com/store/apps/details?id=net.omobio.robisc",
+          "cover": {
+            "assetName": "assets/images/play_store_logo.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HungryNaki - Food Delivery",
+      "projectUrl": "https://docs.google.com/document/d/11ALH_duhMO7sIRUiw33RMdeK25AB7ZZOQIT1CZtue-E/edit?usp=sharing",
+      "cover": {
+        "assetName": "assets/images/project-hungrynaki.jpg"
+      },
+      "descriptionTitle": "Description:",
+      "descriptionData": "HungryNaki is an online food ordering and delivery service launched in 2013 to deliver to doorsteps.",
+      "responsibilityTitle": "Responsibility:",
+      "responsibilityData": "Improved app performance with caching and API load optimization. Developed modules for Customers, Riders, and Partners. Implemented live GPS order tracking and integrated a printer SDK for handheld POS devices.",
+      "technologyTitle": "Technology Used:",
+      "technologyData": "Android SDK, Kotlin, MVVM Architecture, Dagger 2, RxJava 3, Coroutines, Apollo Android GraphQL, Android Jetpack Components, Data Binding, Navigation Component, Google Maps SDK, Aliyun OSS SDK, Android Service, etc.",
+      "tags": [
+        {
+          "type": "android_apps",
+          "title": "Android Apps",
+          "cover": {
+            "assetName": "assets/images/android_logo.jpg"
+          }
+        },
+        {
+          "type": "external_link",
+          "title": "Project Documentation",
+          "link": "https://docs.google.com/document/d/11ALH_duhMO7sIRUiw33RMdeK25AB7ZZOQIT1CZtue-E/edit?usp=sharing",
+          "cover": {
+            "assetName": "assets/images/link_icon.jpg"
+          }
         }
       ]
     }

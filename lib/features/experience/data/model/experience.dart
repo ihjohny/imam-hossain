@@ -1,11 +1,10 @@
-import 'package:imam_hossain/features/experience/data/model/link.dart';
-
 import '../../../common/data/model/app_image.dart';
 import '../../../common/data/model/technology.dart';
 
 class Experience {
   final String? role;
   final String? company;
+  final String? companyLink;
   final AppImage? cover;
   final String? place;
   final String? description;
@@ -15,11 +14,11 @@ class Experience {
   final int? endYear;
   final int? endMonth;
   final List<Technology>? technologies;
-  final List<Link>? links;
 
   Experience({
     this.role,
     this.company,
+    this.companyLink,
     this.cover,
     this.place,
     this.description,
@@ -29,13 +28,13 @@ class Experience {
     this.endYear,
     this.endMonth,
     this.technologies,
-    this.links,
   });
 
   factory Experience.fromJson(Map<String, dynamic> json) {
     return Experience(
       role: json['role'] as String?,
       company: json['company'] as String?,
+      companyLink: json['companyLink'] as String?,
       cover: AppImage.fromJson(json['cover']),
       place: json['place'] as String?,
       description: json['description'] as String?,
@@ -47,9 +46,6 @@ class Experience {
       technologies: (json['technologies'] as List?)
           ?.map((tech) => Technology.fromJson(tech as Map<String, dynamic>))
           .toList(),
-      links: (json['links'] as List?)
-          ?.map((link) => Link.fromJson(link as Map<String, dynamic>))
-          .toList(),
     );
   }
 
@@ -57,6 +53,7 @@ class Experience {
     return {
       'role': role,
       'company': company,
+      'companyLink': companyLink,
       'cover': cover?.toJson(),
       'place': place,
       'description': description,
@@ -66,7 +63,6 @@ class Experience {
       'endYear': endYear,
       'endMonth': endMonth,
       'technologies': technologies?.map((tech) => tech.toJson()).toList(),
-      'links': links?.map((link) => link.toJson()).toList(),
     };
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/core/utils/extension/string_ext.dart';
 
 import '../data/model/app_image.dart';
 
@@ -18,7 +19,7 @@ class AppImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (appImage.assetName == null || appImage.assetName!.isEmpty) {
+    if (appImage.assetName.isNullOrEmpty) {
       return Icon(
         Icons.image_not_supported,
         size: width,

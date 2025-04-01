@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/helper/helper_utils.dart';
-import 'package:imam_hossain/features/common/widgets/item_chip_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_chip_widget.dart';
 
 import '../../generated/localization/locale_keys.g.dart';
 
@@ -44,8 +44,11 @@ class AboutWidgetDesktop extends StatelessWidget {
                 spacing: 8,
                 runSpacing: 8,
                 children: [
-                  ItemChipWidget(
-                    icon: Icons.mail_outline,
+                  AppChipWidget(
+                    leading: const Icon(
+                      Icons.mail_outline,
+                      color: Colors.black87,
+                    ),
                     label: context.tr(LocaleKeys.emailTitle),
                     backgroundColor: const Color(0xFFF8D7D0),
                     textColor: Colors.black87,
@@ -53,8 +56,11 @@ class AboutWidgetDesktop extends StatelessWidget {
                       safeLaunchURL(context, context.tr(LocaleKeys.emailUrl));
                     },
                   ),
-                  ItemChipWidget(
-                    icon: Icons.code,
+                  AppChipWidget(
+                    leading: const Icon(
+                      Icons.code,
+                      color: Colors.black87,
+                    ),
                     label: context.tr(LocaleKeys.githubTitle),
                     backgroundColor: const Color(0xFFEEEEE4),
                     textColor: Colors.black87,
@@ -62,8 +68,11 @@ class AboutWidgetDesktop extends StatelessWidget {
                       safeLaunchURL(context, context.tr(LocaleKeys.githubUrl));
                     },
                   ),
-                  ItemChipWidget(
-                    icon: Icons.person_outline,
+                  AppChipWidget(
+                    leading: const Icon(
+                      Icons.person_outline,
+                      color: Colors.black87,
+                    ),
                     label: context.tr(LocaleKeys.linkedinTitle),
                     backgroundColor: const Color(0xFFD6EAF8),
                     textColor: Colors.black87,
@@ -72,8 +81,11 @@ class AboutWidgetDesktop extends StatelessWidget {
                           context, context.tr(LocaleKeys.linkedinUrl));
                     },
                   ),
-                  ItemChipWidget(
-                    icon: Icons.description_outlined,
+                  AppChipWidget(
+                    leading: const Icon(
+                      Icons.description_outlined,
+                      color: Colors.black87,
+                    ),
                     label: context.tr(LocaleKeys.resumeTitle),
                     backgroundColor: const Color(0xFFD5F5E3),
                     textColor: Colors.black87,
