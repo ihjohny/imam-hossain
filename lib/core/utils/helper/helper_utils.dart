@@ -32,3 +32,14 @@ Future<void> safeLaunchURL(BuildContext context, String? url) async {
     }
   }
 }
+
+void scrollToPosition(GlobalKey positionKey) {
+  final positionKeyCurrentContext = positionKey.currentContext;
+  if (positionKeyCurrentContext != null) {
+    Scrollable.ensureVisible(
+      positionKeyCurrentContext,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.decelerate,
+    );
+  }
+}

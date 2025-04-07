@@ -37,11 +37,11 @@ class AppTagChipWidget extends StatelessWidget {
 }
 
 Color _getTagBackgroundColor(AppTag appTag) {
-  if (appTag.type == "android_apps") {
+  if (appTag.type == "android") {
     return const Color(0xFFF8D7D0);
   } else if (appTag.type == "play_store_link") {
-    const Color(0xFFEEEEE4);
-  } else if (appTag.type == "flutter_apps") {
+    return const Color(0xFFEEEEE4);
+  } else if (appTag.type == "flutter") {
     return const Color(0xFFD6EAF8);
   } else if (appTag.type == "external_link") {
     return const Color(0xFFD5F5E3);

@@ -5,18 +5,32 @@ import 'package:imam_hossain/features/experience/data/experience_data_service.da
 import 'package:imam_hossain/features/projects/data/project_data_service.dart';
 import 'package:imam_hossain/features/skills/data/skills_data_service.dart';
 
+import '../core/navigation/navigation_keys.dart';
+
 final GetIt getIt = GetIt.instance;
 
 void setupServices() {
   getIt.registerSingleton<AppInitService>(AppInitService());
 
-  getIt.registerSingleton<AppThemeService>(AppThemeService(),
-      dispose: (service) => service.dispose());
+  getIt.registerSingleton<NavigationKeys>(NavigationKeys());
 
-  getIt.registerLazySingleton<SkillsDataService>(() => SkillsDataService());
+  getIt.registerSingleton<AppThemeService>(
+    AppThemeService(),
+    dispose: (service) => service.dispose(),
+  );
+
+  getIt.registerLazySingleton<SkillsDataService>(
+    () => SkillsDataService(),
+    dispose: (service) => service.dispose(),
+  );
 
   getIt.registerLazySingleton<ExperienceDataService>(
-      () => ExperienceDataService());
+    () => ExperienceDataService(),
+    dispose: (service) => service.dispose(),
+  );
 
-  getIt.registerLazySingleton<ProjectDataService>(() => ProjectDataService());
+  getIt.registerLazySingleton<ProjectDataService>(
+    () => ProjectDataService(),
+    dispose: (service) => service.dispose(),
+  );
 }

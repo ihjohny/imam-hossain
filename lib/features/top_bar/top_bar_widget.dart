@@ -3,14 +3,20 @@ import 'dart:ui';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
+import 'package:imam_hossain/core/utils/helper/helper_utils.dart';
 import 'package:imam_hossain/features/top_bar/widgets/nav_item_widget.dart';
 import 'package:imam_hossain/generated/localization/locale_keys.g.dart';
+
+import '../../core/navigation/navigation_keys.dart';
+import '../../di/di_setup.dart';
 
 class TopBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const TopBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final navigationKeys = getIt<NavigationKeys>();
+
     return AppBar(
       backgroundColor: context.colorScheme.onPrimary.withValues(alpha: .3),
       elevation: 2,
@@ -27,19 +33,27 @@ class TopBarWidget extends StatelessWidget implements PreferredSizeWidget {
           children: [
             NavItemWidget(
               text: context.tr(LocaleKeys.aboutTitleToolbar),
-              onClick: () {},
+              onClick: () {
+                scrollToPosition(navigationKeys.aboutKey);
+              },
             ),
             NavItemWidget(
               text: context.tr(LocaleKeys.skillsTitleToolbar),
-              onClick: () {},
+              onClick: () {
+                scrollToPosition(navigationKeys.skillsKey);
+              },
             ),
             NavItemWidget(
               text: context.tr(LocaleKeys.experienceTitleToolbar),
-              onClick: () {},
+              onClick: () {
+                scrollToPosition(navigationKeys.experienceKey);
+              },
             ),
             NavItemWidget(
               text: context.tr(LocaleKeys.projectsTitleToolbar),
-              onClick: () {},
+              onClick: () {
+                scrollToPosition(navigationKeys.projectsKey);
+              },
             ),
             NavItemWidget(
               text: context.tr(LocaleKeys.credentialsTitleToolbar),

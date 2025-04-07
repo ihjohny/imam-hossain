@@ -7,36 +7,49 @@ import 'package:imam_hossain/features/projects/projects_widget.dart';
 import 'package:imam_hossain/features/skills/skills_widget.dart';
 import 'package:imam_hossain/features/top_bar/top_bar_widget.dart';
 
+import '../../core/navigation/navigation_keys.dart';
+import '../../di/di_setup.dart';
+
 class DashboardWidgetDesktop extends StatelessWidget {
   const DashboardWidgetDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final navigationKeys = getIt<NavigationKeys>();
+
     return Row(
       children: [
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.33,
           child: const PersonalInfoWidget(),
         ),
-        const Expanded(
+        Expanded(
           child: Column(
             children: [
-              TopBarWidget(),
+              const TopBarWidget(),
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: EdgeInsets.all(24),
+                    padding: const EdgeInsets.all(24),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        AboutWidget(),
-                        VerticalSpacing(16),
-                        SkillsWidget(),
-                        VerticalSpacing(16),
-                        ExperienceWidget(),
-                        VerticalSpacing(16),
-                        ProjectsWidget(),
-                        VerticalSpacing(16),
+                        AboutWidget(
+                          key: navigationKeys.aboutKey,
+                        ),
+                        const VerticalSpacing(16),
+                        SkillsWidget(
+                          key: navigationKeys.skillsKey,
+                        ),
+                        const VerticalSpacing(16),
+                        ExperienceWidget(
+                          key: navigationKeys.experienceKey,
+                        ),
+                        const VerticalSpacing(16),
+                        ProjectsWidget(
+                          key: navigationKeys.projectsKey,
+                        ),
+                        const VerticalSpacing(16),
                       ],
                     ),
                   ),
