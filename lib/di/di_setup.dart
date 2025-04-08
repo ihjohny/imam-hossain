@@ -6,6 +6,7 @@ import 'package:imam_hossain/features/projects/data/project_data_service.dart';
 import 'package:imam_hossain/features/skills/data/skills_data_service.dart';
 
 import '../core/navigation/navigation_keys.dart';
+import '../features/publications/data/publication_data_service.dart';
 
 final GetIt getIt = GetIt.instance;
 
@@ -31,6 +32,11 @@ void setupServices() {
 
   getIt.registerLazySingleton<ProjectDataService>(
     () => ProjectDataService(),
+    dispose: (service) => service.dispose(),
+  );
+
+  getIt.registerLazySingleton<PublicationDataService>(
+    () => PublicationDataService(),
     dispose: (service) => service.dispose(),
   );
 }

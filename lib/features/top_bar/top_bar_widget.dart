@@ -56,8 +56,10 @@ class TopBarWidget extends StatelessWidget implements PreferredSizeWidget {
               },
             ),
             NavItemWidget(
-              text: context.tr(LocaleKeys.credentialsTitleToolbar),
-              onClick: () {},
+              text: context.tr(LocaleKeys.publicationsTitleToolbar),
+              onClick: () {
+                scrollToPosition(navigationKeys.publicationsKey);
+              },
             ),
           ],
         ),

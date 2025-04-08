@@ -31,7 +31,7 @@ class CodegenLoader extends AssetLoader{
   "skillsTitleToolbar": "Skills",
   "experienceTitleToolbar": "Experience",
   "projectsTitleToolbar": "Projects",
-  "credentialsTitleToolbar": "Credentials",
+  "publicationsTitleToolbar": "Publications",
   "aboutTitleSection": "About Me",
   "aboutDetailsSection": "Experienced Senior Software Engineer with 5+ years of expertise in building high-performance, scalable mobile applications. Specializing in Android development, cross-platform solutions, and iOS development, I have successfully delivered apps across industries like e-commerce, food delivery, telecom, and ERP. Skilled in modern app architectures, optimizing performance, and leading end-to-end feature development, I collaborate with cross-functional teams to drive best practices and seamless user experiences. Passionate about crafting efficient, scalable mobile solutions that align with business goals and user needs.",
   "skillsTitleSection": "Skills",
@@ -39,7 +39,7 @@ class CodegenLoader extends AssetLoader{
   "frameworksTitle": "Frameworks",
   "techFrameworksTitle": "Technologies/Frameworks",
   "toolsTitle": "Tools",
-  "noSkillsDataMSg": "No skills data available.",
+  "noDataMSg": "No data available.",
   "skillsData": [
     {
       "title": "Languages",
@@ -273,6 +273,55 @@ class CodegenLoader extends AssetLoader{
           "link": "https://docs.google.com/document/d/11ALH_duhMO7sIRUiw33RMdeK25AB7ZZOQIT1CZtue-E/edit?usp=sharing",
           "cover": {
             "assetName": "assets/images/link_icon.jpg"
+          }
+        }
+      ]
+    }
+  ],
+  "publicationsTitleSection": "Publications",
+  "publicationsData": [
+    {
+      "title": "Heart disease prediction using distinct artificial intelligence techniques: performance analysis and comparison",
+      "subtitle": "Iran Journal of Computer Science - Springer Nature Link · Jun 12, 2023",
+      "url": "https://link.springer.com/article/10.1007/s42044-023-00148-7",
+      "description": "This research improves heart disease prediction by identifying key risk factors like age, gender, and lifestyle through feature selection. A performance analysis and comparison of algorithms, including Logistic Regression, Naïve Bayes, K-NN, SVM, Decision Tree, and Random Forest (using selected features), reveal that Random Forest achieves 90% accuracy for early-stage prediction, offering a reliable tool for forecasting heart disease.",
+      "tags": [
+        {
+          "type": "research_article",
+          "title": "Research Paper",
+          "cover": {
+            "assetName": "assets/images/research_logo.jpg"
+          }
+        },
+        {
+          "type": "external_link",
+          "title": "Read",
+          "link": "https://link.springer.com/article/10.1007/s42044-023-00148-7",
+          "cover": {
+            "assetName": "assets/images/link_read.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Understanding Kotlin Delegates with Practical Examples",
+      "subtitle": "ProAndroidDev - Medium· Jan 26, 2025",
+      "url": "https://proandroiddev.com/understanding-kotlin-delegates-with-practical-examples-c0ea976fb184",
+      "description": "This article explains Kotlin delegates, which simplify code by delegating tasks to other objects. It covers property and class delegation, built-in delegates like lazy, observable, and vetoable, and custom delegates for tasks like logging, JSON parsing, and shared preferences.",
+      "tags": [
+        {
+          "type": "tech_article",
+          "title": "Tech Article",
+          "cover": {
+            "assetName": "assets/images/article_logo.jpg"
+          }
+        },
+        {
+          "type": "external_link",
+          "title": "Read",
+          "link": "https://proandroiddev.com/understanding-kotlin-delegates-with-practical-examples-c0ea976fb184",
+          "cover": {
+            "assetName": "assets/images/link_read.jpg"
           }
         }
       ]

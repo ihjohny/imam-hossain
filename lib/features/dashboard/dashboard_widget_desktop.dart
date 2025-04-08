@@ -4,6 +4,7 @@ import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/experience/experience_widget.dart';
 import 'package:imam_hossain/features/personal_info/personal_info_widget.dart';
 import 'package:imam_hossain/features/projects/projects_widget.dart';
+import 'package:imam_hossain/features/publications/publications_widget.dart';
 import 'package:imam_hossain/features/skills/skills_widget.dart';
 import 'package:imam_hossain/features/top_bar/top_bar_widget.dart';
 
@@ -48,6 +49,10 @@ class DashboardWidgetDesktop extends StatelessWidget {
                         const VerticalSpacing(16),
                         ProjectsWidget(
                           key: navigationKeys.projectsKey,
+                        ),
+                        const VerticalSpacing(16),
+                        PublicationsWidget(
+                          key: navigationKeys.publicationsKey,
                         ),
                         const VerticalSpacing(16),
                       ],

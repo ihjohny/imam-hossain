@@ -42,7 +42,7 @@ class ExperienceWidgetDesktop extends StatelessWidget {
                 builder: (context, snapshot) {
                   if (!snapshot.hasData || snapshot.data!.experiences.isEmpty) {
                     return Center(
-                        child: Text(context.tr(LocaleKeys.noSkillsDataMSg)));
+                        child: Text(context.tr(LocaleKeys.noDataMSg)));
                   }
                   final skillsData = snapshot.data!;
                   return Column(

@@ -43,7 +43,7 @@ class SkillsWidgetDesktop extends StatelessWidget {
                   if (!snapshot.hasData ||
                       snapshot.data!.skillsCategories.isEmpty) {
                     return Center(
-                        child: Text(context.tr(LocaleKeys.noSkillsDataMSg)));
+                        child: Text(context.tr(LocaleKeys.noDataMSg)));
                   }
                   final skillsData = snapshot.data!;
                   return Column(
