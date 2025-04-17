@@ -1,3 +1,5 @@
+import 'package:imam_hossain/features/common/data/model/duration_period.dart';
+
 import '../../../common/data/model/app_image.dart';
 import '../../../common/data/model/technology.dart';
 
@@ -8,11 +10,7 @@ class Experience {
   final AppImage? cover;
   final String? place;
   final String? description;
-  final bool? isPresent;
-  final int? startYear;
-  final int? startMonth;
-  final int? endYear;
-  final int? endMonth;
+  final DurationPeriod? durationPeriod;
   final List<Technology>? technologies;
 
   Experience({
@@ -22,11 +20,7 @@ class Experience {
     this.cover,
     this.place,
     this.description,
-    this.isPresent,
-    this.startYear,
-    this.startMonth,
-    this.endYear,
-    this.endMonth,
+    this.durationPeriod,
     this.technologies,
   });
 
@@ -35,14 +29,15 @@ class Experience {
       role: json['role'] as String?,
       company: json['company'] as String?,
       companyLink: json['companyLink'] as String?,
-      cover: AppImage.fromJson(json['cover']),
+      cover: json['cover'] != null
+          ? AppImage.fromJson(json['cover'] as Map<String, dynamic>)
+          : null,
       place: json['place'] as String?,
       description: json['description'] as String?,
-      isPresent: json['isPresent'] as bool?,
-      startYear: json['startYear'] as int?,
-      startMonth: json['startMonth'] as int?,
-      endYear: json['endYear'] as int?,
-      endMonth: json['endMonth'] as int?,
+      durationPeriod: json['durationPeriod'] != null
+          ? DurationPeriod.fromJson(
+              json['durationPeriod'] as Map<String, dynamic>)
+          : null,
       technologies: (json['technologies'] as List?)
           ?.map((tech) => Technology.fromJson(tech as Map<String, dynamic>))
           .toList(),
@@ -57,11 +52,7 @@ class Experience {
       'cover': cover?.toJson(),
       'place': place,
       'description': description,
-      'isPresent': isPresent,
-      'startYear': startYear,
-      'startMonth': startMonth,
-      'endYear': endYear,
-      'endMonth': endMonth,
+      'durationPeriod': durationPeriod?.toJson(),
       'technologies': technologies?.map((tech) => tech.toJson()).toList(),
     };
   }

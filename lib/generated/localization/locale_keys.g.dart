@@ -20,6 +20,7 @@ abstract class  LocaleKeys {
   static const experienceTitleToolbar = 'experienceTitleToolbar';
   static const projectsTitleToolbar = 'projectsTitleToolbar';
   static const publicationsTitleToolbar = 'publicationsTitleToolbar';
+  static const certificationsTitleToolbar = 'certificationsTitleToolbar';
   static const aboutTitleSection = 'aboutTitleSection';
   static const aboutDetailsSection = 'aboutDetailsSection';
   static const skillsTitleSection = 'skillsTitleSection';
@@ -36,5 +37,7 @@ abstract class  LocaleKeys {
   static const projectsData = 'projectsData';
   static const publicationsTitleSection = 'publicationsTitleSection';
   static const publicationsData = 'publicationsData';
+  static const certificationsTitleSection = 'certificationsTitleSection';
+  static const certificationsData = 'certificationsData';
 
 }

@@ -17,9 +17,9 @@ class AppTagChipWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppChipWidget(
-      leading: appTag.cover != null
+      leading: appTag.logo != null
           ? AppImageWidget(
-              appImage: appTag.cover!,
+              appImage: appTag.logo!,
               height: 24,
               width: 24,
             )
@@ -45,6 +45,10 @@ Color _getTagBackgroundColor(AppTag appTag) {
     return const Color(0xFFD6EAF8);
   } else if (appTag.type == "external_link") {
     return const Color(0xFFD5F5E3);
+  } else if (appTag.type == "certification") {
+    return const Color(0xFFF3E2FB);
+  } else if (appTag.type == "education") {
+    return const Color(0xFFE5F9B3);
   }
 
   return const Color(0xFFF8D7D0);

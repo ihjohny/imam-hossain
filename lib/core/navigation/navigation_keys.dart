@@ -6,4 +6,5 @@ class NavigationKeys {
   final GlobalKey experienceKey = GlobalKey();
   final GlobalKey projectsKey = GlobalKey();
   final GlobalKey publicationsKey = GlobalKey();
+  final GlobalKey certificationsKey = GlobalKey();
 }

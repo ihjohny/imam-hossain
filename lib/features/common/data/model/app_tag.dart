@@ -4,16 +4,16 @@ class AppTag {
   final String? type;
   final String? title;
   final String? link;
-  final AppImage? cover;
+  final AppImage? logo;
 
-  AppTag({this.type, this.title, this.link, this.cover});
+  AppTag({this.type, this.title, this.link, this.logo});
 
   factory AppTag.fromJson(Map<String, dynamic> json) {
     return AppTag(
       type: json['type'],
       title: json['title'],
       link: json['link'],
-      cover: json['cover'] != null ? AppImage.fromJson(json['cover']) : null,
+      logo: json['logo'] != null ? AppImage.fromJson(json['logo']) : null,
     );
   }
 
@@ -22,7 +22,7 @@ class AppTag {
       'type': type,
       'title': title,
       'link': link,
-      'cover': cover?.toJson(),
+      'logo': logo?.toJson(),
     };
   }
 }

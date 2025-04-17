@@ -6,9 +6,9 @@ import 'package:imam_hossain/features/common/widgets/app_image_widget.dart';
 import 'package:imam_hossain/features/common/widgets/horizontal_spacing.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/experience/data/model/experience.dart';
-import 'package:imam_hossain/features/experience/widgets/experience_date_widget.dart';
 
 import '../../../core/utils/helper/helper_utils.dart';
+import '../../common/widgets/app_date_widget.dart';
 
 class ExperienceItemWidget extends StatelessWidget {
   final Experience experience;
@@ -41,12 +41,12 @@ class ExperienceItemWidget extends StatelessWidget {
                   ),
                   const HorizontalSpacing(12),
                   Text(
-                    experience.place.toString() ?? "",
+                    experience.place.toString(),
                     style: context.textTheme.titleSmall,
                   ),
                   const Spacer(),
-                  ExperienceDateWidget(
-                    experience: experience,
+                  AppDateWidget(
+                    durationPeriod: experience.durationPeriod,
                   )
                 ],
               ),

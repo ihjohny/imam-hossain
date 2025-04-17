@@ -10,6 +10,7 @@ import 'package:imam_hossain/features/top_bar/top_bar_widget.dart';
 
 import '../../core/navigation/navigation_keys.dart';
 import '../../di/di_setup.dart';
+import '../certifications/certifications_widget.dart';
 
 class DashboardWidgetDesktop extends StatelessWidget {
   const DashboardWidgetDesktop({super.key});
@@ -53,6 +54,10 @@ class DashboardWidgetDesktop extends StatelessWidget {
                         const VerticalSpacing(16),
                         PublicationsWidget(
                           key: navigationKeys.publicationsKey,
+                        ),
+                        const VerticalSpacing(16),
+                        CertificationsWidget(
+                          key: navigationKeys.certificationsKey,
                         ),
                         const VerticalSpacing(16),
                       ],

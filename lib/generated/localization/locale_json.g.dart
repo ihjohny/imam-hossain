@@ -32,6 +32,7 @@ class CodegenLoader extends AssetLoader{
   "experienceTitleToolbar": "Experience",
   "projectsTitleToolbar": "Projects",
   "publicationsTitleToolbar": "Publications",
+  "certificationsTitleToolbar": "Certifications",
   "aboutTitleSection": "About Me",
   "aboutDetailsSection": "Experienced Senior Software Engineer with 5+ years of expertise in building high-performance, scalable mobile applications. Specializing in Android development, cross-platform solutions, and iOS development, I have successfully delivered apps across industries like e-commerce, food delivery, telecom, and ERP. Skilled in modern app architectures, optimizing performance, and leading end-to-end feature development, I collaborate with cross-functional teams to drive best practices and seamless user experiences. Passionate about crafting efficient, scalable mobile solutions that align with business goals and user needs.",
   "skillsTitleSection": "Skills",
@@ -132,9 +133,10 @@ class CodegenLoader extends AssetLoader{
       },
       "place": "(Dhaka, Bangladesh)",
       "description": "o Led requirement analysis, time & cost estimation, and project planning to meet client needs.\no Revamped mobile app architecture, optimizing API server performance to support 30M+ monthly active users.\no Streamlined telecom app purchase and payment modules, increasing revenue.\no Mentored interns, providing technical guidance and fostering team growth.\no Gained expertise in native Android development, Flutter, and iOS development (Swift).\no Collaborated with cross-functional teams throughout the full software development lifecycle (SDLC), ensuring high-quality and timely releases.\no Integrated third-party services and improved app performance, including caching and API optimization for high-traffic scenarios.\n",
-      "isPresent": true,
-      "startYear": 2020,
-      "startMonth": 1,
+      "durationPeriod": {
+        "startYear": 2020,
+        "startMonth": 1
+      },
       "technologies": [
         {
           "name": "Jetpack Compose",
@@ -173,7 +175,7 @@ class CodegenLoader extends AssetLoader{
         {
           "type": "android",
           "title": "Android",
-          "cover": {
+          "logo": {
             "assetName": "assets/images/android_logo.jpg"
           }
         },
@@ -181,7 +183,7 @@ class CodegenLoader extends AssetLoader{
           "type": "play_store_link",
           "title": "Play Store",
           "link": "https://play.google.com/store/apps/details?id=com.portonics.mygp",
-          "cover": {
+          "logo": {
             "assetName": "assets/images/play_store_logo.jpg"
           }
         }
@@ -203,7 +205,7 @@ class CodegenLoader extends AssetLoader{
         {
           "type": "flutter",
           "title": "Flutter",
-          "cover": {
+          "logo": {
             "assetName": "assets/images/flutter_logo.jpg"
           }
         },
@@ -211,7 +213,7 @@ class CodegenLoader extends AssetLoader{
           "type": "external_link",
           "title": "Link",
           "link": "https://www.longshotcameras.com/pages/longshotapp",
-          "cover": {
+          "logo": {
             "assetName": "assets/images/link_icon.jpg"
           }
         }
@@ -233,7 +235,7 @@ class CodegenLoader extends AssetLoader{
         {
           "type": "android",
           "title": "Android",
-          "cover": {
+          "logo": {
             "assetName": "assets/images/android_logo.jpg"
           }
         },
@@ -241,7 +243,7 @@ class CodegenLoader extends AssetLoader{
           "type": "play_store_link",
           "title": "Play Store",
           "link": "https://play.google.com/store/apps/details?id=net.omobio.robisc",
-          "cover": {
+          "logo": {
             "assetName": "assets/images/play_store_logo.jpg"
           }
         }
@@ -263,7 +265,7 @@ class CodegenLoader extends AssetLoader{
         {
           "type": "android",
           "title": "Android",
-          "cover": {
+          "logo": {
             "assetName": "assets/images/android_logo.jpg"
           }
         },
@@ -271,7 +273,7 @@ class CodegenLoader extends AssetLoader{
           "type": "external_link",
           "title": "Documentation",
           "link": "https://docs.google.com/document/d/11ALH_duhMO7sIRUiw33RMdeK25AB7ZZOQIT1CZtue-E/edit?usp=sharing",
-          "cover": {
+          "logo": {
             "assetName": "assets/images/link_icon.jpg"
           }
         }
@@ -289,7 +291,7 @@ class CodegenLoader extends AssetLoader{
         {
           "type": "research_article",
           "title": "Research Paper",
-          "cover": {
+          "logo": {
             "assetName": "assets/images/research_logo.jpg"
           }
         },
@@ -297,7 +299,7 @@ class CodegenLoader extends AssetLoader{
           "type": "external_link",
           "title": "Read",
           "link": "https://link.springer.com/article/10.1007/s42044-023-00148-7",
-          "cover": {
+          "logo": {
             "assetName": "assets/images/link_read.jpg"
           }
         }
@@ -312,7 +314,7 @@ class CodegenLoader extends AssetLoader{
         {
           "type": "tech_article",
           "title": "Tech Article",
-          "cover": {
+          "logo": {
             "assetName": "assets/images/article_logo.jpg"
           }
         },
@@ -320,8 +322,49 @@ class CodegenLoader extends AssetLoader{
           "type": "external_link",
           "title": "Read",
           "link": "https://proandroiddev.com/understanding-kotlin-delegates-with-practical-examples-c0ea976fb184",
-          "cover": {
+          "logo": {
             "assetName": "assets/images/link_read.jpg"
+          }
+        }
+      ]
+    }
+  ],
+  "certificationsTitleSection": "Certifications",
+  "certificationsData": [
+    {
+      "title": "ACMP 4.0 (Advanced Certificate for Management Professionals)",
+      "subtitle": "IBA, University of Dhaka, Bangladesh",
+      "url": "https://iba-du.edu",
+      "durationPeriod": {
+        "startYear": 2025,
+        "startMonth": 2
+      },
+      "tags": [
+        {
+          "type": "certification",
+          "title": "Certification",
+          "logo": {
+            "assetName": "assets/images/certification_logo.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Bachelor of Science in Information and Communication Engineering",
+      "subtitle": "Noakhali Science and Technology University, Bangladesh",
+      "url": "https://nstu.edu.bd",
+      "durationPeriod": {
+        "startYear": 2016,
+        "startMonth": 2,
+        "endYear": 2019,
+        "endMonth": 12
+      },
+      "tags": [
+        {
+          "type": "education",
+          "title": "Education",
+          "logo": {
+            "assetName": "assets/images/education_logo.jpg"
           }
         }
       ]
