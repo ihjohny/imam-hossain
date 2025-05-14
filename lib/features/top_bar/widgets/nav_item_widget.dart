@@ -14,7 +14,7 @@ class NavItemWidget extends StatefulWidget {
   });
 
   @override
-  _NavItemWidgetState createState() => _NavItemWidgetState();
+  State<NavItemWidget> createState() => _NavItemWidgetState();
 }
 
 class _NavItemWidgetState extends State<NavItemWidget> {

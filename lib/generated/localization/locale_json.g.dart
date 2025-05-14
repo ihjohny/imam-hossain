@@ -369,7 +369,8 @@ class CodegenLoader extends AssetLoader{
         }
       ]
     }
-  ]
+  ],
+  "footerTitle": "© 2025 Built by Imam"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": _en};
 }

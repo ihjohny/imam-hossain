@@ -39,5 +39,6 @@ abstract class  LocaleKeys {
   static const publicationsData = 'publicationsData';
   static const certificationsTitleSection = 'certificationsTitleSection';
   static const certificationsData = 'certificationsData';
+  static const footerTitle = 'footerTitle';
 
 }

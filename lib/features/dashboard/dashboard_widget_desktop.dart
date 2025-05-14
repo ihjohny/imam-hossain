@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:imam_hossain/features/about/about_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/experience/experience_widget.dart';
+import 'package:imam_hossain/features/footer/footer_widget.dart';
 import 'package:imam_hossain/features/personal_info/personal_info_widget.dart';
 import 'package:imam_hossain/features/projects/projects_widget.dart';
 import 'package:imam_hossain/features/publications/publications_widget.dart';
@@ -18,6 +19,7 @@ class DashboardWidgetDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final navigationKeys = getIt<NavigationKeys>();
+    final scrollController = getIt<ScrollController>();
 
     return Row(
       children: [
@@ -30,41 +32,50 @@ class DashboardWidgetDesktop extends StatelessWidget {
             children: [
               const TopBarWidget(),
               Expanded(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(24),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        AboutWidget(
-                          key: navigationKeys.aboutKey,
-                        ),
-                        const VerticalSpacing(16),
-                        SkillsWidget(
-                          key: navigationKeys.skillsKey,
-                        ),
-                        const VerticalSpacing(16),
-                        ExperienceWidget(
-                          key: navigationKeys.experienceKey,
-                        ),
-                        const VerticalSpacing(16),
-                        ProjectsWidget(
-                          key: navigationKeys.projectsKey,
-                        ),
-                        const VerticalSpacing(16),
-                        PublicationsWidget(
-                          key: navigationKeys.publicationsKey,
-                        ),
-                        const VerticalSpacing(16),
-                        CertificationsWidget(
-                          key: navigationKeys.certificationsKey,
-                        ),
-                        const VerticalSpacing(16),
-                      ],
+                  child: Stack(
+                children: [
+                  SingleChildScrollView(
+                    controller: scrollController,
+                    child: Padding(
+                      padding: const EdgeInsets.all(24),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          AboutWidget(
+                            key: navigationKeys.aboutKey,
+                          ),
+                          const VerticalSpacing(16),
+                          SkillsWidget(
+                            key: navigationKeys.skillsKey,
+                          ),
+                          const VerticalSpacing(16),
+                          ExperienceWidget(
+                            key: navigationKeys.experienceKey,
+                          ),
+                          const VerticalSpacing(16),
+                          ProjectsWidget(
+                            key: navigationKeys.projectsKey,
+                          ),
+                          const VerticalSpacing(16),
+                          PublicationsWidget(
+                            key: navigationKeys.publicationsKey,
+                          ),
+                          const VerticalSpacing(16),
+                          CertificationsWidget(
+                            key: navigationKeys.certificationsKey,
+                          ),
+                          const VerticalSpacing(16),
+                          const VerticalSpacing(kBottomNavigationBarHeight),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ),
+                  const Align(
+                    alignment: Alignment.bottomCenter,
+                    child: FooterWidget(),
+                  ),
+                ],
+              )),
             ],
           ),
         ),

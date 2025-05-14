@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
@@ -18,14 +16,7 @@ class TopBarWidget extends StatelessWidget implements PreferredSizeWidget {
     final navigationKeys = getIt<NavigationKeys>();
 
     return AppBar(
-      backgroundColor: context.colorScheme.onPrimary.withValues(alpha: .3),
-      elevation: 2,
-      flexibleSpace: ClipRRect(
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-          child: Container(color: Colors.transparent),
-        ),
-      ),
+      backgroundColor: context.colorScheme.surfaceContainer,
       title: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(

@@ -6,10 +6,13 @@ abstract final class AppTheme {
   // The defined light theme.
   static ThemeData light = FlexThemeData.light(
     scheme: FlexScheme.mandyRed,
+    appBarOpacity: 0.50,
+    appBarElevation: 2.0,
     subThemesData: const FlexSubThemesData(
       interactionEffects: true,
       tintedDisabledControls: true,
       useM2StyleDividerInM3: true,
+      adaptiveAppBarScrollUnderOff: FlexAdaptive.all(),
       inputDecoratorIsFilled: true,
       inputDecoratorBorderType: FlexInputBorderType.outline,
       alignedDropdown: true,
@@ -28,6 +31,7 @@ abstract final class AppTheme {
       tintedDisabledControls: true,
       blendOnColors: true,
       useM2StyleDividerInM3: true,
+      adaptiveAppBarScrollUnderOff: FlexAdaptive.all(),
       inputDecoratorIsFilled: true,
       inputDecoratorBorderType: FlexInputBorderType.outline,
       alignedDropdown: true,

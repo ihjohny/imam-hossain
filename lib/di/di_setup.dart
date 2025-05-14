@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:imam_hossain/app/app_init/app_init_service.dart';
 import 'package:imam_hossain/core/theme/app_theme_service.dart';
@@ -15,6 +16,8 @@ void setupServices() {
   getIt.registerSingleton<AppInitService>(AppInitService());
 
   getIt.registerSingleton<NavigationKeys>(NavigationKeys());
+
+  getIt.registerSingleton<ScrollController>(ScrollController());
 
   getIt.registerSingleton<AppThemeService>(
     AppThemeService(),
