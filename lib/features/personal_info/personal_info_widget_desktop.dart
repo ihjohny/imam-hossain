@@ -1,8 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:imam_hossain/core/utils/constants/custom_icons.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
-import 'package:imam_hossain/features/common/widgets/contact_button_widget.dart';
+import 'package:imam_hossain/features/common/widgets/logo_icon_widget.dart';
 import 'package:imam_hossain/generated/localization/locale_keys.g.dart';
 
 import '../../core/utils/constants/sizes.dart';
@@ -54,25 +55,33 @@ class PersonalInfoWidgetDesktop extends StatelessWidget {
               ),
             ),
             spaceH12,
-            Wrap(
+            const Wrap(
               alignment: WrapAlignment.center,
               spacing: 16,
               children: [
-                ContactButtonWidget(
-                  icon: FontAwesomeIcons.filePdf,
-                  url: context.tr(LocaleKeys.resumeUrl),
+                LogoIconWidget(
+                  child: Icon(
+                    CustomIcons.kotlin,
+                    size: Sizes.px32,
+                  ),
                 ),
-                ContactButtonWidget(
-                  icon: FontAwesomeIcons.github,
-                  url: context.tr(LocaleKeys.githubUrl),
+                LogoIconWidget(
+                  child: Icon(
+                    FontAwesomeIcons.android,
+                    size: Sizes.px32,
+                  ),
                 ),
-                ContactButtonWidget(
-                  icon: FontAwesomeIcons.linkedin,
-                  url: context.tr(LocaleKeys.linkedinUrl),
+                LogoIconWidget(
+                  child: Icon(
+                    FontAwesomeIcons.apple,
+                    size: Sizes.px32,
+                  ),
                 ),
-                ContactButtonWidget(
-                  icon: FontAwesomeIcons.envelope,
-                  url: context.tr(LocaleKeys.emailUrl),
+                LogoIconWidget(
+                  child: Icon(
+                    FontAwesomeIcons.flutter,
+                    size: Sizes.px32,
+                  ),
                 ),
               ],
             ),

@@ -54,3 +54,6 @@ flutter:
     - family: OctIcons
       fonts:
         - asset: assets/fonts/OctIcons.ttf
+    - family: CustomIcons
+      fonts:
+        - asset: assets/fonts/Custom-Icons.ttf
