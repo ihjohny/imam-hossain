@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/features/common/widgets/app_card_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_section_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/skills/data/model/skills_data.dart';
 import 'package:imam_hossain/features/skills/data/skills_data_service.dart';
@@ -18,51 +20,32 @@ class SkillsWidgetDesktop extends StatelessWidget {
 
     return ConstrainedBox(
       constraints: const BoxConstraints(minWidth: double.infinity),
-      child: Card(
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                context.tr(LocaleKeys.skillsTitleToolbar),
-                style: const TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFBF5A55),
-                ),
-              ),
-              const SizedBox(height: 4),
-              StreamBuilder<SkillsData>(
-                stream: skillsDataService.skillsCategories,
-                builder: (context, snapshot) {
-                  if (!snapshot.hasData ||
-                      snapshot.data!.skillsCategories.isEmpty) {
-                    return Center(
-                        child: Text(context.tr(LocaleKeys.noDataMSg)));
-                  }
-                  final skillsData = snapshot.data!;
+      child: AppSectionWidget(
+        title: context.tr(LocaleKeys.skillsTitleToolbar),
+        contentWidget: AppCardWidget(
+          child: StreamBuilder<SkillsData>(
+            stream: skillsDataService.skillsCategories,
+            builder: (context, snapshot) {
+              if (!snapshot.hasData ||
+                  snapshot.data!.skillsCategories.isEmpty) {
+                return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
+              }
+              final skillsData = snapshot.data!;
+              return Column(
+                children:
+                    List.generate(skillsData.skillsCategories.length, (index) {
                   return Column(
-                    children: List.generate(skillsData.skillsCategories.length,
-                        (index) {
-                      return Column(
-                        children: [
-                          SkillsCategoryWidget(
-                            category: skillsData.skillsCategories[index],
-                          ),
-                          if (index < skillsData.skillsCategories.length - 1)
-                            const VerticalSpacing(12),
-                        ],
-                      );
-                    }),
+                    children: [
+                      SkillsCategoryWidget(
+                        category: skillsData.skillsCategories[index],
+                      ),
+                      if (index < skillsData.skillsCategories.length - 1)
+                        const VerticalSpacing(12),
+                    ],
                   );
-                },
-              ),
-            ],
+                }),
+              );
+            },
           ),
         ),
       ),

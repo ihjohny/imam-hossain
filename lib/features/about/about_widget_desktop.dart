@@ -1,7 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/helper/helper_utils.dart';
+import 'package:imam_hossain/features/common/widgets/app_card_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_chip_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_section_widget.dart';
 
 import '../../generated/localization/locale_keys.g.dart';
 
@@ -12,25 +14,12 @@ class AboutWidgetDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: const BoxConstraints(minWidth: double.infinity),
-      child: Card(
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
+      child: AppSectionWidget(
+        title: context.tr(LocaleKeys.aboutTitleSection),
+        contentWidget: AppCardWidget(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                context.tr(LocaleKeys.aboutTitleSection),
-                style: const TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFBF5A55),
-                ),
-              ),
-              const SizedBox(height: 4),
               Text(
                 context.tr(LocaleKeys.aboutDetailsSection),
                 style: TextStyle(

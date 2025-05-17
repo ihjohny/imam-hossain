@@ -43,13 +43,13 @@ class _NavItemWidgetState extends State<NavItemWidget> {
         onPressed: widget.onClick,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: Sizes.px4),
-          child: Text(
-            widget.text,
-            style: context.textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.w700,
-              color: _hovering ? context.colorScheme.primary : Colors.black,
-            ),
-          ),
+          child: Text(widget.text,
+              style: context.themeData.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: _hovering
+                    ? context.colorScheme.primary
+                    : context.colorScheme.onSurface,
+              )),
         ),
       ),
     );

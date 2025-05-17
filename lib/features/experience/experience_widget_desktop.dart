@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/features/common/widgets/app_card_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_section_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/experience/data/experience_data_service.dart';
 import 'package:imam_hossain/features/experience/data/model/experience_data.dart';
@@ -18,50 +20,30 @@ class ExperienceWidgetDesktop extends StatelessWidget {
 
     return ConstrainedBox(
       constraints: const BoxConstraints(minWidth: double.infinity),
-      child: Card(
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                context.tr(LocaleKeys.experienceTitleSection),
-                style: const TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFBF5A55),
-                ),
-              ),
-              const SizedBox(height: 4),
-              StreamBuilder<ExperienceData>(
-                stream: experienceDataService.experiences,
-                builder: (context, snapshot) {
-                  if (!snapshot.hasData || snapshot.data!.experiences.isEmpty) {
-                    return Center(
-                        child: Text(context.tr(LocaleKeys.noDataMSg)));
-                  }
-                  final skillsData = snapshot.data!;
+      child: AppSectionWidget(
+        title: context.tr(LocaleKeys.experienceTitleSection),
+        contentWidget: AppCardWidget(
+          child: StreamBuilder<ExperienceData>(
+            stream: experienceDataService.experiences,
+            builder: (context, snapshot) {
+              if (!snapshot.hasData || snapshot.data!.experiences.isEmpty) {
+                return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
+              }
+              final skillsData = snapshot.data!;
+              return Column(
+                children: List.generate(skillsData.experiences.length, (index) {
                   return Column(
-                    children:
-                        List.generate(skillsData.experiences.length, (index) {
-                      return Column(
-                        children: [
-                          ExperienceItemWidget(
-                            experience: skillsData.experiences[index],
-                          ),
-                          if (index < skillsData.experiences.length - 1)
-                            const VerticalSpacing(12),
-                        ],
-                      );
-                    }),
+                    children: [
+                      ExperienceItemWidget(
+                        experience: skillsData.experiences[index],
+                      ),
+                      if (index < skillsData.experiences.length - 1)
+                        const VerticalSpacing(12),
+                    ],
                   );
-                },
-              ),
-            ],
+                }),
+              );
+            },
           ),
         ),
       ),

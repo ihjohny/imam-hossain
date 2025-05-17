@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/core/utils/constants/sizes.dart';
 import 'package:imam_hossain/features/about/about_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/experience/experience_widget.dart';
@@ -37,34 +38,34 @@ class DashboardWidgetDesktop extends StatelessWidget {
                   SingleChildScrollView(
                     controller: scrollController,
                     child: Padding(
-                      padding: const EdgeInsets.all(24),
+                      padding: const EdgeInsets.all(Sizes.px24),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           AboutWidget(
                             key: navigationKeys.aboutKey,
                           ),
-                          const VerticalSpacing(16),
+                          const VerticalSpacing(Sizes.px16),
                           SkillsWidget(
                             key: navigationKeys.skillsKey,
                           ),
-                          const VerticalSpacing(16),
+                          const VerticalSpacing(Sizes.px16),
                           ExperienceWidget(
                             key: navigationKeys.experienceKey,
                           ),
-                          const VerticalSpacing(16),
+                          const VerticalSpacing(Sizes.px16),
                           ProjectsWidget(
                             key: navigationKeys.projectsKey,
                           ),
-                          const VerticalSpacing(16),
+                          const VerticalSpacing(Sizes.px16),
                           PublicationsWidget(
                             key: navigationKeys.publicationsKey,
                           ),
-                          const VerticalSpacing(16),
+                          const VerticalSpacing(Sizes.px16),
                           CertificationsWidget(
                             key: navigationKeys.certificationsKey,
                           ),
-                          const VerticalSpacing(16),
+                          const VerticalSpacing(Sizes.px16),
                           const VerticalSpacing(kBottomNavigationBarHeight),
                         ],
                       ),
