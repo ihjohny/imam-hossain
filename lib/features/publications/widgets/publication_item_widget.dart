@@ -3,6 +3,7 @@ import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/features/common/widgets/app_card_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_tag_chip_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/publications/data/model/publication.dart';
 
@@ -20,9 +21,7 @@ class PublicationItemWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
+          AppWrapWidget(
             children: publication.tags
                     ?.map(
                       (item) => AppTagChipWidget(appTag: item),

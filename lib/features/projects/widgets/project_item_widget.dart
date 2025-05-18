@@ -4,6 +4,7 @@ import 'package:imam_hossain/features/common/widgets/app_card_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_image_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_tag_chip_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/projects/data/model/project.dart';
 import 'package:imam_hossain/features/projects/widgets/project_label_text_widget.dart';
@@ -22,9 +23,7 @@ class ProjectItemWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
+          AppWrapWidget(
             children: project.tags
                     ?.map(
                       (item) => AppTagChipWidget(appTag: item),

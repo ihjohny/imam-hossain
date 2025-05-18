@@ -6,6 +6,8 @@ import 'package:imam_hossain/features/about/data/model/about_data.dart';
 import 'package:imam_hossain/features/common/widgets/app_card_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_section_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_tag_chip_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
+import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
 import '../../generated/localization/locale_keys.g.dart';
 
@@ -38,10 +40,8 @@ class AboutWidgetDesktop extends StatelessWidget {
     return AppCardWidget(
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         _buildAboutDetails(context, aboutData.details),
-        const SizedBox(height: 12),
-        Wrap(
-          spacing: 8,
-          runSpacing: 8,
+        const SizedBox(height: Sizes.px12),
+        AppWrapWidget(
           children: List.generate(
             aboutData.tags?.length ?? 0,
             (index) {

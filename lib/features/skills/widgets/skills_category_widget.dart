@@ -2,6 +2,7 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/features/common/widgets/app_chip_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
 import 'package:imam_hossain/features/skills/data/model/skills_category.dart';
 
 class SkillsCategoryWidget extends StatelessWidget {
@@ -26,9 +27,7 @@ class SkillsCategoryWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 6),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
+          AppWrapWidget(
             children: category.data
                 .map(
                   (item) => AppChipWidget(
