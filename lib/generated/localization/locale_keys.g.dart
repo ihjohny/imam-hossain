@@ -6,14 +6,6 @@ abstract class  LocaleKeys {
   static const name = 'name';
   static const position = 'position';
   static const subDescription = 'subDescription';
-  static const resumeUrl = 'resumeUrl';
-  static const resumeTitle = 'resumeTitle';
-  static const githubUrl = 'githubUrl';
-  static const githubTitle = 'githubTitle';
-  static const linkedinUrl = 'linkedinUrl';
-  static const linkedinTitle = 'linkedinTitle';
-  static const emailUrl = 'emailUrl';
-  static const emailTitle = 'emailTitle';
   static const openUrlError = 'openUrlError';
   static const aboutTitleToolbar = 'aboutTitleToolbar';
   static const skillsTitleToolbar = 'skillsTitleToolbar';
@@ -22,7 +14,9 @@ abstract class  LocaleKeys {
   static const publicationsTitleToolbar = 'publicationsTitleToolbar';
   static const certificationsTitleToolbar = 'certificationsTitleToolbar';
   static const aboutTitleSection = 'aboutTitleSection';
-  static const aboutDetailsSection = 'aboutDetailsSection';
+  static const aboutData_details = 'aboutData.details';
+  static const aboutData_tags = 'aboutData.tags';
+  static const aboutData = 'aboutData';
   static const skillsTitleSection = 'skillsTitleSection';
   static const programmingLanguagesTitle = 'programmingLanguagesTitle';
   static const frameworksTitle = 'frameworksTitle';

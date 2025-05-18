@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:imam_hossain/features/projects/data/model/project_data.dart';
 import 'package:rxdart/rxdart.dart';
 
-import '../../../core/localization/json_list_translation.dart';
+import '../../../core/localization/json_translation.dart';
 import '../../../generated/localization/locale_keys.g.dart';
 
 class ProjectDataService {

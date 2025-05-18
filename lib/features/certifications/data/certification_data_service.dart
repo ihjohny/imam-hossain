@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:rxdart/rxdart.dart';
 
-import '../../../core/localization/json_list_translation.dart';
+import '../../../core/localization/json_translation.dart';
 import '../../../generated/localization/locale_keys.g.dart';
 import 'model/certification_data.dart';
 

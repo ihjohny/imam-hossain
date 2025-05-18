@@ -34,22 +34,30 @@ class AppTagChipWidget extends StatelessWidget {
           : null,
     );
   }
-}
 
-Color _getTagBackgroundColor(AppTag appTag) {
-  if (appTag.type == "android") {
+  Color _getTagBackgroundColor(AppTag appTag) {
+    if (appTag.type == "android") {
+      return const Color(0xFFF8D7D0);
+    } else if (appTag.type == "play_store_link") {
+      return const Color(0xFFEEEEE4);
+    } else if (appTag.type == "flutter") {
+      return const Color(0xFFD6EAF8);
+    } else if (appTag.type == "external_link") {
+      return const Color(0xFFD5F5E3);
+    } else if (appTag.type == "certification") {
+      return const Color(0xFFF3E2FB);
+    } else if (appTag.type == "education") {
+      return const Color(0xFFE5F9B3);
+    } else if (appTag.type == "email") {
+      return const Color(0xFFF8D7D0);
+    } else if (appTag.type == "code_link") {
+      return const Color(0xFFEEEEE4);
+    } else if (appTag.type == "social_link") {
+      return const Color(0xFFD6EAF8);
+    } else if (appTag.type == "document_link") {
+      return const Color(0xFFD5F5E3);
+    }
+
     return const Color(0xFFF8D7D0);
-  } else if (appTag.type == "play_store_link") {
-    return const Color(0xFFEEEEE4);
-  } else if (appTag.type == "flutter") {
-    return const Color(0xFFD6EAF8);
-  } else if (appTag.type == "external_link") {
-    return const Color(0xFFD5F5E3);
-  } else if (appTag.type == "certification") {
-    return const Color(0xFFF3E2FB);
-  } else if (appTag.type == "education") {
-    return const Color(0xFFE5F9B3);
   }
-
-  return const Color(0xFFF8D7D0);
 }

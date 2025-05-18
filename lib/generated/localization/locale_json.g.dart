@@ -18,14 +18,6 @@ class CodegenLoader extends AssetLoader{
   "name": "Md Imam Hossain",
   "position": "Senior Software Engineer",
   "subDescription": "Excited by the latest tech trends, I specialize in building mobile apps that are both beautiful and technically sound, from concept to deployment.",
-  "resumeUrl": "https://drive.google.com/file/d/1UVBpzDWfOwwaZQb176yc8DGHHXkcnk47/view?usp=sharing",
-  "resumeTitle": "Resume",
-  "githubUrl": "https://github.com/ihjohny",
-  "githubTitle": "Github",
-  "linkedinUrl": "https://www.linkedin.com/in/ihjohny",
-  "linkedinTitle": "LinkedIn",
-  "emailUrl": "mailto:iimamhossain23@gmail.com",
-  "emailTitle": "Gmail",
   "openUrlError": "Could not open the url",
   "aboutTitleToolbar": "About",
   "skillsTitleToolbar": "Skills",
@@ -34,7 +26,43 @@ class CodegenLoader extends AssetLoader{
   "publicationsTitleToolbar": "Publications",
   "certificationsTitleToolbar": "Certifications",
   "aboutTitleSection": "About Me",
-  "aboutDetailsSection": "Experienced Senior Software Engineer with 5+ years of expertise in building high-performance, scalable mobile applications. Specializing in Android development, cross-platform solutions, and iOS development, I have successfully delivered apps across industries like e-commerce, food delivery, telecom, and ERP. Skilled in modern app architectures, optimizing performance, and leading end-to-end feature development, I collaborate with cross-functional teams to drive best practices and seamless user experiences. Passionate about crafting efficient, scalable mobile solutions that align with business goals and user needs.",
+  "aboutData": {
+    "details": "Experienced Senior Software Engineer with 5+ years of expertise in building high-performance, scalable mobile applications. Specializing in Android development, cross-platform solutions, and iOS development, I have successfully delivered apps across industries like e-commerce, food delivery, telecom, and ERP. Skilled in modern app architectures, optimizing performance, and leading end-to-end feature development, I collaborate with cross-functional teams to drive best practices and seamless user experiences. Passionate about crafting efficient, scalable mobile solutions that align with business goals and user needs.",
+    "tags": [
+      {
+        "type": "email",
+        "title": "Gmail",
+        "link": "mailto:iimamhossain23@gmail.com",
+        "logo": {
+          "iconType": "email"
+        }
+      },
+      {
+        "type": "code_link",
+        "title": "Github",
+        "link": "https://github.com/ihjohny",
+        "logo": {
+          "iconType": "code"
+        }
+      },
+      {
+        "type": "social_link",
+        "title": "LinkedIn",
+        "link": "https://www.linkedin.com/in/ihjohny",
+        "logo": {
+          "iconType": "person"
+        }
+      },
+      {
+        "type": "document_link",
+        "title": "Resume",
+        "link": "https://drive.google.com/file/d/1UVBpzDWfOwwaZQb176yc8DGHHXkcnk47/view?usp=sharing",
+        "logo": {
+          "iconType": "document"
+        }
+      }
+    ]
+  },
   "skillsTitleSection": "Skills",
   "programmingLanguagesTitle": "Programming Languages",
   "frameworksTitle": "Frameworks",
