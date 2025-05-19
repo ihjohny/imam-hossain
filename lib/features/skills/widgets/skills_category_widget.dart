@@ -5,6 +5,8 @@ import 'package:imam_hossain/features/common/widgets/app_chip_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
 import 'package:imam_hossain/features/skills/data/model/skills_category.dart';
 
+import '../../../core/utils/constants/sizes.dart';
+
 class SkillsCategoryWidget extends StatelessWidget {
   final SkillsCategory category;
 
@@ -26,14 +28,14 @@ class SkillsCategoryWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 6),
+          const SizedBox(height: Sizes.px8),
           AppWrapWidget(
             children: category.data
                 .map(
                   (item) => AppChipWidget(
                     label: item.name,
                     backgroundColor: category.colorTheme.toColor,
-                    textColor: Colors.black87,
+                    textColor: context.themeData.colorScheme.onSurface,
                   ),
                 )
                 .toList(),

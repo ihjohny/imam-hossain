@@ -9,6 +9,7 @@ class AppImageWidget extends StatelessWidget {
   final double? width;
   final double? height;
   final BoxFit fit;
+  final Color? tintColor;
 
   const AppImageWidget({
     super.key,
@@ -16,6 +17,7 @@ class AppImageWidget extends StatelessWidget {
     this.width,
     this.height,
     this.fit = BoxFit.cover,
+    this.tintColor,
   });
 
   @override
@@ -25,13 +27,13 @@ class AppImageWidget extends StatelessWidget {
         return Icon(
           _getIconData(appImage.iconType!),
           size: width,
-          color: context.themeData.colorScheme.onSurfaceVariant,
+          color: tintColor ?? context.themeData.colorScheme.onSurfaceVariant,
         );
       } else {
         return Icon(
           Icons.image_not_supported,
           size: width,
-          color: context.themeData.colorScheme.onSurfaceVariant,
+          color: tintColor ?? context.themeData.colorScheme.onSurfaceVariant,
         );
       }
     }

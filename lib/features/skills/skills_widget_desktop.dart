@@ -7,6 +7,7 @@ import 'package:imam_hossain/features/skills/data/model/skills_data.dart';
 import 'package:imam_hossain/features/skills/data/skills_data_service.dart';
 import 'package:imam_hossain/features/skills/widgets/skills_category_widget.dart';
 
+import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
 import '../../generated/localization/locale_keys.g.dart';
 
@@ -40,7 +41,7 @@ class SkillsWidgetDesktop extends StatelessWidget {
                         category: skillsData.skillsCategories[index],
                       ),
                       if (index < skillsData.skillsCategories.length - 1)
-                        const VerticalSpacing(12),
+                        const VerticalSpacing(Sizes.px12),
                     ],
                   );
                 }),
