@@ -7,8 +7,10 @@ import 'package:imam_hossain/features/experience/data/experience_data_service.da
 import 'package:imam_hossain/features/experience/data/model/experience_data.dart';
 import 'package:imam_hossain/features/experience/widgets/experience_item_widget.dart';
 
+import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
 import '../../generated/localization/locale_keys.g.dart';
+import 'data/model/experience.dart';
 
 class ExperienceWidgetDesktop extends StatelessWidget {
   const ExperienceWidgetDesktop({super.key});
@@ -22,30 +24,37 @@ class ExperienceWidgetDesktop extends StatelessWidget {
       constraints: const BoxConstraints(minWidth: double.infinity),
       child: AppSectionWidget(
         title: context.tr(LocaleKeys.experienceTitleSection),
-        contentWidget: AppCardWidget(
-          child: StreamBuilder<ExperienceData>(
-            stream: experienceDataService.experiences,
-            builder: (context, snapshot) {
-              if (!snapshot.hasData || snapshot.data!.experiences.isEmpty) {
-                return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
-              }
-              final skillsData = snapshot.data!;
-              return Column(
-                children: List.generate(skillsData.experiences.length, (index) {
-                  return Column(
-                    children: [
-                      ExperienceItemWidget(
-                        experience: skillsData.experiences[index],
-                      ),
-                      if (index < skillsData.experiences.length - 1)
-                        const VerticalSpacing(12),
-                    ],
-                  );
-                }),
-              );
-            },
-          ),
+        contentWidget: StreamBuilder<ExperienceData>(
+          stream: experienceDataService.experiences,
+          builder: (context, snapshot) {
+            if (!snapshot.hasData || snapshot.data!.experiences.isEmpty) {
+              return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
+            }
+            final experiences = snapshot.data!.experiences;
+            return _buildExperienceList(context, experiences);
+          },
         ),
+      ),
+    );
+  }
+
+  Widget _buildExperienceList(
+    BuildContext context,
+    List<Experience> experiences,
+  ) {
+    return AppCardWidget(
+      child: Column(
+        children: List.generate(experiences.length, (index) {
+          return Column(
+            children: [
+              ExperienceItemWidget(
+                experience: experiences[index],
+              ),
+              if (index < experiences.length - 1)
+                const VerticalSpacing(Sizes.px12),
+            ],
+          );
+        }),
       ),
     );
   }

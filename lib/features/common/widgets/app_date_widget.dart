@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/extension/localized_date_ext.dart';
 import 'package:imam_hossain/core/utils/extension/string_ext.dart';
+import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/features/common/data/model/duration_period.dart';
 import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
 
@@ -33,7 +34,7 @@ class AppDateWidget extends StatelessWidget {
     if (startDate == null || endDate == null) return const Text("");
     return Text(
       "${startDate.capitalize()} - ${endDate.capitalize()}",
-      style: Theme.of(context).textTheme.titleSmall,
+      style: context.themeData.textTheme.labelMedium,
     );
   }
 }

@@ -48,7 +48,9 @@ class _FooterWidgetState extends State<FooterWidget> {
         child: Text(
           context.tr(LocaleKeys.footerTitle),
           textAlign: TextAlign.center,
-          style: context.textTheme.titleMedium,
+          style: context.textTheme.titleMedium?.copyWith(
+            color: context.colorScheme.primary,
+          ),
           maxLines: 1,
         ),
       ),

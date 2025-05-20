@@ -137,34 +137,73 @@
   "present": "Present",
   "experienceData": [
     {
-      "role": "Senior Software Engineer",
-      "company": "Brain Station 23",
-      "companyLink": "https://brainstation-23.com/",
+      "company": {
+        "name": "Brain Station 23",
+        "link": "https://brainstation-23.com/",
+        "place": "Dhaka, Bangladesh"
+      },
+      "roles": [
+        {
+          "title": "Senior Software Engineer",
+          "durationPeriod": {
+            "startYear": 2023,
+            "startMonth": 7
+          }
+        },
+        {
+          "title": "Software Engineer",
+          "durationPeriod": {
+            "startYear": 2021,
+            "startMonth": 7,
+            "endYear": 2023,
+            "endMonth": 6
+          }
+        },
+        {
+          "title": "Associate Software Engineer",
+          "durationPeriod": {
+            "startYear": 2020,
+            "startMonth": 1,
+            "endYear": 2021,
+            "endMonth": 6
+          }
+        }
+      ],
       "cover": {
         "assetName": "assets/images/brain_station23_logo.jpeg"
       },
-      "place": "(Dhaka, Bangladesh)",
-      "description": "o Led requirement analysis, time & cost estimation, and project planning to meet client needs.\no Revamped mobile app architecture, optimizing API server performance to support 30M+ monthly active users.\no Streamlined telecom app purchase and payment modules, increasing revenue.\no Mentored interns, providing technical guidance and fostering team growth.\no Gained expertise in native Android development, Flutter, and iOS development (Swift).\no Collaborated with cross-functional teams throughout the full software development lifecycle (SDLC), ensuring high-quality and timely releases.\no Integrated third-party services and improved app performance, including caching and API optimization for high-traffic scenarios.\n",
-      "durationPeriod": {
-        "startYear": 2020,
-        "startMonth": 1
-      },
-      "technologies": [
+      "responsibilities": [
+        "Led requirements analysis and project planning for clients.",
+        "Engineered high-performance TelCo app (MyGP) for heavy traffic.",
+        "Redesigned app architecture for 30M+ users, reducing server load.",
+        "Streamlined telecom purchase/payment modules, boosting revenue.",
+        "Added live GPS tracking and printer SDKs to delivery apps.",
+        "Mentored interns and juniors, sharing technical expertise.",
+        "Skilled in Android (Kotlin), Flutter, and iOS (Swift).",
+        "Collaborated across teams for timely, quality releases.",
+        "Integrated third-party services and analytics tools."
+      ],
+      "tags": [
         {
-          "name": "Jetpack Compose",
-          "type": "jetpackCompose"
+          "type": "jetpack_compose",
+          "title": "Jetpack Compose",
+          "logo": {
+            "assetName": "assets/images/jetpack_compose_logo.jpg"
+          }
         },
         {
-          "name": "Kotlin",
-          "type": "kotlin"
+          "type": "kotlin",
+          "title": "Kotlin",
+          "logo": {
+            "assetName": "assets/images/kotlin_logo.jpg"
+          }
         },
         {
-          "name": "Dart",
-          "type": "dart"
-        },
-        {
-          "name": "Swift",
-          "type": "swift"
+          "type": "dart",
+          "title": "Dart",
+          "logo": {
+            "assetName": "assets/images/dart_logo.jpg"
+          }
         }
       ]
     }

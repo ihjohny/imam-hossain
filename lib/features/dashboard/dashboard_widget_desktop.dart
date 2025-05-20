@@ -45,27 +45,27 @@ class DashboardWidgetDesktop extends StatelessWidget {
                           AboutWidget(
                             key: navigationKeys.aboutKey,
                           ),
-                          const VerticalSpacing(Sizes.px16),
+                          const VerticalSpacing(Sizes.px12),
                           SkillsWidget(
                             key: navigationKeys.skillsKey,
                           ),
-                          const VerticalSpacing(Sizes.px16),
+                          const VerticalSpacing(Sizes.px12),
                           ExperienceWidget(
                             key: navigationKeys.experienceKey,
                           ),
-                          const VerticalSpacing(Sizes.px16),
+                          const VerticalSpacing(Sizes.px12),
                           ProjectsWidget(
                             key: navigationKeys.projectsKey,
                           ),
-                          const VerticalSpacing(Sizes.px16),
+                          const VerticalSpacing(Sizes.px12),
                           PublicationsWidget(
                             key: navigationKeys.publicationsKey,
                           ),
-                          const VerticalSpacing(Sizes.px16),
+                          const VerticalSpacing(Sizes.px12),
                           CertificationsWidget(
                             key: navigationKeys.certificationsKey,
                           ),
-                          const VerticalSpacing(Sizes.px16),
+                          const VerticalSpacing(Sizes.px12),
                           const VerticalSpacing(kBottomNavigationBarHeight),
                         ],
                       ),

@@ -25,7 +25,7 @@ class AppSectionWidget extends StatelessWidget {
 
   Widget _buildTitle(BuildContext context, String title) {
     return Padding(
-      padding: const EdgeInsets.all(Sizes.px12),
+      padding: const EdgeInsets.all(Sizes.px8),
       child: Text(
         title,
         style: context.themeData.textTheme.headlineSmall?.copyWith(
