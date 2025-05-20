@@ -24,32 +24,37 @@ class SkillsWidgetDesktop extends StatelessWidget {
       child: AppSectionWidget(
         title: context.tr(LocaleKeys.skillsTitleToolbar),
         contentWidget: AppCardWidget(
-          child: StreamBuilder<SkillsData>(
-            stream: skillsDataService.skillsCategories,
-            builder: (context, snapshot) {
-              if (!snapshot.hasData ||
-                  snapshot.data!.skillsCategories.isEmpty) {
-                return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
-              }
-              final skillsData = snapshot.data!;
-              return Column(
-                children:
-                    List.generate(skillsData.skillsCategories.length, (index) {
-                  return Column(
-                    children: [
-                      SkillsCategoryWidget(
-                        category: skillsData.skillsCategories[index],
-                      ),
-                      if (index < skillsData.skillsCategories.length - 1)
-                        const VerticalSpacing(Sizes.px12),
-                    ],
-                  );
-                }),
-              );
-            },
-          ),
+          child: _buildSkillsCategories(skillsDataService, context),
         ),
       ),
+    );
+  }
+
+  Widget _buildSkillsCategories(
+    SkillsDataService skillsDataService,
+    BuildContext context,
+  ) {
+    return StreamBuilder<SkillsData>(
+      stream: skillsDataService.skillsCategories,
+      builder: (context, snapshot) {
+        if (!snapshot.hasData || snapshot.data!.skillsCategories.isEmpty) {
+          return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
+        }
+        final skillsData = snapshot.data!;
+        return Column(
+          children: List.generate(skillsData.skillsCategories.length, (index) {
+            return Column(
+              children: [
+                SkillsCategoryWidget(
+                  category: skillsData.skillsCategories[index],
+                ),
+                if (index < skillsData.skillsCategories.length - 1)
+                  const VerticalSpacing(Sizes.px12),
+              ],
+            );
+          }),
+        );
+      },
     );
   }
 }

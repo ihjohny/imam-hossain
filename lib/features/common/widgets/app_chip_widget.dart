@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/extension/string_ext.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 
+import '../../../core/utils/constants/sizes.dart';
 import 'app_cursors_button_widget.dart';
 
 class AppChipWidget extends StatelessWidget {
@@ -26,12 +27,12 @@ class AppChipWidget extends StatelessWidget {
       onPressed: onPressed,
       child: Container(
         padding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 8,
+          horizontal: Sizes.px12,
+          vertical: Sizes.px8,
         ),
         decoration: BoxDecoration(
           color: backgroundColor,
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(Sizes.px24),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -39,7 +40,7 @@ class AppChipWidget extends StatelessWidget {
             if (leading != null) leading!,
             if (!label.isNullOrEmpty)
               Padding(
-                padding: EdgeInsets.only(left: leading != null ? 8.0 : 0),
+                padding: EdgeInsets.only(left: leading != null ? Sizes.px8 : 0),
                 child: Text(
                   label ?? "",
                   style: context.textTheme.labelLarge?.copyWith(

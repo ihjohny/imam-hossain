@@ -8,6 +8,7 @@ class Sizes {
   static const px16 = 16.0;
   static const px20 = 20.0;
   static const px24 = 24.0;
+  static const px28 = 28.0;
   static const px32 = 32.0;
   static const px40 = 40.0;
   static const px48 = 48.0;
