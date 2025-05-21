@@ -1,7 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:imam_hossain/features/certifications/widgets/education_item_widget.dart';
+import 'package:imam_hossain/features/certifications/widgets/certification_item_widget.dart';
 import 'package:imam_hossain/features/common/widgets/custom_grid_widget.dart';
+import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
 import '../../generated/localization/locale_keys.g.dart';
 import '../common/widgets/app_section_widget.dart';
@@ -27,8 +28,8 @@ class CertificationsWidgetDesktop extends StatelessWidget {
           final certificationData = snapshot.data!;
           return CustomGridWidget(
             columns: 2,
-            horizontalSpacing: 8,
-            verticalSpacing: 16,
+            horizontalSpacing: Sizes.px8,
+            verticalSpacing: Sizes.px16,
             children: List.generate(
               certificationData.certifications.length,
               (index) {

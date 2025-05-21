@@ -7,6 +7,8 @@ import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/publications/data/model/publication.dart';
 
+import '../../../core/utils/constants/sizes.dart';
+
 class PublicationItemWidget extends StatelessWidget {
   final Publication publication;
 
@@ -29,17 +31,19 @@ class PublicationItemWidget extends StatelessWidget {
                     .toList() ??
                 [const AppEmptyWidget()],
           ),
-          const VerticalSpacing(12),
+          const VerticalSpacing(Sizes.px12),
           Text(
             publication.title ?? "",
             style: context.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),
-          const VerticalSpacing(4),
+          const VerticalSpacing(Sizes.px4),
           Text(
             publication.description ?? "",
-            style: context.textTheme.bodyMedium,
+            style: context.textTheme.titleSmall?.copyWith(
+              color: context.themeData.colorScheme.onSurfaceVariant,
+            ),
           ),
         ],
       ),

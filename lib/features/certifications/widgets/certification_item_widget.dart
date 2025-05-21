@@ -6,6 +6,7 @@ import 'package:imam_hossain/features/common/widgets/app_tag_chip_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 
+import '../../../core/utils/constants/sizes.dart';
 import '../../common/widgets/app_date_widget.dart';
 import '../data/model/certification.dart';
 
@@ -31,21 +32,21 @@ class CertificationItemWidget extends StatelessWidget {
                   .toList() ??
               [const AppEmptyWidget()],
         ),
-        const VerticalSpacing(12),
+        const VerticalSpacing(Sizes.px12),
         Text(
           certification.title ?? "",
           style: context.textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.bold,
           ),
         ),
-        const VerticalSpacing(4),
+        const VerticalSpacing(Sizes.px4),
         Text(
           certification.subtitle ?? "",
-          style: context.textTheme.bodyMedium?.copyWith(
+          style: context.textTheme.titleSmall?.copyWith(
             fontWeight: FontWeight.bold,
           ),
         ),
-        const VerticalSpacing(4),
+        const VerticalSpacing(Sizes.px4),
         AppDateWidget(
           durationPeriod: certification.durationPeriod,
         )

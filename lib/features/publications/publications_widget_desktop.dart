@@ -2,10 +2,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/features/common/widgets/app_section_widget.dart';
 import 'package:imam_hossain/features/common/widgets/custom_grid_widget.dart';
+import 'package:imam_hossain/features/publications/data/model/publication.dart';
 import 'package:imam_hossain/features/publications/data/model/publication_data.dart';
 import 'package:imam_hossain/features/publications/data/publication_data_service.dart';
 import 'package:imam_hossain/features/publications/widgets/publication_item_widget.dart';
 
+import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
 import '../../generated/localization/locale_keys.g.dart';
 
@@ -25,21 +27,21 @@ class PublicationsWidgetDesktop extends StatelessWidget {
           if (!snapshot.hasData || snapshot.data!.publications.isEmpty) {
             return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
           }
-          final publicationData = snapshot.data!;
-          return CustomGridWidget(
-            columns: 2,
-            horizontalSpacing: 8,
-            verticalSpacing: 16,
-            children: List.generate(
-              publicationData.publications.length,
-              (index) {
-                return PublicationItemWidget(
-                  publication: publicationData.publications[index],
-                );
-              },
-            ),
-          );
+          return _buildPublicationsGrid(context, snapshot.data!.publications);
         },
+      ),
+    );
+  }
+
+  Widget _buildPublicationsGrid(
+      BuildContext context, List<Publication> publications) {
+    return CustomGridWidget(
+      columns: 2,
+      horizontalSpacing: Sizes.px8,
+      verticalSpacing: Sizes.px16,
+      children: List.generate(
+        publications.length,
+        (index) => PublicationItemWidget(publication: publications[index]),
       ),
     );
   }
