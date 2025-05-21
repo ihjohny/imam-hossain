@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/constants/sizes.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
+import 'package:imam_hossain/features/common/data/model/app_image.dart';
 import 'package:imam_hossain/features/common/widgets/app_cursors_button_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_image_widget.dart';
 import 'package:imam_hossain/features/common/widgets/horizontal_spacing.dart';
+import 'package:imam_hossain/features/common/widgets/focused_content_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/experience/data/model/company.dart';
 import 'package:imam_hossain/features/experience/data/model/experience.dart';
@@ -39,14 +41,11 @@ class ExperienceItemWidget extends StatelessWidget {
         ),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(Sizes.px24),
-            child: experience.cover?.assetName?.isNotEmpty == true
-                ? AppImageWidget(
-                    appImage: experience.cover!,
-                    height: 300,
-                    width: 300,
-                  )
-                : const AppEmptyWidget(),
+            padding: const EdgeInsets.only(left: Sizes.px32),
+            child: _buildCoverSection(
+              context,
+              experience.cover,
+            ),
           ),
         ),
       ],
@@ -145,6 +144,22 @@ class ExperienceItemWidget extends StatelessWidget {
                   ],
                 ),
               )),
+    );
+  }
+
+  Widget _buildCoverSection(
+    BuildContext context,
+    AppImage? coverImage,
+  ) {
+    if (coverImage == null || (coverImage.assetName?.isEmpty == true)) {
+      return const AppEmptyWidget();
+    }
+    return FocusedContentWidget(
+      child: AppImageWidget(
+        appImage: coverImage,
+        height: Sizes.px300,
+        width: Sizes.px300,
+      ),
     );
   }
 }

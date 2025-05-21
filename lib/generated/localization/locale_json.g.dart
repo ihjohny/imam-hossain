@@ -182,7 +182,7 @@ class CodegenLoader extends AssetLoader{
         }
       ],
       "cover": {
-        "assetName": "assets/images/brain_station23_logo.jpeg"
+        "assetName": "assets/images/brain_station_23_cover.jpg"
       },
       "responsibilities": [
         "Led requirements analysis and project planning for clients.",

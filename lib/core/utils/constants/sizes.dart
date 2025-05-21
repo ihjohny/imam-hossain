@@ -16,6 +16,7 @@ class Sizes {
   static const px80 = 80.0;
   static const px100 = 100.0;
   static const px120 = 120.0;
+  static const px300 = 300.0;
 }
 
 const spaceW4 = SizedBox(width: Sizes.px4);
