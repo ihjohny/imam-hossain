@@ -48,10 +48,6 @@
     ]
   },
   "skillsTitleSection": "Skills",
-  "programmingLanguagesTitle": "Programming Languages",
-  "frameworksTitle": "Frameworks",
-  "techFrameworksTitle": "Technologies/Frameworks",
-  "toolsTitle": "Tools",
   "noDataMSg": "No data available.",
   "skillsData": [
     {
@@ -209,6 +205,9 @@
     }
   ],
   "projectsTitleSection": "Projects",
+  "descriptionTitle": "Description:",
+  "responsibilityTitle": "Responsibility:",
+  "technologyTitle": "Technology Used:",
   "projectsData": [
     {
       "name": "MyGP - Offer, Recharge, Sports",
@@ -216,11 +215,8 @@
       "cover": {
         "assetName": "assets/images/project-mygp.jpg"
       },
-      "descriptionTitle": "Description:",
       "descriptionData": "MyGP is Grameenphone's all-in-one self-service telecommunications app with 50 million downloads on Play Store.",
-      "responsibilityTitle": "Responsibility:",
       "responsibilityData": "As an Android Engineer, focused on developing features, conducting code reviews, and engaging in solution-oriented discussions. Played a key role in the R&D team, exploring and implementing best practices and innovative ideas to enhance the user experience.",
-      "technologyTitle": "Technology Used:",
       "technologyData": "Android SDK, Multi-Module, MVVM Architecture, Kotlin, Java, Dagger Hilt, Coroutines, Jetpack Compose, Retrofit, Socket.IO, Room, Play Feature Delivery, JUnit, Mockito, Jenkins, Fastlane, etc.",
       "tags": [
         {
@@ -246,11 +242,8 @@
       "cover": {
         "assetName": "assets/images/project-longshot.jpg"
       },
-      "descriptionTitle": "Description:",
       "descriptionData": "Longshot app connects to Longshot cameras, providing live target viewing and tracking tools for precise shooting analysis.",
-      "responsibilityTitle": "Responsibility:",
       "responsibilityData": "Implemented core features, including support for new camera models and camera detection through IP-based ping. Added a grid overlay option on the video feed to enhance precision in target tracking and analysis.",
-      "technologyTitle": "Technology Used:",
       "technologyData": "Flutter, Bloc Architecture, Fijkplayer, Video Player, Screen Recording, Geolocator, Camera, etc.",
       "tags": [
         {
@@ -276,11 +269,8 @@
       "cover": {
         "assetName": "assets/images/project-myrobi.jpg"
       },
-      "descriptionTitle": "Description:",
       "descriptionData": "My Robi is a one-stop self-service app for telecommunications with 10 million downloads on Play Store.",
-      "responsibilityTitle": "Responsibility:",
       "responsibilityData": "Part of the software engineering team that was responsible for redesigning the My Robi app with a new UI and architecture to accommodate a large user base.",
-      "technologyTitle": "Technology Used:",
       "technologyData": "Android SDK, MVVM Architecture, Kotlin, Coroutines, Retrofit, WorkManager, Room, Datastore, Google Maps SDK, Material Design etc.",
       "tags": [
         {
@@ -306,11 +296,8 @@
       "cover": {
         "assetName": "assets/images/project-hungrynaki.jpg"
       },
-      "descriptionTitle": "Description:",
       "descriptionData": "HungryNaki is an online food ordering and delivery service launched in 2013 to deliver to doorsteps.",
-      "responsibilityTitle": "Responsibility:",
       "responsibilityData": "Improved app performance with caching and API load optimization. Developed modules for Customers, Riders, and Partners. Implemented live GPS order tracking and integrated a printer SDK for handheld POS devices.",
-      "technologyTitle": "Technology Used:",
       "technologyData": "Android SDK, Kotlin, MVVM Architecture, Dagger 2, RxJava 3, Coroutines, Apollo Android GraphQL, Android Jetpack Components, Data Binding, Navigation Component, Google Maps SDK, Aliyun OSS SDK, Android Service, etc.",
       "tags": [
         {

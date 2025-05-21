@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/features/common/widgets/app_card_widget.dart';
@@ -8,6 +9,8 @@ import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/projects/data/model/project.dart';
 import 'package:imam_hossain/features/projects/widgets/project_label_text_widget.dart';
+
+import '../../../generated/localization/locale_keys.g.dart';
 
 class ProjectItemWidget extends StatelessWidget {
   final Project project;
@@ -51,17 +54,17 @@ class ProjectItemWidget extends StatelessWidget {
           ),
           const VerticalSpacing(4),
           ProjectLabelTextWidget(
-            label: project.descriptionTitle,
+            label: context.tr(LocaleKeys.descriptionTitle),
             data: project.descriptionData,
           ),
           const VerticalSpacing(4),
           ProjectLabelTextWidget(
-            label: project.responsibilityTitle,
+            label: context.tr(LocaleKeys.responsibilityTitle),
             data: project.responsibilityData,
           ),
           const VerticalSpacing(4),
           ProjectLabelTextWidget(
-            label: project.technologyTitle,
+            label: context.tr(LocaleKeys.technologyTitle),
             data: project.technologyData,
           ),
         ],
