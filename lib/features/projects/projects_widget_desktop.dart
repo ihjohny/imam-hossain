@@ -6,6 +6,7 @@ import 'package:imam_hossain/features/projects/data/model/project_data.dart';
 import 'package:imam_hossain/features/projects/data/project_data_service.dart';
 import 'package:imam_hossain/features/projects/widgets/project_item_widget.dart';
 
+import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
 import '../../generated/localization/locale_keys.g.dart';
 
@@ -28,8 +29,8 @@ class ProjectsWidgetDesktop extends StatelessWidget {
           final projectData = snapshot.data!;
           return CustomGridWidget(
             columns: 2,
-            horizontalSpacing: 8,
-            verticalSpacing: 16,
+            horizontalSpacing: Sizes.px8,
+            verticalSpacing: Sizes.px16,
             children: List.generate(
               projectData.projects.length,
               (index) {

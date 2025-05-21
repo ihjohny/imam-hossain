@@ -16,17 +16,21 @@ class ProjectLabelTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        style: context.textTheme.bodyMedium,
         children: [
           if (!label.isNullOrEmpty)
             TextSpan(
               text: '$label ',
-              style: context.textTheme.bodyMedium?.copyWith(
+              style: context.textTheme.titleSmall?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
             ),
-          // add to to add space here if label and data not null
-          if (!data.isNullOrEmpty) TextSpan(text: data),
+          if (!data.isNullOrEmpty)
+            TextSpan(
+              text: data,
+              style: context.textTheme.titleSmall?.copyWith(
+                color: context.themeData.colorScheme.onSurfaceVariant,
+              ),
+            ),
         ],
       ),
     );
