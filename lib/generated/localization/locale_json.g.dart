@@ -15,16 +15,67 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> _en = {
-  "name": "Md Imam Hossain",
-  "position": "Senior Software Engineer",
-  "subDescription": "Excited by the latest tech trends, I specialize in building mobile apps that are both beautiful and technically sound, from concept to deployment.",
-  "openUrlError": "Could not open the url",
-  "aboutTitleToolbar": "About",
-  "skillsTitleToolbar": "Skills",
-  "experienceTitleToolbar": "Experience",
-  "projectsTitleToolbar": "Projects",
-  "publicationsTitleToolbar": "Publications",
-  "certificationsTitleToolbar": "Certifications",
+  "appName": "Imam's Portfolio",
+  "personalInfoData": {
+    "photo": {
+      "assetName": "assets/images/profile_pic.png"
+    },
+    "name": "Md Imam Hossain",
+    "positionTitle": "Senior Software Engineer",
+    "message": "Excited by the latest tech trends, I specialize in building mobile apps that are both beautiful and technically sound, from concept to deployment.",
+    "tags": [
+      {
+        "type": "icon_showcase",
+        "logo": {
+          "iconType": "kotlin"
+        }
+      },
+      {
+        "type": "icon_showcase",
+        "logo": {
+          "iconType": "android"
+        }
+      },
+      {
+        "type": "icon_showcase",
+        "logo": {
+          "iconType": "apple"
+        }
+      },
+      {
+        "type": "icon_showcase",
+        "logo": {
+          "iconType": "flutter"
+        }
+      }
+    ]
+  },
+  "toolbarData": [
+    {
+      "key": "about",
+      "title": "About"
+    },
+    {
+      "key": "skills",
+      "title": "Skills"
+    },
+    {
+      "key": "experience",
+      "title": "Experience"
+    },
+    {
+      "key": "projects",
+      "title": "Projects"
+    },
+    {
+      "key": "publications",
+      "title": "Publications"
+    },
+    {
+      "key": "certifications",
+      "title": "Certifications"
+    }
+  ],
   "aboutTitleSection": "About Me",
   "aboutData": {
     "details": "Experienced Senior Software Engineer with 5+ years of expertise in building high-performance, scalable mobile applications. Specializing in Android development, cross-platform solutions, and iOS development, I have successfully delivered apps across industries like e-commerce, food delivery, telecom, and ERP. Skilled in modern app architectures, optimizing performance, and leading end-to-end feature development, I collaborate with cross-functional teams to drive best practices and seamless user experiences. Passionate about crafting efficient, scalable mobile solutions that align with business goals and user needs.",
@@ -64,7 +115,6 @@ class CodegenLoader extends AssetLoader{
     ]
   },
   "skillsTitleSection": "Skills",
-  "noDataMSg": "No data available.",
   "skillsData": [
     {
       "title": "Languages",
@@ -146,7 +196,6 @@ class CodegenLoader extends AssetLoader{
     }
   ],
   "experienceTitleSection": "Experience",
-  "present": "Present",
   "experienceData": [
     {
       "company": {
@@ -221,9 +270,6 @@ class CodegenLoader extends AssetLoader{
     }
   ],
   "projectsTitleSection": "Projects",
-  "descriptionTitle": "Description:",
-  "responsibilityTitle": "Responsibility:",
-  "technologyTitle": "Technology Used:",
   "projectsData": [
     {
       "name": "Offer, Recharge, Sports",
@@ -424,6 +470,12 @@ class CodegenLoader extends AssetLoader{
       ]
     }
   ],
+  "noDataMSg": "No data available.",
+  "descriptionTitle": "Description:",
+  "responsibilityTitle": "Responsibility:",
+  "technologyTitle": "Technology Used:",
+  "present": "Present",
+  "openUrlError": "Could not open the url",
   "footerTitle": "© 2025 Built by Imam"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": _en};

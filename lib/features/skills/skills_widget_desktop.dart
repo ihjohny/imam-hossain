@@ -22,7 +22,7 @@ class SkillsWidgetDesktop extends StatelessWidget {
     return ConstrainedBox(
       constraints: const BoxConstraints(minWidth: double.infinity),
       child: AppSectionWidget(
-        title: context.tr(LocaleKeys.skillsTitleToolbar),
+        title: context.tr(LocaleKeys.skillsTitleSection),
         contentWidget: AppCardWidget(
           child: _buildSkillsCategories(skillsDataService, context),
         ),

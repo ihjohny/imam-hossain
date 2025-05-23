@@ -22,17 +22,18 @@ class AboutWidgetDesktop extends StatelessWidget {
     return ConstrainedBox(
       constraints: const BoxConstraints(minWidth: double.infinity),
       child: AppSectionWidget(
-          title: context.tr(LocaleKeys.aboutTitleSection),
-          contentWidget: StreamBuilder(
-            stream: aboutDataService.aboutData,
-            builder: (context, snapshot) {
-              if (!snapshot.hasData || snapshot.data == null) {
-                return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
-              }
-              final aboutData = snapshot.data!;
-              return _buildAboutContent(context, aboutData);
-            },
-          )),
+        title: context.tr(LocaleKeys.aboutTitleSection),
+        contentWidget: StreamBuilder(
+          stream: aboutDataService.aboutData,
+          builder: (context, snapshot) {
+            if (!snapshot.hasData || snapshot.data == null) {
+              return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
+            }
+            final aboutData = snapshot.data!;
+            return _buildAboutContent(context, aboutData);
+          },
+        ),
+      ),
     );
   }
 

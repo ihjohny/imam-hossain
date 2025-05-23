@@ -18,7 +18,7 @@ class CertificationsWidgetDesktop extends StatelessWidget {
     certificationDataService.fetchEducationData(context.locale);
 
     return AppSectionWidget(
-      title: context.tr(LocaleKeys.certificationsTitleToolbar),
+      title: context.tr(LocaleKeys.certificationsTitleSection),
       contentWidget: StreamBuilder<CertificationData>(
         stream: certificationDataService.educations,
         builder: (context, snapshot) {

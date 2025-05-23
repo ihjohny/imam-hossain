@@ -21,7 +21,7 @@ class Application extends StatelessWidget {
         final isDarkMode = snapshot.data ?? false;
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          onGenerateTitle: (_) => tr(LocaleKeys.name),
+          onGenerateTitle: (_) => tr(LocaleKeys.appName),
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,

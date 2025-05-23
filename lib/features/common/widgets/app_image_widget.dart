@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:imam_hossain/core/utils/extension/string_ext.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
+import '../../../core/utils/constants/custom_icons.dart';
 import '../data/model/app_image.dart';
 
 class AppImageWidget extends StatelessWidget {
@@ -61,6 +62,14 @@ class AppImageWidget extends StatelessWidget {
         return FontAwesomeIcons.linkedin;
       case "document":
         return FontAwesomeIcons.filePdf;
+      case "kotlin":
+        return CustomIcons.kotlin;
+      case "android":
+        return FontAwesomeIcons.android;
+      case "apple":
+        return FontAwesomeIcons.apple;
+      case "flutter":
+        return FontAwesomeIcons.flutter;
       default:
         return Icons.image_not_supported;
     }
