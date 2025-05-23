@@ -170,8 +170,8 @@
       },
       "responsibilities": [
         "Led requirements analysis and project planning for clients.",
-        "Engineered high-performance TelCo app (MyGP) for heavy traffic.",
-        "Redesigned app architecture for 30M+ users, reducing server load.",
+        "Engineered high-performance TelCo apps for heavy traffic.",
+        "Redesigned app architecture for 30M+ monthly active users",
         "Streamlined telecom purchase/payment modules, boosting revenue.",
         "Added live GPS tracking and printer SDKs to delivery apps.",
         "Mentored interns and juniors, sharing technical expertise.",
@@ -210,12 +210,12 @@
   "technologyTitle": "Technology Used:",
   "projectsData": [
     {
-      "name": "MyGP - Offer, Recharge, Sports",
+      "name": "Offer, Recharge, Sports",
       "projectUrl": "https://play.google.com/store/apps/details?id=com.portonics.mygp",
       "cover": {
-        "assetName": "assets/images/project-mygp.jpg"
+        "assetName": "assets/images/project-myp.jpg"
       },
-      "descriptionData": "MyGP is Grameenphone's all-in-one self-service telecommunications app with 50 million downloads on Play Store.",
+      "descriptionData": "All-in-one self-service telecommunications app with 50 million downloads on Play Store.",
       "responsibilityData": "As an Android Engineer, focused on developing features, conducting code reviews, and engaging in solution-oriented discussions. Played a key role in the R&D team, exploring and implementing best practices and innovative ideas to enhance the user experience.",
       "technologyData": "Android SDK, Multi-Module, MVVM Architecture, Kotlin, Java, Dagger Hilt, Coroutines, Jetpack Compose, Retrofit, Socket.IO, Room, Play Feature Delivery, JUnit, Mockito, Jenkins, Fastlane, etc.",
       "tags": [
@@ -264,12 +264,12 @@
       ]
     },
     {
-      "name": "My Robi: Offers, Usage & More!",
+      "name": "Offers, Usage & More!",
       "projectUrl": "https://play.google.com/store/apps/details?id=net.omobio.robisc",
       "cover": {
-        "assetName": "assets/images/project-myrobi.jpg"
+        "assetName": "assets/images/project-myb.jpg"
       },
-      "descriptionData": "My Robi is a one-stop self-service app for telecommunications with 10 million downloads on Play Store.",
+      "descriptionData": "A one-stop self-service app for telecommunications with 10 million downloads on Play Store.",
       "responsibilityData": "Part of the software engineering team that was responsible for redesigning the My Robi app with a new UI and architecture to accommodate a large user base.",
       "technologyData": "Android SDK, MVVM Architecture, Kotlin, Coroutines, Retrofit, WorkManager, Room, Datastore, Google Maps SDK, Material Design etc.",
       "tags": [
