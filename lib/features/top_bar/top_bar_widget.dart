@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/core/utils/helper/helper_utils.dart';
 import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
+import 'package:imam_hossain/features/top_bar/data/toolbar_data_service.dart';
 import 'package:imam_hossain/features/top_bar/widgets/nav_item_widget.dart';
-import 'package:imam_hossain/generated/localization/locale_keys.g.dart';
+import 'package:imam_hossain/features/top_bar/data/model/toolbar_data.dart';
 
 import '../../core/navigation/navigation_keys.dart';
 import '../../di/di_setup.dart';
@@ -14,56 +15,46 @@ class TopBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final navigationKeys = getIt<NavigationKeys>();
-    return AppEmptyWidget();
-    // return AppBar(
-    //   backgroundColor: context.colorScheme.surfaceContainer,
-    //   title: SingleChildScrollView(
-    //     scrollDirection: Axis.horizontal,
-    //     child: Row(
-    //       mainAxisAlignment: MainAxisAlignment.center,
-    //       children: [
-    //         NavItemWidget(
-    //           text: context.tr(LocaleKeys.aboutTitleToolbar),
-    //           onClick: () {
-    //             scrollToPosition(navigationKeys.aboutKey);
-    //           },
-    //         ),
-    //         NavItemWidget(
-    //           text: context.tr(LocaleKeys.skillsTitleToolbar),
-    //           onClick: () {
-    //             scrollToPosition(navigationKeys.skillsKey);
-    //           },
-    //         ),
-    //         NavItemWidget(
-    //           text: context.tr(LocaleKeys.experienceTitleToolbar),
-    //           onClick: () {
-    //             scrollToPosition(navigationKeys.experienceKey);
-    //           },
-    //         ),
-    //         NavItemWidget(
-    //           text: context.tr(LocaleKeys.projectsTitleToolbar),
-    //           onClick: () {
-    //             scrollToPosition(navigationKeys.projectsKey);
-    //           },
-    //         ),
-    //         NavItemWidget(
-    //           text: context.tr(LocaleKeys.publicationsTitleToolbar),
-    //           onClick: () {
-    //             scrollToPosition(navigationKeys.publicationsKey);
-    //           },
-    //         ),
-    //         NavItemWidget(
-    //           text: context.tr(LocaleKeys.certificationsTitleToolbar),
-    //           onClick: () {
-    //             scrollToPosition(navigationKeys.certificationsKey);
-    //           },
-    //         ),
-    //       ],
-    //     ),
-    //   ),
-    // );
-  
+    final toolbarDataService = getIt<ToolbarDataService>();
+    toolbarDataService.fetchToolbarData(context.locale);
+    final navigationKeyMap = getIt<NavigationKeys>().keyMap;
+
+    return StreamBuilder<ToolbarData>(
+      stream: toolbarDataService.toolbarData,
+      builder: (context, snapshot) {
+        final items = snapshot.data?.items;
+        if (items == null || items.isEmpty) {
+          return AppBar(
+            backgroundColor: context.colorScheme.surfaceContainer,
+            title: const AppEmptyWidget(),
+          );
+        }
+        return AppBar(
+          backgroundColor: context.colorScheme.surfaceContainer,
+          title: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: items
+                  .map((item) => NavItemWidget(
+                        text: item.title ?? '',
+                        onClick: () {
+                          final key = item.key;
+                          if (key != null &&
+                              navigationKeyMap.containsKey(key)) {
+                            final navKey = navigationKeyMap[key];
+                            if (navKey != null) {
+                              scrollToPosition(navKey);
+                            }
+                          }
+                        },
+                      ))
+                  .toList(),
+            ),
+          ),
+        );
+      },
+    );
   }
 
   @override

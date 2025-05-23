@@ -7,6 +7,7 @@ import 'package:imam_hossain/features/experience/data/experience_data_service.da
 import 'package:imam_hossain/features/personal_info/data/personal_info_data_service.dart';
 import 'package:imam_hossain/features/projects/data/project_data_service.dart';
 import 'package:imam_hossain/features/skills/data/skills_data_service.dart';
+import 'package:imam_hossain/features/top_bar/data/toolbar_data_service.dart';
 
 import '../core/navigation/navigation_keys.dart';
 import '../features/certifications/data/certification_data_service.dart';
@@ -23,6 +24,11 @@ void setupServices() {
 
   getIt.registerSingleton<AppThemeService>(
     AppThemeService(),
+    dispose: (service) => service.dispose(),
+  );
+
+  getIt.registerLazySingleton<ToolbarDataService>(
+    () => ToolbarDataService(),
     dispose: (service) => service.dispose(),
   );
 

@@ -19,7 +19,7 @@ class DashboardWidgetDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final navigationKeys = getIt<NavigationKeys>();
+    final navigationKeyMap = getIt<NavigationKeys>().keyMap;
     final scrollController = getIt<ScrollController>();
 
     return Row(
@@ -43,27 +43,27 @@ class DashboardWidgetDesktop extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           AboutWidget(
-                            key: navigationKeys.aboutKey,
+                            key: navigationKeyMap[NavigationKeys.about],
                           ),
                           const VerticalSpacing(Sizes.px12),
                           SkillsWidget(
-                            key: navigationKeys.skillsKey,
+                            key: navigationKeyMap[NavigationKeys.skills],
                           ),
                           const VerticalSpacing(Sizes.px12),
                           ExperienceWidget(
-                            key: navigationKeys.experienceKey,
+                            key: navigationKeyMap[NavigationKeys.experience],
                           ),
                           const VerticalSpacing(Sizes.px12),
                           ProjectsWidget(
-                            key: navigationKeys.projectsKey,
+                            key: navigationKeyMap[NavigationKeys.projects],
                           ),
                           const VerticalSpacing(Sizes.px12),
                           PublicationsWidget(
-                            key: navigationKeys.publicationsKey,
+                            key: navigationKeyMap[NavigationKeys.publications],
                           ),
                           const VerticalSpacing(Sizes.px12),
                           CertificationsWidget(
-                            key: navigationKeys.certificationsKey,
+                            key: navigationKeyMap[NavigationKeys.certifications],
                           ),
                           const VerticalSpacing(Sizes.px12),
                           const VerticalSpacing(kBottomNavigationBarHeight),

@@ -1,10 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:imam_hossain/core/utils/constants/custom_icons.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_image_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
 import 'package:imam_hossain/features/common/widgets/logo_icon_widget.dart';
 import 'package:imam_hossain/features/personal_info/data/model/personal_info.dart';
 import 'package:imam_hossain/features/personal_info/data/personal_info_data_service.dart';
@@ -81,9 +80,8 @@ class PersonalInfoWidgetDesktop extends StatelessWidget {
           ),
         ),
         spaceH12,
-        Wrap(
-          alignment: WrapAlignment.center,
-          spacing: 16,
+        AppWrapWidget(
+          spacing: Sizes.px12,
           children: List.generate(
             personalInfo.tags?.length ?? 0,
             (index) {
