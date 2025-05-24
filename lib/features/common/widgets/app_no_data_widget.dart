@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 
@@ -10,7 +11,7 @@ class AppNoDataWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        LocaleKeys.noDataMSg,
+        context.tr(LocaleKeys.noDataMSg),
         style: context.themeData.textTheme.titleMedium,
         textAlign: TextAlign.center,
       ),
