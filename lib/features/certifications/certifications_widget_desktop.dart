@@ -8,6 +8,7 @@ import '../../generated/localization/locale_keys.g.dart';
 import '../common/widgets/app_section_widget.dart';
 import 'data/certification_data_service.dart';
 import 'data/model/certification_data.dart';
+import '../common/widgets/app_no_data_widget.dart';
 
 class CertificationsWidgetDesktop extends StatelessWidget {
   const CertificationsWidgetDesktop({super.key});
@@ -23,7 +24,7 @@ class CertificationsWidgetDesktop extends StatelessWidget {
         stream: certificationDataService.educations,
         builder: (context, snapshot) {
           if (!snapshot.hasData || snapshot.data!.certifications.isEmpty) {
-            return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
+            return const AppNoDataWidget();
           }
           final certificationData = snapshot.data!;
           return CustomGridWidget(

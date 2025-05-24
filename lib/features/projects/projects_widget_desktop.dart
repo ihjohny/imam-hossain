@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/features/common/widgets/app_no_data_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_section_widget.dart';
 import 'package:imam_hossain/features/common/widgets/custom_grid_widget.dart';
 import 'package:imam_hossain/features/projects/data/model/project_data.dart';
@@ -24,7 +25,7 @@ class ProjectsWidgetDesktop extends StatelessWidget {
         stream: projectDataService.projects,
         builder: (context, snapshot) {
           if (!snapshot.hasData || snapshot.data!.projects.isEmpty) {
-            return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
+            return const AppNoDataWidget();
           }
           final projectData = snapshot.data!;
           return CustomGridWidget(

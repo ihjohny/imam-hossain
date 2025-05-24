@@ -7,10 +7,10 @@ import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
 import 'package:imam_hossain/features/common/widgets/logo_icon_widget.dart';
 import 'package:imam_hossain/features/personal_info/data/model/personal_info.dart';
 import 'package:imam_hossain/features/personal_info/data/personal_info_data_service.dart';
-import 'package:imam_hossain/generated/localization/locale_keys.g.dart';
 
 import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
+import 'package:imam_hossain/features/common/widgets/app_no_data_widget.dart';
 
 class PersonalInfoWidgetDesktop extends StatelessWidget {
   const PersonalInfoWidgetDesktop({super.key});
@@ -32,7 +32,7 @@ class PersonalInfoWidgetDesktop extends StatelessWidget {
           stream: personalInfoDataService.personalInfo,
           builder: (context, snapshot) {
             if (!snapshot.hasData || snapshot.data == null) {
-              return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
+              return const AppNoDataWidget();
             }
             final personalInfoData = snapshot.data!;
             return _buildPersonalInfoContent(context, personalInfoData);

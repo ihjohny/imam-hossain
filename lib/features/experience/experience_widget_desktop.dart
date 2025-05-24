@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/features/common/widgets/app_card_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_no_data_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_section_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/experience/data/experience_data_service.dart';
@@ -28,7 +29,7 @@ class ExperienceWidgetDesktop extends StatelessWidget {
           stream: experienceDataService.experiences,
           builder: (context, snapshot) {
             if (!snapshot.hasData || snapshot.data!.experiences.isEmpty) {
-              return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
+              return const AppNoDataWidget();
             }
             final experiences = snapshot.data!.experiences;
             return _buildExperienceList(context, experiences);

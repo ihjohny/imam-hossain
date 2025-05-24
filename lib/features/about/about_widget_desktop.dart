@@ -4,6 +4,7 @@ import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/features/about/data/about_data_service.dart';
 import 'package:imam_hossain/features/about/data/model/about_data.dart';
 import 'package:imam_hossain/features/common/widgets/app_card_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_no_data_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_section_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_tag_chip_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
@@ -27,7 +28,7 @@ class AboutWidgetDesktop extends StatelessWidget {
           stream: aboutDataService.aboutData,
           builder: (context, snapshot) {
             if (!snapshot.hasData || snapshot.data == null) {
-              return Center(child: Text(context.tr(LocaleKeys.noDataMSg)));
+              return const AppNoDataWidget();
             }
             final aboutData = snapshot.data!;
             return _buildAboutContent(context, aboutData);
