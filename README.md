@@ -4,7 +4,7 @@ A personal portfolio project for Imam Hossain
 
 ## Getting started 🚀
 
-<a id="generate-localization-files" style="text-decoration:none">**5. Generate localization files:**</a>
+<a id="generate-localization-files" style="text-decoration:none">**Generate localization files:**</a>
 
 ```bash
 dart pub run easy_localization:generate -S assets/translations -f keys -o localization/locale_keys.g.dart
