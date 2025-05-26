@@ -23,6 +23,7 @@ dependencies:
   url_launcher: ^6.2.6
   freezed_annotation: ^3.0.0
   json_annotation: ^4.9.0
+  flutter_native_splash: ^2.4.6
 
 dev_dependencies:
   flutter_test:
