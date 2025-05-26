@@ -18,7 +18,7 @@ class CodegenLoader extends AssetLoader{
   "appName": "Imam's Portfolio",
   "personalInfoData": {
     "photo": {
-      "assetName": "assets/images/profile_pic.png"
+      "assetName": "assets/images/profile-pic.jpg"
     },
     "name": "Md Imam Hossain",
     "positionTitle": "Senior Software Engineer",
