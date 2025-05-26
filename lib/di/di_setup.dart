@@ -16,14 +16,17 @@ import '../features/publications/data/publication_data_service.dart';
 final GetIt getIt = GetIt.instance;
 
 void setupServices() {
-  getIt.registerSingleton<AppInitService>(AppInitService());
+  getIt.registerLazySingleton<AppInitService>(
+    () => AppInitService(),
+    dispose: (service) => service.dispose(),
+  );
 
-  getIt.registerSingleton<NavigationKeys>(NavigationKeys());
+  getIt.registerLazySingleton<NavigationKeys>(() => NavigationKeys());
 
-  getIt.registerSingleton<ScrollController>(ScrollController());
+  getIt.registerLazySingleton<ScrollController>(() => ScrollController());
 
-  getIt.registerSingleton<AppThemeService>(
-    AppThemeService(),
+  getIt.registerLazySingleton<AppThemeService>(
+    () => AppThemeService(),
     dispose: (service) => service.dispose(),
   );
 
