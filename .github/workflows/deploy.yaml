@@ -32,6 +32,7 @@ jobs:
           dart run build_runner build -d
           dart run easy_localization:generate -S assets/translations -f json -o localization/locale_json.g.dart
           dart run easy_localization:generate -S assets/translations -f keys -o localization/locale_keys.g.dart
+
       - name: Set base-href
         id: set_base_href
         run: |
