@@ -490,18 +490,6 @@ class CompiledApp {
       _1729: () => typeof dartUseDateNowForTicks !== "undefined",
       _1730: () => 1000 * performance.now(),
       _1731: () => Date.now(),
-      _1732: () => {
-        // On browsers return `globalThis.location.href`
-        if (globalThis.location != null) {
-          return globalThis.location.href;
-        }
-        return null;
-      },
-      _1733: () => {
-        return typeof process != "undefined" &&
-               Object.prototype.toString.call(process) == "[object process]" &&
-               process.platform == "win32"
-      },
       _1734: () => new WeakMap(),
       _1735: (map, o) => map.get(o),
       _1736: (map, o, v) => map.set(o, v),
