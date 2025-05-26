@@ -14,7 +14,7 @@ void main() async {
   setPathUrlStrategy();
   GoogleFonts.config.allowRuntimeFetching = false;
   setupServices();
-  final supportedLocales = await AppLocalizations.supportedLocales();
+  final supportedLocales = AppLocalizations.supportedLocales();
 
   runApp(
     AppInitWidget(

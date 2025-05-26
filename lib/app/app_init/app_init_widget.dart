@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:imam_hossain/features/common/widgets/app_no_data_widget.dart';
 
 import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
+import '../../features/common/widgets/app_empty_widget.dart';
 import 'app_init_service.dart';
 
 class AppInitWidget extends StatelessWidget {
@@ -42,7 +42,7 @@ class AppInitLoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AppNoDataWidget();
+    return const AppEmptyWidget();
   }
 }
 
