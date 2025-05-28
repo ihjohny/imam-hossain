@@ -22,7 +22,7 @@ class CodegenLoader extends AssetLoader{
     },
     "name": "Md Imam Hossain",
     "positionTitle": "Senior Software Engineer",
-    "message": "Passionate about the latest tech trends, I specialize in crafting high-quality mobile applications—whether native Android, native iOS, or cross-platform—focusing on clean architecture, elegant UI, and scalable performance from concept to deployment.",
+    "message": "Driven by a passion for the latest tech trends, I specialize in crafting mobile applications that are both user-centric and technically robust—from concept to deployment.",
     "tags": [
       {
         "type": "icon_showcase",
