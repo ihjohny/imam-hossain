@@ -11,8 +11,8 @@ import 'widgets/personal_info_avatar_widget.dart';
 import 'widgets/personal_info_tags_widget.dart';
 import 'widgets/personal_info_text_widget.dart';
 
-class PersonalInfoWidgetDesktop extends StatelessWidget {
-  const PersonalInfoWidgetDesktop({super.key});
+class PersonalInfoWidgetMobile extends StatelessWidget {
+  const PersonalInfoWidgetMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class PersonalInfoWidgetDesktop extends StatelessWidget {
         padding: const EdgeInsets.only(
           left: Sizes.px24,
           right: Sizes.px24,
-          top: Sizes.px100,
+          top: Sizes.px24,
         ),
         child: StreamBuilder(
           stream: personalInfoDataService.personalInfo,
@@ -57,7 +57,7 @@ class PersonalInfoWidgetDesktop extends StatelessWidget {
         ),
         spaceH12,
         PersonalInfoTags(tags: personalInfo.tags),
-        spaceH12,
+        spaceH24,
       ],
     );
   }
