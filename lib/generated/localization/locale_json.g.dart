@@ -15,7 +15,7 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> _en = {
-  "appName": "Imam's Portfolio",
+  "appName": "Imam Hossain Uncompiled",
   "personalInfoData": {
     "photo": {
       "assetName": "assets/images/profile-pic.jpg"
