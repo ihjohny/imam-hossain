@@ -59,7 +59,7 @@ class AboutWidgetDesktop extends StatelessWidget {
 
   Widget _buildAboutDetails(BuildContext context, String? details) {
     return Text(
-      details ?? '',
+      details ?? "",
       style: context.themeData.textTheme.titleMedium?.copyWith(
         fontWeight: FontWeight.bold,
         color: context.themeData.colorScheme.onSurfaceVariant,
