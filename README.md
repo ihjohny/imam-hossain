@@ -1,6 +1,6 @@
 # imam_hossain
 
-A personal portfolio project for Imam Hossain
+A personal portfolio project for Md Imam Hossain
 
 ## Getting started 🚀
 
