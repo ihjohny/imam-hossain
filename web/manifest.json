@@ -3,9 +3,9 @@
     "short_name": "imam_hossain",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A personal portfolio project for Imam Hossain",
+    "background_color": "#CD5758",
+    "theme_color": "#CD5758",
+    "description": "A personal portfolio project for Md Imam Hossain",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
