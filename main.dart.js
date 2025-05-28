@@ -76856,7 +76856,7 @@ B.aa9=new A.t(B.bV,["education","Education",B.aaw],t.M)
 B.a0J=A.a(s([B.aa9]),t.A)
 B.aaZ=new A.t(B.Dh,["Bachelor of Science in Information and Communication Engineering","Noakhali Science and Technology University, Bangladesh","https://nstu.edu.bd",B.aaO,B.a0J],t.M)
 B.a0S=A.a(s([B.aaY,B.aaZ]),t.A)
-B.ab0=new A.t(B.abq,["Imam's Portfolio",B.a80,B.a5J,"About Me",B.aaf,"Skills",B.ZQ,"Experience",B.a0R,"Projects",B.a2V,"Publications",B.a0Q,"Certifications",B.a0S,"No data available.","Description:","Responsibility:","Technology Used:","Present","Could not open the url","\xa9 2025 Built by Imam"],t.yf)
+B.ab0=new A.t(B.abq,["Imam Hossain Uncompiled",B.a80,B.a5J,"About Me",B.aaf,"Skills",B.ZQ,"Experience",B.a0R,"Projects",B.a2V,"Publications",B.a0Q,"Certifications",B.a0S,"No data available.","Description:","Responsibility:","Technology Used:","Present","Could not open the url","\xa9 2025 Built by Imam"],t.yf)
 B.D6=new A.t(B.abB,[B.ab0],A.ar("t<k,a8<k,@>>"))
 B.aby={KeyA:0,KeyB:1,KeyC:2,KeyD:3,KeyE:4,KeyF:5,KeyG:6,KeyH:7,KeyI:8,KeyJ:9,KeyK:10,KeyL:11,KeyM:12,KeyN:13,KeyO:14,KeyP:15,KeyQ:16,KeyR:17,KeyS:18,KeyT:19,KeyU:20,KeyV:21,KeyW:22,KeyX:23,KeyY:24,KeyZ:25,Digit1:26,Digit2:27,Digit3:28,Digit4:29,Digit5:30,Digit6:31,Digit7:32,Digit8:33,Digit9:34,Digit0:35,Minus:36,Equal:37,BracketLeft:38,BracketRight:39,Backslash:40,Semicolon:41,Quote:42,Backquote:43,Comma:44,Period:45,Slash:46}
 B.mU=new A.t(B.aby,["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","0","-","=","[","]","\\",";","'","`",",",".","/"],t.w)
