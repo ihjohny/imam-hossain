@@ -21,57 +21,55 @@ class DashboardWidgetMobile extends StatelessWidget {
     final navigationKeyMap = getIt<NavigationKeys>().keyMap;
     final scrollController = getIt<ScrollController>();
 
-    return Expanded(
-      child: Column(
-        children: [
-          const TopBarWidget(),
-          Expanded(
-              child: Stack(
-            children: [
-              SingleChildScrollView(
-                controller: scrollController,
-                child: Padding(
-                  padding: const EdgeInsets.all(Sizes.px24),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AboutWidget(
-                        key: navigationKeyMap[NavigationKeys.about],
-                      ),
-                      const VerticalSpacing(Sizes.px12),
-                      SkillsWidget(
-                        key: navigationKeyMap[NavigationKeys.skills],
-                      ),
-                      const VerticalSpacing(Sizes.px12),
-                      ExperienceWidget(
-                        key: navigationKeyMap[NavigationKeys.experience],
-                      ),
-                      const VerticalSpacing(Sizes.px12),
-                      ProjectsWidget(
-                        key: navigationKeyMap[NavigationKeys.projects],
-                      ),
-                      const VerticalSpacing(Sizes.px12),
-                      PublicationsWidget(
-                        key: navigationKeyMap[NavigationKeys.publications],
-                      ),
-                      const VerticalSpacing(Sizes.px12),
-                      CertificationsWidget(
-                        key: navigationKeyMap[NavigationKeys.certifications],
-                      ),
-                      const VerticalSpacing(Sizes.px12),
-                      const VerticalSpacing(kBottomNavigationBarHeight),
-                    ],
-                  ),
+    return Column(
+      children: [
+        const TopBarWidget(),
+        Expanded(
+            child: Stack(
+          children: [
+            SingleChildScrollView(
+              controller: scrollController,
+              child: Padding(
+                padding: const EdgeInsets.all(Sizes.px24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AboutWidget(
+                      key: navigationKeyMap[NavigationKeys.about],
+                    ),
+                    const VerticalSpacing(Sizes.px12),
+                    SkillsWidget(
+                      key: navigationKeyMap[NavigationKeys.skills],
+                    ),
+                    const VerticalSpacing(Sizes.px12),
+                    ExperienceWidget(
+                      key: navigationKeyMap[NavigationKeys.experience],
+                    ),
+                    const VerticalSpacing(Sizes.px12),
+                    ProjectsWidget(
+                      key: navigationKeyMap[NavigationKeys.projects],
+                    ),
+                    const VerticalSpacing(Sizes.px12),
+                    PublicationsWidget(
+                      key: navigationKeyMap[NavigationKeys.publications],
+                    ),
+                    const VerticalSpacing(Sizes.px12),
+                    CertificationsWidget(
+                      key: navigationKeyMap[NavigationKeys.certifications],
+                    ),
+                    const VerticalSpacing(Sizes.px12),
+                    const VerticalSpacing(kBottomNavigationBarHeight),
+                  ],
                 ),
               ),
-              const Align(
-                alignment: Alignment.bottomCenter,
-                child: FooterWidget(),
-              ),
-            ],
-          )),
-        ],
-      ),
+            ),
+            const Align(
+              alignment: Alignment.bottomCenter,
+              child: FooterWidget(),
+            ),
+          ],
+        )),
+      ],
     );
   }
 }
