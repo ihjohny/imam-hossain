@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../common/widgets/responsive_widget.dart';
 import 'certifications_widget_desktop.dart';
+import 'certifications_widget_mobile.dart';
 
 class CertificationsWidget extends StatelessWidget {
   const CertificationsWidget({super.key});
@@ -10,6 +11,7 @@ class CertificationsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Responsive(
       desktop: CertificationsWidgetDesktop(),
+      mobile: CertificationsWidgetMobile(),
     );
   }
 }
