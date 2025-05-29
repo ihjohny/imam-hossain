@@ -6,8 +6,8 @@ abstract final class AppTheme {
   // The defined light theme.
   static ThemeData light = FlexThemeData.light(
     scheme: FlexScheme.mandyRed,
-    appBarOpacity: 0.90,
     appBarElevation: 2.0,
+    appBarStyle: FlexAppBarStyle.primary,
     subThemesData: const FlexSubThemesData(
       interactionEffects: true,
       tintedDisabledControls: true,
@@ -26,8 +26,8 @@ abstract final class AppTheme {
   // The defined dark theme.
   static ThemeData dark = FlexThemeData.dark(
     scheme: FlexScheme.mandyRed,
-    appBarOpacity: 0.90,
     appBarElevation: 2.0,
+    appBarStyle: FlexAppBarStyle.primary,
     subThemesData: const FlexSubThemesData(
       interactionEffects: true,
       tintedDisabledControls: true,

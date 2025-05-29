@@ -11,8 +11,10 @@ import 'package:imam_hossain/features/personal_info/personal_info_widget.dart';
 import 'package:imam_hossain/features/projects/projects_widget.dart';
 import 'package:imam_hossain/features/publications/publications_widget.dart';
 import 'package:imam_hossain/features/skills/skills_widget.dart';
+import 'package:imam_hossain/features/top_bar/widgets/app_drawer_widget.dart';
 
 import '../certifications/certifications_widget.dart';
+import '../top_bar/top_bar_widget_mobile.dart';
 
 class DashboardWidgetMobile extends StatelessWidget {
   const DashboardWidgetMobile({super.key});
@@ -21,9 +23,11 @@ class DashboardWidgetMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     final navigationKeyMap = getIt<NavigationKeys>().keyMap;
     final scrollController = getIt<ScrollController>();
-    
+
     return Scaffold(
       backgroundColor: context.colorScheme.onPrimary,
+      appBar: const TopBarWidgetMobile(),
+      endDrawer: const AppDrawerWidget(),
       body: SafeArea(
         child: _buildDashboardBody(
           context,
@@ -75,7 +79,8 @@ class DashboardWidgetMobile extends StatelessWidget {
                           ),
                           const VerticalSpacing(Sizes.px12),
                           CertificationsWidget(
-                            key: navigationKeyMap[NavigationKeys.certifications],
+                            key:
+                                navigationKeyMap[NavigationKeys.certifications],
                           ),
                           const VerticalSpacing(Sizes.px12),
                           const VerticalSpacing(kBottomNavigationBarHeight),
