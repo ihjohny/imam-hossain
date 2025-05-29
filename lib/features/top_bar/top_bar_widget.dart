@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/core/utils/extension/responsive_ext.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/core/utils/helper/helper_utils.dart';
 import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
@@ -22,7 +23,7 @@ class TopBarWidget extends StatelessWidget implements PreferredSizeWidget {
     return StreamBuilder<ToolbarData>(
       stream: toolbarDataService.toolbarData,
       builder: (context, snapshot) {
-        final items = snapshot.data?.items;
+        final items = snapshot.data?.getToolbarItems(context.deviceType);
         if (items == null || items.isEmpty) {
           return AppBar(
             backgroundColor: context.colorScheme.surfaceContainer,

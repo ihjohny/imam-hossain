@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/extension/responsive_ext.dart';
+import 'package:imam_hossain/core/utils/extension/string_ext.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/top_bar/data/toolbar_data_service.dart';
 import 'package:imam_hossain/features/top_bar/widgets/nav_item_widget.dart';
@@ -43,10 +44,7 @@ class AppDrawerWidget extends StatelessWidget {
             child: StreamBuilder<ToolbarData>(
               stream: toolbarDataService.toolbarData,
               builder: (context, snapshot) {
-                final items = _getToolbarItems(
-                  context.deviceType,
-                  snapshot.data?.items,
-                );
+                final items = snapshot.data?.getToolbarItems(context.deviceType);
                 if (items == null || items.isEmpty) {
                   return const Center(child: AppEmptyWidget());
                 }
@@ -89,19 +87,5 @@ class AppDrawerWidget extends StatelessWidget {
               ],
             ))
         .toList();
-  }
-
-  List<ToolbarItem>? _getToolbarItems(
-    String deviceType,
-    List<ToolbarItem>? items,
-  ) {
-    if (items == null || items.isEmpty) return null;
-    return items.where((item) {
-      final showOnly = item.showOnly;
-      if (showOnly != null && showOnly.isNotEmpty) {
-        return showOnly.contains(deviceType);
-      }
-      return true;
-    }).toList();
   }
 }
