@@ -11,8 +11,8 @@ import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
 import '../../generated/localization/locale_keys.g.dart';
 
-class ProjectsWidgetMobile extends StatelessWidget {
-  const ProjectsWidgetMobile({super.key});
+class ProjectsWidgetTablet extends StatelessWidget {
+  const ProjectsWidgetTablet({super.key});
 
   @override
   Widget build(BuildContext context) {

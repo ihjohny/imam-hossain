@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../common/widgets/responsive_widget.dart';
 import 'projects_widget_desktop.dart';
-import 'projects_widget_mobile.dart';
+import 'projects_widget_tablet.dart';
 
 class ProjectsWidget extends StatelessWidget {
   const ProjectsWidget({super.key});
@@ -11,7 +11,7 @@ class ProjectsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Responsive(
       desktop: ProjectsWidgetDesktop(),
-      mobile: ProjectsWidgetMobile(),
+      tablet: ProjectsWidgetTablet(),
     );
   }
 }
