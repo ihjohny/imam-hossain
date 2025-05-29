@@ -1,13 +1,19 @@
 class ToolbarItem {
   final String? key;
   final String? title;
+  final String? showOnly;
 
-  ToolbarItem({this.key, this.title});
+  ToolbarItem({
+    this.key,
+    this.title,
+    this.showOnly,
+  });
 
   factory ToolbarItem.fromJson(Map<String, dynamic> json) {
     return ToolbarItem(
       key: json['key'] as String?,
       title: json['title'] as String?,
+      showOnly: json['showOnly'] as String?,
     );
   }
 
@@ -15,6 +21,7 @@ class ToolbarItem {
     return {
       'key': key,
       'title': title,
+      'showOnly': showOnly,
     };
   }
 }

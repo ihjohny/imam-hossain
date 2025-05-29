@@ -10,4 +10,12 @@ extension ResponsiveExt on BuildContext {
   bool get isMobileOrTablet => MediaQuery.sizeOf(this).width < 1024;
 
   bool get isMobile => MediaQuery.sizeOf(this).width < 640;
+
+  String get deviceType {
+    if (isDesktop) return "desktop";
+    if (isTablet) return "tablet";
+    if (isMobile) return "mobile";
+    if (isMobileOrTablet) return "mobile_or_tablet";
+    return "unknown";
+  }
 }

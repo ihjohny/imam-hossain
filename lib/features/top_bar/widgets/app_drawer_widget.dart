@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/core/utils/extension/responsive_ext.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/top_bar/data/toolbar_data_service.dart';
 import 'package:imam_hossain/features/top_bar/widgets/nav_item_widget.dart';
@@ -9,6 +10,7 @@ import 'package:imam_hossain/core/utils/helper/helper_utils.dart';
 import '../../../core/navigation/navigation_keys.dart';
 import '../../../core/utils/constants/sizes.dart';
 import '../../../di/di_setup.dart';
+import '../data/model/toolbar_item.dart';
 
 class AppDrawerWidget extends StatelessWidget {
   const AppDrawerWidget({super.key});
@@ -33,7 +35,7 @@ class AppDrawerWidget extends StatelessWidget {
             ),
           ),
           Divider(
-            height: 8,
+            height: Sizes.px8,
             color: Theme.of(context).colorScheme.outlineVariant,
           ),
           const VerticalSpacing(Sizes.px16),
@@ -41,31 +43,20 @@ class AppDrawerWidget extends StatelessWidget {
             child: StreamBuilder<ToolbarData>(
               stream: toolbarDataService.toolbarData,
               builder: (context, snapshot) {
-                final items = snapshot.data?.items;
+                final items = _getToolbarItems(
+                  context.deviceType,
+                  snapshot.data?.items,
+                );
                 if (items == null || items.isEmpty) {
                   return const Center(child: AppEmptyWidget());
                 }
                 return ListView(
                   padding: EdgeInsets.zero,
-                  children: [
-                    for (final item in items) ...[
-                      NavItemWidget(
-                        text: item.title ?? '',
-                        onClick: () {
-                          final key = item.key;
-                          if (key != null &&
-                              navigationKeyMap.containsKey(key)) {
-                            final navKey = navigationKeyMap[key];
-                            if (navKey != null) {
-                              Navigator.of(context).pop();
-                              scrollToPosition(navKey);
-                            }
-                          }
-                        },
-                      ),
-                      const VerticalSpacing(Sizes.px16),
-                    ],
-                  ],
+                  children: _buildNavItemWidgets(
+                    context,
+                    items,
+                    navigationKeyMap,
+                  ),
                 );
               },
             ),
@@ -73,5 +64,44 @@ class AppDrawerWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  List<Widget> _buildNavItemWidgets(
+    BuildContext context,
+    List<ToolbarItem> items,
+    Map<String, GlobalKey> navigationKeyMap,
+  ) {
+    return items
+        .map((item) => Column(
+              children: [
+                NavItemWidget(
+                  text: item.title ?? '',
+                  onClick: () {
+                    final key = item.key;
+                    final navKey = key != null ? navigationKeyMap[key] : null;
+                    if (navKey != null) {
+                      Navigator.of(context).pop();
+                      scrollToPosition(navKey);
+                    }
+                  },
+                ),
+                const VerticalSpacing(Sizes.px16),
+              ],
+            ))
+        .toList();
+  }
+
+  List<ToolbarItem>? _getToolbarItems(
+    String deviceType,
+    List<ToolbarItem>? items,
+  ) {
+    if (items == null || items.isEmpty) return null;
+    return items.where((item) {
+      final showOnly = item.showOnly;
+      if (showOnly != null && showOnly.isNotEmpty) {
+        return showOnly.contains(deviceType);
+      }
+      return true;
+    }).toList();
   }
 }

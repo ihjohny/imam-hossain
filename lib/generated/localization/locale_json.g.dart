@@ -52,6 +52,11 @@ class CodegenLoader extends AssetLoader{
   },
   "toolbarData": [
     {
+      "key": "profile",
+      "title": "Profile",
+      "showOnly": "mobile"
+    },
+    {
       "key": "about",
       "title": "About"
     },

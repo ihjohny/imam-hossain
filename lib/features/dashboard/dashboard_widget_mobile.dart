@@ -53,7 +53,9 @@ class DashboardWidgetMobile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const PersonalInfoWidget(),
+                    PersonalInfoWidget(
+                      key: navigationKeyMap[NavigationKeys.profile],
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(Sizes.px16),
                       child: Column(
