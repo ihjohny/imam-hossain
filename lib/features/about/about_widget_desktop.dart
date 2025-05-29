@@ -61,7 +61,6 @@ class AboutWidgetDesktop extends StatelessWidget {
     return Text(
       details ?? "",
       style: context.themeData.textTheme.titleMedium?.copyWith(
-        fontWeight: FontWeight.bold,
         color: context.themeData.colorScheme.onSurfaceVariant,
       ),
     );
