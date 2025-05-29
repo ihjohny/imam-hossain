@@ -1,11 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/top_bar/data/toolbar_data_service.dart';
 import 'package:imam_hossain/features/top_bar/widgets/nav_item_widget.dart';
 import 'package:imam_hossain/features/top_bar/data/model/toolbar_data.dart';
 import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
 import 'package:imam_hossain/core/utils/helper/helper_utils.dart';
 import '../../../core/navigation/navigation_keys.dart';
+import '../../../core/utils/constants/sizes.dart';
 import '../../../di/di_setup.dart';
 
 class AppDrawerWidget extends StatelessWidget {
@@ -18,32 +20,57 @@ class AppDrawerWidget extends StatelessWidget {
     final navigationKeyMap = getIt<NavigationKeys>().keyMap;
 
     return Drawer(
-      child: StreamBuilder<ToolbarData>(
-        stream: toolbarDataService.toolbarData,
-        builder: (context, snapshot) {
-          final items = snapshot.data?.items;
-          if (items == null || items.isEmpty) {
-            return const Center(child: AppEmptyWidget());
-          }
-          return ListView(
-            padding: EdgeInsets.zero,
-            children: items
-                .map((item) => NavItemWidget(
-                      text: item.title ?? '',
-                      onClick: () {
-                        final key = item.key;
-                        if (key != null && navigationKeyMap.containsKey(key)) {
-                          final navKey = navigationKeyMap[key];
-                          if (navKey != null) {
-                            Navigator.of(context).pop();
-                            scrollToPosition(navKey);
+      child: Column(
+        children: [
+          Align(
+            alignment: Alignment.topRight,
+            child: Padding(
+              padding: const EdgeInsets.all(Sizes.px8),
+              child: IconButton(
+                onPressed: () => Navigator.of(context).pop(),
+                icon: const Icon(Icons.close),
+              ),
+            ),
+          ),
+          Divider(
+            height: 8,
+            color: Theme.of(context).colorScheme.outlineVariant,
+          ),
+          const VerticalSpacing(Sizes.px16),
+          Expanded(
+            child: StreamBuilder<ToolbarData>(
+              stream: toolbarDataService.toolbarData,
+              builder: (context, snapshot) {
+                final items = snapshot.data?.items;
+                if (items == null || items.isEmpty) {
+                  return const Center(child: AppEmptyWidget());
+                }
+                return ListView(
+                  padding: EdgeInsets.zero,
+                  children: [
+                    for (final item in items) ...[
+                      NavItemWidget(
+                        text: item.title ?? '',
+                        onClick: () {
+                          final key = item.key;
+                          if (key != null &&
+                              navigationKeyMap.containsKey(key)) {
+                            final navKey = navigationKeyMap[key];
+                            if (navKey != null) {
+                              Navigator.of(context).pop();
+                              scrollToPosition(navKey);
+                            }
                           }
-                        }
-                      },
-                    ))
-                .toList(),
-          );
-        },
+                        },
+                      ),
+                      const VerticalSpacing(Sizes.px16),
+                    ],
+                  ],
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
