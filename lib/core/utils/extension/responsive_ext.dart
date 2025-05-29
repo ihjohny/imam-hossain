@@ -7,5 +7,7 @@ extension ResponsiveExt on BuildContext {
       MediaQuery.sizeOf(this).width < 1024 &&
       MediaQuery.sizeOf(this).width >= 640;
 
+  bool get isMobileOrTablet => MediaQuery.sizeOf(this).width < 1024;
+
   bool get isMobile => MediaQuery.sizeOf(this).width < 640;
 }

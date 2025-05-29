@@ -17,7 +17,7 @@ class Responsive extends StatelessWidget {
   Widget build(BuildContext context) {
     if (context.isMobile && mobile != null) {
       return mobile!;
-    } else if (context.isTablet && tablet != null) {
+    } else if (context.isMobileOrTablet && tablet != null) {
       return tablet!;
     } else {
       return desktop;
