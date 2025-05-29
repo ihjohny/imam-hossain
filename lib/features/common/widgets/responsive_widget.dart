@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/core/utils/extension/responsive_ext.dart';
 
 class Responsive extends StatelessWidget {
   final Widget desktop;
@@ -14,10 +15,9 @@ class Responsive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final maxWidth = MediaQuery.sizeOf(context).width;
-    if (maxWidth < 640 && mobile != null) {
+    if (context.isMobile && mobile != null) {
       return mobile!;
-    } else if (maxWidth < 1024 && tablet != null) {
+    } else if (context.isTablet && tablet != null) {
       return tablet!;
     } else {
       return desktop;

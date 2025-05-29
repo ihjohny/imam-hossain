@@ -33,7 +33,7 @@ class DashboardWidgetMobile extends StatelessWidget {
                 children: [
                   const PersonalInfoWidget(),
                   Padding(
-                    padding: const EdgeInsets.all(Sizes.px24),
+                    padding: const EdgeInsets.all(Sizes.px16),
                     child: Column(
                       children: [
                         AboutWidget(
