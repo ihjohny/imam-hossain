@@ -21,21 +21,23 @@ class PersonalInfoWidgetDesktop extends StatelessWidget {
 
     return Container(
       color: context.colorScheme.primary,
-      child: Padding(
-        padding: const EdgeInsets.only(
-          left: Sizes.px24,
-          right: Sizes.px24,
-          top: Sizes.px100,
-        ),
-        child: StreamBuilder(
-          stream: personalInfoDataService.personalInfo,
-          builder: (context, snapshot) {
-            if (!snapshot.hasData || snapshot.data == null) {
-              return const AppNoDataWidget();
-            }
-            final personalInfoData = snapshot.data!;
-            return _buildPersonalInfoContent(context, personalInfoData);
-          },
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: Sizes.px24,
+            right: Sizes.px24,
+            top: Sizes.px100,
+          ),
+          child: StreamBuilder(
+            stream: personalInfoDataService.personalInfo,
+            builder: (context, snapshot) {
+              if (!snapshot.hasData || snapshot.data == null) {
+                return const AppNoDataWidget();
+              }
+              final personalInfoData = snapshot.data!;
+              return _buildPersonalInfoContent(context, personalInfoData);
+            },
+          ),
         ),
       ),
     );
@@ -57,7 +59,7 @@ class PersonalInfoWidgetDesktop extends StatelessWidget {
         ),
         spaceH12,
         PersonalInfoTags(tags: personalInfo.tags),
-        spaceH12,
+        spaceH24,
       ],
     );
   }
