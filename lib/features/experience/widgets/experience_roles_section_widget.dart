@@ -49,10 +49,12 @@ class ExperienceRolesSectionWidget extends StatelessWidget {
 
   Widget _buildDesktopRole(Role role, BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _roleTitle(role.title, context),
+        Flexible(
+          child: _roleTitle(role.title, context),
+        ),
         const HorizontalSpacing(Sizes.px8),
-        const Spacer(),
         if (role.durationPeriod != null)
           AppDateWidget(durationPeriod: role.durationPeriod!),
       ],
