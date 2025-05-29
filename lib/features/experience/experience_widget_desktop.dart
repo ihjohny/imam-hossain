@@ -12,7 +12,7 @@ import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
 import '../../generated/localization/locale_keys.g.dart';
 import 'data/model/experience.dart';
-import 'widgets/experience_item_widget_mobile.dart';
+import 'widgets/experience_item_widget_tablet.dart';
 
 class ExperienceWidgetDesktop extends StatelessWidget {
   const ExperienceWidgetDesktop({super.key});
@@ -50,7 +50,7 @@ class ExperienceWidgetDesktop extends StatelessWidget {
           children: [
             Responsive(
               desktop: ExperienceItemDesktop(experience: experiences[index]),
-              mobile: ExperienceItemMobile(experience: experiences[index]),
+              tablet: ExperienceItemTablet(experience: experiences[index]),
             ),
             if (index < experiences.length - 1)
               const VerticalSpacing(Sizes.px12),

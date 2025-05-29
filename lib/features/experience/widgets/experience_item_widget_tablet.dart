@@ -9,10 +9,10 @@ import 'experience_cover_section_widget.dart';
 import 'experience_responsibilities_section_widget.dart';
 import 'experience_roles_section_widget.dart';
 
-class ExperienceItemMobile extends StatelessWidget {
+class ExperienceItemTablet extends StatelessWidget {
   final Experience experience;
 
-  const ExperienceItemMobile({
+  const ExperienceItemTablet({
     super.key,
     required this.experience,
   });
@@ -28,12 +28,14 @@ class ExperienceItemMobile extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: Sizes.px16),
-                  child: ExperienceCoverSectionWidget(coverImage: experience.cover),
+                  child: ExperienceCoverSectionWidget(
+                      coverImage: experience.cover),
                 ),
                 ExperienceCompanyInfoSectionWidget(company: experience.company),
                 ExperienceRolesSectionWidget(roles: experience.roles),
                 const VerticalSpacing(Sizes.px8),
-                ExperienceResponsibilitiesSectionWidget(responsibilities: experience.responsibilities),
+                ExperienceResponsibilitiesSectionWidget(
+                    responsibilities: experience.responsibilities),
               ],
             ),
           ),
