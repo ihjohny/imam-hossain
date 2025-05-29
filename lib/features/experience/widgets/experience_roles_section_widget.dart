@@ -27,15 +27,15 @@ class ExperienceRolesSectionWidget extends StatelessWidget {
         children:
             roles!.map((role) => _buildDesktopRole(role, context)).toList(),
       ),
-      mobile: Column(
+      tablet: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children:
-            roles!.map((role) => _buildMobileRole(role, context)).toList(),
+            roles!.map((role) => _buildTabletRole(role, context)).toList(),
       ),
     );
   }
 
-  Widget _buildMobileRole(Role role, BuildContext context) {
+  Widget _buildTabletRole(Role role, BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
