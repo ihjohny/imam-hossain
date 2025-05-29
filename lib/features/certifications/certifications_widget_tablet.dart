@@ -10,8 +10,8 @@ import 'data/certification_data_service.dart';
 import 'data/model/certification_data.dart';
 import '../common/widgets/app_no_data_widget.dart';
 
-class CertificationsWidgetMobile extends StatelessWidget {
-  const CertificationsWidgetMobile({super.key});
+class CertificationsWidgetTablet extends StatelessWidget {
+  const CertificationsWidgetTablet({super.key});
 
   @override
   Widget build(BuildContext context) {
