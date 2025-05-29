@@ -25,7 +25,7 @@ class DashboardWidgetTablet extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.5,
+          width: MediaQuery.of(context).size.width * 0.45,
           height: double.infinity,
           child: const PersonalInfoWidget(),
         ),
