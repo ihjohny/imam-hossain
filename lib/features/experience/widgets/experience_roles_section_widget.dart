@@ -5,6 +5,7 @@ import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
 import 'package:imam_hossain/features/common/widgets/horizontal_spacing.dart';
 import 'package:imam_hossain/features/experience/data/model/role.dart';
 import 'package:imam_hossain/features/common/widgets/app_date_widget.dart';
+import 'package:imam_hossain/features/common/widgets/responsive_widget.dart';
 
 class ExperienceRolesSectionWidget extends StatelessWidget {
   final List<Role>? roles;
@@ -20,24 +21,50 @@ class ExperienceRolesSectionWidget extends StatelessWidget {
       return const AppEmptyWidget();
     }
 
+    return Responsive(
+      desktop: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children:
+            roles!.map((role) => _buildDesktopRole(role, context)).toList(),
+      ),
+      mobile: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children:
+            roles!.map((role) => _buildMobileRole(role, context)).toList(),
+      ),
+    );
+  }
+
+  Widget _buildMobileRole(Role role, BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: roles!
-          .map((role) => Row(
-                children: [
-                  Text(
-                    role.title ?? "",
-                    style: context.themeData.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const HorizontalSpacing(Sizes.px8),
-                  const Spacer(),
-                  if (role.durationPeriod != null)
-                    AppDateWidget(durationPeriod: role.durationPeriod!),
-                ],
-              ))
-          .toList(),
+      children: [
+        _roleTitle(role.title, context),
+        if (role.durationPeriod != null)
+          AppDateWidget(durationPeriod: role.durationPeriod!),
+        const SizedBox(height: Sizes.px8),
+      ],
+    );
+  }
+
+  Widget _buildDesktopRole(Role role, BuildContext context) {
+    return Row(
+      children: [
+        _roleTitle(role.title, context),
+        const HorizontalSpacing(Sizes.px8),
+        const Spacer(),
+        if (role.durationPeriod != null)
+          AppDateWidget(durationPeriod: role.durationPeriod!),
+      ],
+    );
+  }
+
+  Widget _roleTitle(String? title, BuildContext context) {
+    return Text(
+      title ?? "",
+      style: context.themeData.textTheme.titleMedium?.copyWith(
+        fontWeight: FontWeight.w500,
+      ),
     );
   }
 }
