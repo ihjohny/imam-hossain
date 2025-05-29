@@ -38,7 +38,7 @@ class DashboardWidgetTablet extends StatelessWidget {
                   SingleChildScrollView(
                     controller: scrollController,
                     child: Padding(
-                      padding: const EdgeInsets.all(Sizes.px24),
+                      padding: const EdgeInsets.all(Sizes.px16),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -63,7 +63,8 @@ class DashboardWidgetTablet extends StatelessWidget {
                           ),
                           const VerticalSpacing(Sizes.px12),
                           CertificationsWidget(
-                            key: navigationKeyMap[NavigationKeys.certifications],
+                            key:
+                                navigationKeyMap[NavigationKeys.certifications],
                           ),
                           const VerticalSpacing(Sizes.px12),
                           const VerticalSpacing(kBottomNavigationBarHeight),
