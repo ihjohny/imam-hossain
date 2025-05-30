@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/constants/sizes.dart';
-import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/features/about/about_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
 import 'package:imam_hossain/features/experience/experience_widget.dart';
