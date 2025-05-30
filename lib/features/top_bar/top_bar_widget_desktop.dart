@@ -11,8 +11,9 @@ import 'package:imam_hossain/features/top_bar/data/model/toolbar_data.dart';
 import '../../core/navigation/navigation_keys.dart';
 import '../../di/di_setup.dart';
 
-class TopBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  const TopBarWidget({super.key});
+class TopBarWidgetDesktop extends StatelessWidget
+    implements PreferredSizeWidget {
+  const TopBarWidgetDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {

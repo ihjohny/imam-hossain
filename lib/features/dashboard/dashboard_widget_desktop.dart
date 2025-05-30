@@ -9,7 +9,7 @@ import 'package:imam_hossain/features/personal_info/personal_info_widget.dart';
 import 'package:imam_hossain/features/projects/projects_widget.dart';
 import 'package:imam_hossain/features/publications/publications_widget.dart';
 import 'package:imam_hossain/features/skills/skills_widget.dart';
-import 'package:imam_hossain/features/top_bar/top_bar_widget.dart';
+import 'package:imam_hossain/features/top_bar/top_bar_widget_desktop.dart';
 
 import '../../core/navigation/navigation_keys.dart';
 import '../../di/di_setup.dart';
@@ -50,7 +50,7 @@ class DashboardWidgetDesktop extends StatelessWidget {
         Expanded(
           child: Column(
             children: [
-              const TopBarWidget(),
+              const TopBarWidgetDesktop(),
               Expanded(
                 child: Stack(
                   children: [
@@ -78,11 +78,13 @@ class DashboardWidgetDesktop extends StatelessWidget {
                             ),
                             const VerticalSpacing(Sizes.px12),
                             PublicationsWidget(
-                              key: navigationKeyMap[NavigationKeys.publications],
+                              key:
+                                  navigationKeyMap[NavigationKeys.publications],
                             ),
                             const VerticalSpacing(Sizes.px12),
                             CertificationsWidget(
-                              key: navigationKeyMap[NavigationKeys.certifications],
+                              key: navigationKeyMap[
+                                  NavigationKeys.certifications],
                             ),
                             const VerticalSpacing(Sizes.px12),
                             const VerticalSpacing(kBottomNavigationBarHeight),
