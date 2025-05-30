@@ -4,6 +4,7 @@ import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/features/common/widgets/app_no_data_widget.dart';
 import 'package:imam_hossain/features/personal_info/data/model/personal_info.dart';
 import 'package:imam_hossain/features/personal_info/data/personal_info_data_service.dart';
+import 'package:imam_hossain/features/personal_info/widgets/personal_info_top_bar_widget_desktop.dart';
 
 import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
@@ -21,24 +22,31 @@ class PersonalInfoWidgetDesktop extends StatelessWidget {
 
     return Container(
       color: context.colorScheme.primary,
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.only(
-            left: Sizes.px24,
-            right: Sizes.px24,
-            top: Sizes.px100,
+      child: Column(
+        children: [
+          const PersonalInfoTopBarWidgetDesktop(),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: Sizes.px24,
+                  right: Sizes.px24,
+                  top: Sizes.px24,
+                ),
+                child: StreamBuilder(
+                  stream: personalInfoDataService.personalInfo,
+                  builder: (context, snapshot) {
+                    if (!snapshot.hasData || snapshot.data == null) {
+                      return const AppNoDataWidget();
+                    }
+                    final personalInfoData = snapshot.data!;
+                    return _buildPersonalInfoContent(context, personalInfoData);
+                  },
+                ),
+              ),
+            ),
           ),
-          child: StreamBuilder(
-            stream: personalInfoDataService.personalInfo,
-            builder: (context, snapshot) {
-              if (!snapshot.hasData || snapshot.data == null) {
-                return const AppNoDataWidget();
-              }
-              final personalInfoData = snapshot.data!;
-              return _buildPersonalInfoContent(context, personalInfoData);
-            },
-          ),
-        ),
+        ],
       ),
     );
   }
