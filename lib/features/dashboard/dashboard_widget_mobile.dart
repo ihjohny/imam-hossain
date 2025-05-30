@@ -24,7 +24,6 @@ class DashboardWidgetMobile extends StatelessWidget {
     final scrollController = getIt<ScrollController>();
 
     return Scaffold(
-      appBar: const TopBarWidgetMobile(),
       endDrawer: const AppDrawerWidget(),
       body: SafeArea(
         child: _buildDashboardBody(
