@@ -35,7 +35,7 @@ class SkillsCategoryWidget extends StatelessWidget {
                   (item) => AppChipWidget(
                     label: item.name,
                     backgroundColor: category.colorTheme.toColor,
-                    textColor: context.themeData.colorScheme.onSurface,
+                    textColor: context.themeData.colorScheme.onSecondaryFixedVariant,
                   ),
                 )
                 .toList(),
