@@ -10,7 +10,7 @@ class TopBarWidgetTablet extends StatelessWidget
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: context.colorScheme.surfaceContainer,
-      iconTheme: IconThemeData(
+      actionsIconTheme: IconThemeData(
         color: context.colorScheme.primary,
       ),
       title: const AppEmptyWidget(),
