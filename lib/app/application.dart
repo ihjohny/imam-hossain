@@ -16,7 +16,6 @@ class Application extends StatelessWidget {
 
     return StreamBuilder<bool>(
       stream: themeService.isDarkModeStream,
-      initialData: themeService.isDarkMode,
       builder: (context, snapshot) {
         final isDarkMode = snapshot.data ?? false;
         return MaterialApp(
