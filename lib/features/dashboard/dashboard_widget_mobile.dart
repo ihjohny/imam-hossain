@@ -25,7 +25,6 @@ class DashboardWidgetMobile extends StatelessWidget {
     final scrollController = getIt<ScrollController>();
 
     return Scaffold(
-      backgroundColor: context.colorScheme.onPrimary,
       appBar: const TopBarWidgetMobile(),
       endDrawer: const AppDrawerWidget(),
       body: SafeArea(

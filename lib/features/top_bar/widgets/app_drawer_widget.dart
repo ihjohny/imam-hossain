@@ -22,44 +22,48 @@ class AppDrawerWidget extends StatelessWidget {
     toolbarDataService.fetchToolbarData(context.locale);
     final navigationKeyMap = getIt<NavigationKeys>().keyMap;
 
-    return Drawer(
-      child: Column(
-        children: [
-          Align(
-            alignment: Alignment.topRight,
-            child: Padding(
-              padding: const EdgeInsets.all(Sizes.px8),
-              child: IconButton(
-                onPressed: () => Navigator.of(context).pop(),
-                icon: const Icon(Icons.close),
+    return SafeArea(
+      child: Drawer(
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.topRight,
+              child: Padding(
+                padding: const EdgeInsets.all(Sizes.px8),
+                child: IconButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  icon: const Icon(Icons.close),
+                ),
               ),
             ),
-          ),
-          Divider(
-            height: Sizes.px8,
-            color: Theme.of(context).colorScheme.outlineVariant,
-          ),
-          const VerticalSpacing(Sizes.px16),
-          Expanded(
-            child: StreamBuilder<ToolbarData>(
-              stream: toolbarDataService.toolbarData,
-              builder: (context, snapshot) {
-                final items = snapshot.data?.getToolbarItems(context.deviceType);
-                if (items == null || items.isEmpty) {
-                  return const Center(child: AppEmptyWidget());
-                }
-                return ListView(
-                  padding: EdgeInsets.zero,
-                  children: _buildNavItemWidgets(
-                    context,
-                    items,
-                    navigationKeyMap,
-                  ),
-                );
-              },
+            Divider(
+              height: Sizes.px8,
+              color: Theme.of(context).colorScheme.outlineVariant,
             ),
-          ),
-        ],
+            const VerticalSpacing(Sizes.px16),
+            Expanded(
+              child: StreamBuilder<ToolbarData>(
+                stream: toolbarDataService.toolbarData,
+                builder: (context, snapshot) {
+                  final items = snapshot.data?.getToolbarItems(
+                    context.deviceType,
+                  );
+                  if (items == null || items.isEmpty) {
+                    return const Center(child: AppEmptyWidget());
+                  }
+                  return ListView(
+                    padding: EdgeInsets.zero,
+                    children: _buildNavItemWidgets(
+                      context,
+                      items,
+                      navigationKeyMap,
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

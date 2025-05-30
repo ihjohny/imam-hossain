@@ -24,7 +24,6 @@ class DashboardWidgetDesktop extends StatelessWidget {
     final scrollController = getIt<ScrollController>();
 
     return Scaffold(
-      backgroundColor: context.colorScheme.onPrimary,
       body: SafeArea(
         child: _buildDashboardBody(
           context,
