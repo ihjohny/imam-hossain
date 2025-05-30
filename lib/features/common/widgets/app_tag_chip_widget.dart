@@ -29,7 +29,7 @@ class _AppTagChipWidgetState extends State<AppTagChipWidget> {
 
     final Color contentColor = _isHovered && isClickable
         ? context.themeData.colorScheme.primary
-        : context.themeData.colorScheme.onSurface;
+        : context.themeData.colorScheme.surface;
 
     final Color backgroundColor = _isHovered && isClickable
         ? context.themeData.colorScheme.primary.withValues(alpha: .1)
