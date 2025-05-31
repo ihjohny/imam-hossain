@@ -25,6 +25,7 @@ dependencies:
   json_annotation: ^4.9.0
   flutter_native_splash: ^2.4.6
   flutter_launcher_icons: ^0.14.3
+  tuple: ^2.0.2
 
 dev_dependencies:
   flutter_test:
