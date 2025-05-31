@@ -25,7 +25,7 @@ class DashboardWidgetMobile extends StatelessWidget {
 
     return Scaffold(
       appBar: const TopBarWidgetMobile(),
-      endDrawer: const AppDrawerWidget(),
+      drawer: const AppDrawerWidget(),
       body: SafeArea(
         child: _buildDashboardBody(
           context,

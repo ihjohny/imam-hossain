@@ -15,7 +15,9 @@ class AppColorSwitchWidget extends StatelessWidget {
     return AppCursorsButtonWidget(
       child: const Icon(Icons.color_lens_sharp),
       onPressed: () {
-        themeService.updateColorScheme(FlexScheme.barossa);
+        final choices = List<FlexScheme>.from(FlexScheme.values);
+        choices.shuffle();
+        themeService.updateColorScheme(choices[0]);
       },
     );
   }

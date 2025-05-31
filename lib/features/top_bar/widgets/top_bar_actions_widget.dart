@@ -10,15 +10,12 @@ class TopBarActionsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(left: Sizes.px12),
-      child: Row(
-        children: [
-          AppThemeSwitchWidget(),
-          HorizontalSpacing(Sizes.px12),
-          AppColorSwitchWidget(),
-        ],
-      ),
+    return const Row(
+      children: [
+        AppThemeSwitchWidget(),
+        HorizontalSpacing(Sizes.px12),
+        AppColorSwitchWidget(),
+      ],
     );
   }
 }
