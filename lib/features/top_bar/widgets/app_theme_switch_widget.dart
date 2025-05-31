@@ -22,8 +22,8 @@ class _AppThemeSwitchWidgetState extends State<AppThemeSwitchWidget> {
         final isDarkMode = snapshot.data ?? false;
         return AppCursorsButtonWidget(
           child: isDarkMode
-              ? const Icon(Icons.dark_mode_outlined)
-              : const Icon(Icons.light_mode_outlined),
+              ? const Icon(Icons.light_mode_outlined)
+              : const Icon(Icons.dark_mode_outlined),
           onPressed: () {
             themeService.toggleTheme();
           },
