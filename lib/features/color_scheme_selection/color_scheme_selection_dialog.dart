@@ -162,9 +162,11 @@ class _ColorSchemeCard extends StatelessWidget {
                       end: Alignment.bottomRight,
                       colors: [
                         previewTheme.colorScheme.primary,
+                        previewTheme.colorScheme.primary,
                         previewTheme.colorScheme.secondary,
                         previewTheme.colorScheme.tertiary,
                       ],
+                      stops: const [0.0, 0.4, 0.7, 1.0],
                     ),
                   ),
                   child: Stack(
