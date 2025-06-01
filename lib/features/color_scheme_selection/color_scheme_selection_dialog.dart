@@ -23,19 +23,6 @@ class ColorSchemeSelectionDialog extends StatefulWidget {
 class _ColorSchemeSelectionDialogState
     extends State<ColorSchemeSelectionDialog> {
   final themeService = getIt<AppThemeService>();
-  FlexScheme? selectedScheme;
-
-  @override
-  void initState() {
-    super.initState();
-    themeService.colorSchemeStream.listen((scheme) {
-      if (mounted) {
-        setState(() {
-          selectedScheme = scheme;
-        });
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,11 +70,8 @@ class _ColorSchemeSelectionDialogState
                   final scheme = FlexScheme.values[index];
                   return _ColorSchemeCard(
                     scheme: scheme,
-                    isSelected: selectedScheme == scheme,
+                    isSelected: themeService.currentColorScheme == scheme,
                     onTap: () {
-                      setState(() {
-                        selectedScheme = scheme;
-                      });
                       themeService.updateColorScheme(scheme);
                       Navigator.of(context).pop();
                     },

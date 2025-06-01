@@ -20,6 +20,8 @@ class AppThemeService {
 
   Stream<FlexScheme> get colorSchemeStream => _colorScheme.stream;
 
+  FlexScheme get currentColorScheme => _colorScheme.value;
+
   void updateColorScheme(FlexScheme scheme) {
     _colorScheme.add(scheme);
   }
