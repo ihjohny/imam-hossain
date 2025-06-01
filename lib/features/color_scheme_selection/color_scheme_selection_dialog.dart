@@ -23,6 +23,21 @@ class ColorSchemeSelectionDialog extends StatefulWidget {
 class _ColorSchemeSelectionDialogState
     extends State<ColorSchemeSelectionDialog> {
   final themeService = getIt<AppThemeService>();
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _scrollToSelectedScheme();
+    });
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +58,7 @@ class _ColorSchemeSelectionDialogState
               children: [
                 Text(
                   context.tr(LocaleKeys.colorSchemeSelectionTitle),
-                  style: context.textTheme.headlineSmall?.copyWith(
+                  style: context.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -59,6 +74,7 @@ class _ColorSchemeSelectionDialogState
             const VerticalSpacing(Sizes.px16),
             Expanded(
               child: GridView.builder(
+                controller: _scrollController,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: _getCrossAxisCount(context),
                   crossAxisSpacing: _getGridSpacing(context),
@@ -85,6 +101,36 @@ class _ColorSchemeSelectionDialogState
     );
   }
 
+  void _scrollToSelectedScheme() {
+    final currentScheme = themeService.currentColorScheme;
+    const schemes = FlexScheme.values;
+    final selectedIndex = schemes.indexOf(currentScheme);
+
+    if (selectedIndex != -1) {
+      final crossAxisCount = _getCrossAxisCount(context);
+      final row = selectedIndex ~/ crossAxisCount;
+      final itemHeight = _getItemHeight(context);
+      final spacing = _getGridSpacing(context);
+
+      final dialogHeight = _getDialogHeight(context);
+      const headerHeight = 64.0;
+      final padding = context.isDesktop ? Sizes.px32 * 2 : Sizes.px24 * 2;
+      final visibleGridHeight = dialogHeight - headerHeight - padding;
+
+      final visibleRows = visibleGridHeight / (itemHeight + spacing);
+
+      final targetRow = row - (visibleRows / 2).floor();
+      final scrollOffset =
+          (targetRow * (itemHeight + spacing)).clamp(0.0, double.infinity);
+
+      _scrollController.animateTo(
+        scrollOffset,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
   int _getCrossAxisCount(BuildContext context) {
     if (context.isDesktop) return 5;
     if (context.isTablet) return 4;
@@ -108,6 +154,17 @@ class _ColorSchemeSelectionDialogState
     if (context.isTablet) return context.mediaQuerySize.height * 0.8;
     return context.mediaQuerySize.height * 0.8;
   }
+
+  double _getItemHeight(BuildContext context) {
+    final dialogWidth = _getDialogWidth(context);
+    final padding = context.isDesktop ? Sizes.px32 * 2 : Sizes.px24 * 2;
+    final availableWidth = dialogWidth - padding;
+    final crossAxisCount = _getCrossAxisCount(context);
+    final spacing = _getGridSpacing(context);
+    final totalSpacing = spacing * (crossAxisCount - 1);
+    final itemWidth = (availableWidth - totalSpacing) / crossAxisCount;
+    return itemWidth / 1.2;
+  }
 }
 
 class _ColorSchemeCard extends StatelessWidget {
@@ -129,7 +186,7 @@ class _ColorSchemeCard extends StatelessWidget {
     return AppCursorsButtonWidget(
       onPressed: onTap,
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
+        duration: const Duration(milliseconds: 300),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(Sizes.px12),
           border: Border.all(
