@@ -223,7 +223,7 @@ class _ColorSchemeCard extends StatelessWidget {
                         previewTheme.colorScheme.secondary,
                         previewTheme.colorScheme.tertiary,
                       ],
-                      stops: const [0.0, 0.5, 0.75, 1.0],
+                      stops: const [0.0, 0.6, 0.8, 1.0],
                     ),
                   ),
                   child: Stack(
