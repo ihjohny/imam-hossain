@@ -480,6 +480,7 @@ class CodegenLoader extends AssetLoader{
   "responsibilityTitle": "Responsibility:",
   "technologyTitle": "Technology Used:",
   "present": "Present",
+  "colorSchemeSelectionTitle": "Choose Color Scheme",
   "openUrlError": "Could not open the url",
   "footerTitle": "© 2025 Built by Imam"
 };

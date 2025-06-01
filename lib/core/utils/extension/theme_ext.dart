@@ -6,4 +6,6 @@ extension ThemeExt on BuildContext {
   ColorScheme get colorScheme => themeData.colorScheme;
 
   TextTheme get textTheme => themeData.textTheme;
+
+  bool get isDarkMode => themeData.brightness == Brightness.dark;
 }

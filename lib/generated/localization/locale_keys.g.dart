@@ -31,6 +31,7 @@ abstract class  LocaleKeys {
   static const responsibilityTitle = 'responsibilityTitle';
   static const technologyTitle = 'technologyTitle';
   static const present = 'present';
+  static const colorSchemeSelectionTitle = 'colorSchemeSelectionTitle';
   static const openUrlError = 'openUrlError';
   static const footerTitle = 'footerTitle';
 
