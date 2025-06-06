@@ -439,10 +439,12 @@ class CodegenLoader extends AssetLoader{
     {
       "title": "ACMP 4.0 (Advanced Certificate for Management Professionals)",
       "subtitle": "IBA, University of Dhaka, Bangladesh",
-      "url": "https://iba-du.edu",
+      "url": "https://acmp.iba-du.edu",
       "durationPeriod": {
         "startYear": 2025,
-        "startMonth": 2
+        "startMonth": 2,
+        "endYear": 2025,
+        "endMonth": 6
       },
       "tags": [
         {
@@ -457,7 +459,7 @@ class CodegenLoader extends AssetLoader{
     {
       "title": "Bachelor of Science in Information and Communication Engineering",
       "subtitle": "Noakhali Science and Technology University, Bangladesh",
-      "url": "https://nstu.edu.bd",
+      "url": "https://www.nstu.edu.bd/department.php?name=ice",
       "durationPeriod": {
         "startYear": 2016,
         "startMonth": 2,
