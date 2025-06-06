@@ -19,25 +19,25 @@ class ExperienceResponsibilitiesSectionWidget extends StatelessWidget {
       return const AppEmptyWidget();
     }
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: List.generate(
-        responsibilities!.length,
-        (i) => Padding(
-          padding: EdgeInsets.only(
-            bottom: i < responsibilities!.length - 1 ? Sizes.px4 : 0,
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Icon(
-                Icons.check,
-                size: Sizes.px24,
-                color: context.themeData.colorScheme.primary,
-              ),
-              const HorizontalSpacing(Sizes.px4),
-              Expanded(
-                child: AppSelectionAreaWidget(
+    return AppSelectionAreaWidget(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: List.generate(
+          responsibilities!.length,
+          (i) => Padding(
+            padding: EdgeInsets.only(
+              bottom: i < responsibilities!.length - 1 ? Sizes.px4 : 0,
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(
+                  Icons.check,
+                  size: Sizes.px24,
+                  color: context.themeData.colorScheme.primary,
+                ),
+                const HorizontalSpacing(Sizes.px4),
+                Expanded(
                   child: Text(
                     responsibilities![i],
                     style: context.textTheme.titleSmall?.copyWith(
@@ -45,8 +45,8 @@ class ExperienceResponsibilitiesSectionWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
