@@ -3,6 +3,7 @@ import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/features/common/widgets/app_card_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_link_able_title_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_selection_area_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_tag_chip_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
 import 'package:imam_hossain/features/common/widgets/vertical_spacing.dart';
@@ -38,10 +39,12 @@ class PublicationItemWidget extends StatelessWidget {
             url: publication.url,
           ),
           const VerticalSpacing(Sizes.px4),
-          Text(
-            publication.description ?? "",
-            style: context.textTheme.titleSmall?.copyWith(
-              color: context.themeData.colorScheme.onSurfaceVariant,
+          AppSelectionAreaWidget(
+            child: Text(
+              publication.description ?? "",
+              style: context.textTheme.titleSmall?.copyWith(
+                color: context.themeData.colorScheme.onSurfaceVariant,
+              ),
             ),
           ),
         ],
