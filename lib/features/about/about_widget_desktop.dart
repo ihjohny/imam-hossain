@@ -6,7 +6,6 @@ import 'package:imam_hossain/features/about/data/model/about_data.dart';
 import 'package:imam_hossain/features/common/widgets/app_card_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_no_data_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_section_widget.dart';
-import 'package:imam_hossain/features/common/widgets/app_selection_area_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_tag_chip_widget.dart';
 import 'package:imam_hossain/features/common/widgets/app_wrap_widget.dart';
 
@@ -60,12 +59,10 @@ class AboutWidgetDesktop extends StatelessWidget {
   }
 
   Widget _buildAboutDetails(BuildContext context, String? details) {
-    return AppSelectionAreaWidget(
-      child: Text(
-        details ?? "",
-        style: context.themeData.textTheme.titleMedium?.copyWith(
-          color: context.themeData.colorScheme.onSurfaceVariant,
-        ),
+    return Text(
+      details ?? "",
+      style: context.themeData.textTheme.titleMedium?.copyWith(
+        color: context.themeData.colorScheme.onSurfaceVariant,
       ),
     );
   }

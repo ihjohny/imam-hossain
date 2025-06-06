@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:imam_hossain/features/common/widgets/app_selection_area_widget.dart';
 import 'package:imam_hossain/features/personal_info/personal_info_widget_desktop.dart';
 
 import '../common/widgets/responsive_widget.dart';
@@ -10,11 +9,9 @@ class PersonalInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AppSelectionAreaWidget(
-      child: Responsive(
-        desktop: PersonalInfoWidgetDesktop(),
-        mobile: PersonalInfoWidgetMobile(),
-      ),
+    return const Responsive(
+      desktop: PersonalInfoWidgetDesktop(),
+      mobile: PersonalInfoWidgetMobile(),
     );
   }
 }
