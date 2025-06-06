@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/constants/sizes.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_selection_area_widget.dart';
 import 'package:imam_hossain/features/common/widgets/horizontal_spacing.dart';
 
 class ExperienceResponsibilitiesSectionWidget extends StatelessWidget {
@@ -36,10 +37,12 @@ class ExperienceResponsibilitiesSectionWidget extends StatelessWidget {
               ),
               const HorizontalSpacing(Sizes.px4),
               Expanded(
-                child: Text(
-                  responsibilities![i],
-                  style: context.textTheme.titleSmall?.copyWith(
-                    color: context.themeData.colorScheme.onSurfaceVariant,
+                child: AppSelectionAreaWidget(
+                  child: Text(
+                    responsibilities![i],
+                    style: context.textTheme.titleSmall?.copyWith(
+                      color: context.themeData.colorScheme.onSurfaceVariant,
+                    ),
                   ),
                 ),
               ),

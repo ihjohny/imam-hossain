@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:imam_hossain/core/utils/constants/sizes.dart';
 import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
-import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
-import 'package:imam_hossain/features/common/widgets/horizontal_spacing.dart';
-import 'package:imam_hossain/features/experience/data/model/role.dart';
 import 'package:imam_hossain/features/common/widgets/app_date_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_empty_widget.dart';
+import 'package:imam_hossain/features/common/widgets/app_selection_area_widget.dart';
+import 'package:imam_hossain/features/common/widgets/horizontal_spacing.dart';
 import 'package:imam_hossain/features/common/widgets/responsive_widget.dart';
+import 'package:imam_hossain/features/experience/data/model/role.dart';
 
 class ExperienceRolesSectionWidget extends StatelessWidget {
   final List<Role>? roles;
@@ -21,16 +22,18 @@ class ExperienceRolesSectionWidget extends StatelessWidget {
       return const AppEmptyWidget();
     }
 
-    return Responsive(
-      desktop: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children:
-            roles!.map((role) => _buildDesktopRole(role, context)).toList(),
-      ),
-      tablet: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children:
-            roles!.map((role) => _buildTabletRole(role, context)).toList(),
+    return AppSelectionAreaWidget(
+      child: Responsive(
+        desktop: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:
+              roles!.map((role) => _buildDesktopRole(role, context)).toList(),
+        ),
+        tablet: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:
+              roles!.map((role) => _buildTabletRole(role, context)).toList(),
+        ),
       ),
     );
   }
