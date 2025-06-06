@@ -14,7 +14,7 @@ class ProjectLabelTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SelectableText.rich(
+    return Text.rich(
       TextSpan(
         children: [
           if (!label.isNullOrEmpty)
