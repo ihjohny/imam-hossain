@@ -84,6 +84,8 @@ class _AppTagChipWidgetState extends State<AppTagChipWidget> {
       return const Color(0xFFD6EAF8);
     } else if (appTag.type == "document_link") {
       return const Color(0xFFD5F5E3);
+    } else if (appTag.type == "insta_link") {
+      return const Color(0xFFF3E2FB);
     }
 
     return const Color(0xFFE1F6F4);

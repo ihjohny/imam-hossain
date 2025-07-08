@@ -110,6 +110,14 @@ class CodegenLoader extends AssetLoader{
         }
       },
       {
+        "type": "insta_link",
+        "title": "Instagram",
+        "link": "https://www.instagram.com/imam_hossain_johny/",
+        "logo": {
+          "iconType": "insta"
+        }
+      },
+      {
         "type": "document_link",
         "title": "Resume",
         "link": "https://drive.google.com/file/d/1LhzHtOYXjfOTOxX6dI4EDnCco6VQTW4L/view?usp=sharing",

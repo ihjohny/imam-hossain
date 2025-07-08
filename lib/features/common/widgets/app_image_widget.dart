@@ -70,6 +70,8 @@ class AppImageWidget extends StatelessWidget {
         return FontAwesomeIcons.apple;
       case "flutter":
         return FontAwesomeIcons.flutter;
+      case "insta":
+        return FontAwesomeIcons.instagram;
       default:
         return Icons.image_not_supported;
     }
