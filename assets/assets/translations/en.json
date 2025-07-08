@@ -94,6 +94,14 @@
         }
       },
       {
+        "type": "insta_link",
+        "title": "Instagram",
+        "link": "https://www.instagram.com/imam_hossain_johny/",
+        "logo": {
+          "iconType": "insta"
+        }
+      },
+      {
         "type": "document_link",
         "title": "Resume",
         "link": "https://drive.google.com/file/d/1LhzHtOYXjfOTOxX6dI4EDnCco6VQTW4L/view?usp=sharing",
@@ -468,5 +476,6 @@
   "present": "Present",
   "colorSchemeSelectionTitle": "Choose Color Scheme",
   "openUrlError": "Could not open the url",
-  "footerTitle": "© 2025 Built by Imam"
+  "footerCraftedWith": "Crafted with",
+  "footerCopyright": "© {year} Imam"
 }
