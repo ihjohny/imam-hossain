@@ -492,7 +492,8 @@ class CodegenLoader extends AssetLoader{
   "present": "Present",
   "colorSchemeSelectionTitle": "Choose Color Scheme",
   "openUrlError": "Could not open the url",
-  "footerTitle": "© 2025 Built by Imam"
+  "footerCraftedWith": "Crafted with",
+  "footerCopyright": "© {year} Imam"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": _en};
 }

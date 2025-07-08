@@ -33,6 +33,7 @@ abstract class  LocaleKeys {
   static const present = 'present';
   static const colorSchemeSelectionTitle = 'colorSchemeSelectionTitle';
   static const openUrlError = 'openUrlError';
-  static const footerTitle = 'footerTitle';
+  static const footerCraftedWith = 'footerCraftedWith';
+  static const footerCopyright = 'footerCopyright';
 
 }

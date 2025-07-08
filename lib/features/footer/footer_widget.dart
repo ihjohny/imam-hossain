@@ -11,8 +11,11 @@ class FooterWidget extends StatefulWidget {
   State<FooterWidget> createState() => _FooterWidgetState();
 }
 
-class _FooterWidgetState extends State<FooterWidget> {
+class _FooterWidgetState extends State<FooterWidget>
+    with SingleTickerProviderStateMixin {
   final scrollController = getIt<ScrollController>();
+  late AnimationController _animationController;
+  late Animation<double> _jumpAnimation;
 
   double _height = 0;
 
@@ -20,11 +23,25 @@ class _FooterWidgetState extends State<FooterWidget> {
   void initState() {
     super.initState();
     scrollController.addListener(_displayFooter);
+
+    _animationController = AnimationController(
+      duration: const Duration(milliseconds: 800),
+      vsync: this,
+    )..repeat(reverse: true);
+
+    _jumpAnimation = Tween<double>(
+      begin: 1.0,
+      end: 1.3,
+    ).animate(CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeInOut,
+    ));
   }
 
   @override
   void dispose() {
     scrollController.removeListener(_displayFooter);
+    _animationController.dispose();
     super.dispose();
   }
 
@@ -45,13 +62,34 @@ class _FooterWidgetState extends State<FooterWidget> {
       height: _height,
       color: context.colorScheme.surfaceContainer,
       child: Center(
-        child: Text(
-          context.tr(LocaleKeys.footerTitle),
+        child: RichText(
           textAlign: TextAlign.center,
-          style: context.textTheme.titleMedium?.copyWith(
-            color: context.colorScheme.primary,
-          ),
           maxLines: 1,
+          text: TextSpan(
+            style: context.textTheme.titleMedium?.copyWith(
+              color: context.colorScheme.primary,
+            ),
+            children: [
+              TextSpan(text: '${context.tr(LocaleKeys.footerCraftedWith)} '),
+              WidgetSpan(
+                child: AnimatedBuilder(
+                  animation: _jumpAnimation,
+                  builder: (context, child) {
+                    return Transform.scale(
+                      scale: _jumpAnimation.value,
+                      child: const FlutterLogo(
+                        size: 20,
+                      ),
+                    );
+                  },
+                ),
+              ),
+              TextSpan(
+                  text: ' ${context.tr(LocaleKeys.footerCopyright, namedArgs: {
+                    'year': DateTime.now().year.toString()
+                  })}'),
+            ],
+          ),
         ),
       ),
     );

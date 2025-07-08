@@ -476,5 +476,6 @@
   "present": "Present",
   "colorSchemeSelectionTitle": "Choose Color Scheme",
   "openUrlError": "Could not open the url",
-  "footerTitle": "© 2025 Built by Imam"
+  "footerCraftedWith": "Crafted with",
+  "footerCopyright": "© {year} Imam"
 }
