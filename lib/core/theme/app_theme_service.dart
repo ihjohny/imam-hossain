@@ -1,6 +1,8 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:rxdart/rxdart.dart';
 
+import 'app_theme.dart';
+
 class AppThemeService {
   // theme mode
   final BehaviorSubject<bool> _isDarkModeController =
@@ -16,7 +18,7 @@ class AppThemeService {
 
   // color scheme
   final BehaviorSubject<FlexScheme> _colorScheme =
-      BehaviorSubject<FlexScheme>.seeded(FlexScheme.mandyRed);
+      BehaviorSubject<FlexScheme>.seeded(AppTheme.defaultScheme);
 
   Stream<FlexScheme> get colorSchemeStream => _colorScheme.stream;
 

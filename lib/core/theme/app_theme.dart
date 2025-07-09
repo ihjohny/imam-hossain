@@ -3,9 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 abstract final class AppTheme {
+  /// Default color scheme for the app
+  static const FlexScheme defaultScheme = FlexScheme.flutterDash;
+
   // Get light theme with a custom scheme
   static ThemeData light([FlexScheme? scheme]) => FlexThemeData.light(
-        scheme: scheme ?? FlexScheme.mandyRed,
+        scheme: scheme ?? defaultScheme,
         appBarElevation: 2.0,
         appBarStyle: FlexAppBarStyle.primary,
         subThemesData: const FlexSubThemesData(
@@ -25,7 +28,7 @@ abstract final class AppTheme {
 
   // Get dark theme with a custom scheme
   static ThemeData dark([FlexScheme? scheme]) => FlexThemeData.dark(
-        scheme: scheme ?? FlexScheme.mandyRed,
+        scheme: scheme ?? defaultScheme,
         appBarElevation: 2.0,
         appBarStyle: FlexAppBarStyle.primary,
         subThemesData: const FlexSubThemesData(
