@@ -54,9 +54,9 @@ flutter:
         - asset: assets/fonts/Custom-Icons.ttf
 
 flutter_native_splash:
-  color: "#CD5758"
+  color: "#4496E0"
   image: "assets/images/splash-rocket.apng"
-  color_dark: "#CD5758"
+  color_dark: "#4496E0"
   image_dark: "assets/images/splash-rocket.apng"
 
 flutter_launcher_icons:
@@ -67,8 +67,8 @@ flutter_launcher_icons:
   web:
     generate: true
     image_path: "assets/images/app-icon.png"
-    background_color: "#CD5758"
-    theme_color: "#CD5758"
+    background_color: "#4496E0"
+    theme_color: "#4496E0"
   windows:
     generate: true
     image_path: "assets/images/app-icon.png"
