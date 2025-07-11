@@ -116,14 +116,6 @@ class CodegenLoader extends AssetLoader{
         "logo": {
           "iconType": "insta"
         }
-      },
-      {
-        "type": "document_link",
-        "title": "Resume",
-        "link": "https://drive.google.com/file/d/1LhzHtOYXjfOTOxX6dI4EDnCco6VQTW4L/view?usp=sharing",
-        "logo": {
-          "iconType": "document"
-        }
       }
     ]
   },
