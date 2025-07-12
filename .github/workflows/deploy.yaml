@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - '**.md'
+      - "**.md"
   workflow_dispatch:
 
 jobs:
@@ -20,8 +20,8 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
-          flutter-version: 3.29.0
+          channel: "stable"
+          flutter-version: 3.32.0
           cache: true
 
       - name: Install dependencies
@@ -37,7 +37,7 @@ jobs:
           fi
 
       - name: Build
-        run: flutter build web --release --no-tree-shake-icons --base-href "${{ steps.set_base_href.outputs.base_href }}"
+        run: flutter build web --wasm --release --no-tree-shake-icons --base-href "${{ steps.set_base_href.outputs.base_href }}"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
