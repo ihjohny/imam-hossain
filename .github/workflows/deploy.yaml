@@ -37,7 +37,7 @@ jobs:
           fi
 
       - name: Build
-        run: flutter build web --wasm --release --no-tree-shake-icons --base-href "${{ steps.set_base_href.outputs.base_href }}"
+        run: flutter build web --dart-define=dart.vm.product=true --release --tree-shake-icons --source-maps --base-href "${{ steps.set_base_href.outputs.base_href }}" --dart2js-optimization O4
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

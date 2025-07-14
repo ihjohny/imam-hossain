@@ -47,9 +47,11 @@ flutter:
     - family: FontAwesome
       fonts:
         - asset: assets/fonts/FontAwesome.ttf
+          weight: 400
     - family: CustomIcons
       fonts:
         - asset: assets/fonts/Custom-Icons.ttf
+          weight: 400
 
 flutter_native_splash:
   color: "#4496E0"
