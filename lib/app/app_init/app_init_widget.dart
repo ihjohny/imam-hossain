@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:imam_hossain/core/utils/extension/theme_ext.dart';
 
 import '../../core/utils/constants/sizes.dart';
 import '../../di/di_setup.dart';
-import '../../features/common/widgets/app_empty_widget.dart';
 import 'app_init_service.dart';
 
 class AppInitWidget extends StatelessWidget {
@@ -42,7 +42,11 @@ class AppInitLoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AppEmptyWidget();
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      color: context.colorScheme.onPrimary,
+    );
   }
 }
 
@@ -66,7 +70,7 @@ class AppInitErrorWidget extends StatelessWidget {
             children: [
               Text(
                 message,
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: context.textTheme.headlineSmall,
               ),
               spaceH16,
               ElevatedButton(
