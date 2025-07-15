@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <!--      If you are serving your web app in a path other than the root, change the      href value below to reflect the base path you are serving from.      The path provided below has to start and end with a slash "/" in order for      it to work correctly.      For more details:      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base      This is a placeholder for base href that will be replaced by the value of      the `--base-href` argument provided to `flutter build`.    -->
   <base href="$FLUTTER_BASE_HREF">
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -15,6 +14,7 @@
   <title>Md Imam Hossain</title>
   <link rel="manifest" href="manifest.json">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+
   <style id="splash-screen-style">
     html {
       height: 100%
@@ -22,60 +22,74 @@
 
     body {
       margin: 0;
-      min-height: 100%;
+      min-height: 100vh;
       background: linear-gradient(135deg, #4496E0 0%, #2c5aa0 100%);
       background-size: 100% 100%;
-      font-family: 'Arial', sans-serif;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 20px 0;
+      box-sizing: border-box;
+      position: relative;
     }
 
     .splash-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0 auto;
+      padding: 30px 20px;
       text-align: center;
-      color: white;
+      color: #FFFFFF;
       width: 90%;
-      max-width: 500px;
+      max-width: 400px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #4496E0 0%, #2c5aa0 100%);
     }
 
     .professional-header {
-      margin-bottom: 40px;
+      margin-bottom: 35px;
     }
 
     .name-title {
       font-size: 32px;
       font-weight: 600;
-      margin-bottom: 8px;
-      text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+      color: #FFFFFF;
+      text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
       animation: gentle-glow 3s ease-in-out infinite alternate;
     }
 
     .role-subtitle {
       font-size: 16px;
-      opacity: 0.9;
+      opacity: 0.95;
       font-weight: 300;
       letter-spacing: 2px;
-      color: #13B9FD;
-      text-shadow: 0 0 10px rgba(19, 185, 253, 0.4);
+      color: #B8E0FF;
+      text-shadow: 0 0 15px rgba(184, 224, 255, 0.6);
     }
 
     .experience-badge {
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 18px;
       padding: 8px 20px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.15);
       border-radius: 25px;
       font-size: 14px;
       font-weight: 300;
       letter-spacing: 1px;
+      color: #FFFFFF;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     .loading-center {
-      margin: 40px 0;
+      margin: 35px 0;
       position: relative;
     }
 
@@ -116,19 +130,21 @@
       justify-content: center;
       font-size: 24px;
       font-weight: bold;
-      text-shadow: 0 0 10px rgba(19, 185, 253, 0.5);
+      color: #FFFFFF;
+      text-shadow: 0 0 10px rgba(19, 185, 253, 0.5), 0 1px 3px rgba(0, 0, 0, 0.5);
       animation: gentle-pulse 2s ease-in-out infinite;
     }
 
     .story-progress {
-      margin: 40px 0;
+      margin: 35px 0;
     }
 
     .progress-label {
       font-size: 18px;
       margin-bottom: 20px;
       font-weight: 400;
-      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+      color: #FFFFFF;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
     }
 
     .progress-bar {
@@ -144,68 +160,32 @@
       height: 100%;
       background: linear-gradient(90deg, #13B9FD, #0175C2, #02569B);
       border-radius: 4px;
-      animation: story-progress 12s ease-in-out infinite;
+      animation: simple-progress 3s ease-in-out infinite;
       box-shadow: 0 0 15px rgba(19, 185, 253, 0.5);
-    }
-
-    .story-stage {
-      font-size: 14px;
-      opacity: 0;
-      margin: 8px 0;
-      font-weight: 300;
-      letter-spacing: 0.5px;
-      animation: story-fade 12s ease-in-out infinite;
-      text-align: left;
-      padding: 8px 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      backdrop-filter: blur(5px);
-    }
-
-    .story-stage:nth-child(1) {
-      animation-delay: 0s;
-    }
-
-    .story-stage:nth-child(2) {
-      animation-delay: 2s;
-    }
-
-    .story-stage:nth-child(3) {
-      animation-delay: 4s;
-    }
-
-    .story-stage:nth-child(4) {
-      animation-delay: 6s;
-    }
-
-    .story-stage:nth-child(5) {
-      animation-delay: 8s;
-    }
-
-    .story-stage:nth-child(6) {
-      animation-delay: 10s;
     }
 
     .tech-showcase {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
+      gap: 18px;
+      margin-top: 25px;
     }
 
     .tech-icon {
       width: 40px;
       height: 40px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.15);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 12px;
       font-weight: 600;
+      color: #FFFFFF;
       animation: tech-float 3s ease-in-out infinite;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     }
 
     .tech-icon:nth-child(1) {
@@ -226,11 +206,11 @@
 
     @keyframes gentle-glow {
       from {
-        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
       }
 
       to {
-        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3), 0 0 30px rgba(19, 185, 253, 0.3);
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(184, 224, 255, 0.4);
       }
     }
 
@@ -256,54 +236,17 @@
       }
     }
 
-    @keyframes story-progress {
+    @keyframes simple-progress {
       0% {
         width: 0%;
       }
 
-      17% {
-        width: 20%;
-      }
-
-      34% {
-        width: 40%;
-      }
-
-      51% {
-        width: 60%;
-      }
-
-      68% {
-        width: 80%;
-      }
-
-      85% {
-        width: 95%;
+      50% {
+        width: 70%;
       }
 
       100% {
         width: 100%;
-      }
-    }
-
-    @keyframes story-fade {
-
-      0%,
-      12% {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-
-      17%,
-      25% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      30%,
-      100% {
-        opacity: 0;
-        transform: translateY(-15px);
       }
     }
 
@@ -320,17 +263,48 @@
     }
 
     @media (max-width: 768px) {
+      .splash-container {
+        padding: 20px 15px;
+        width: 95%;
+        max-width: 350px;
+      }
+
+      .professional-header {
+        margin-bottom: 25px;
+      }
+
       .name-title {
-        font-size: 26px;
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      .role-subtitle {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+      }
+
+      .experience-badge {
+        font-size: 12px;
+        padding: 6px 16px;
+        margin-top: 10px;
+      }
+
+      .loading-center {
+        margin: 25px 0;
       }
 
       .progress-label {
         font-size: 16px;
+        margin-bottom: 15px;
       }
 
-      .story-stage {
-        font-size: 12px;
-        padding: 6px 15px;
+      .story-progress {
+        margin: 25px 0;
+      }
+
+      .tech-showcase {
+        margin-top: 20px;
+        gap: 12px;
       }
 
       .tech-icon {
@@ -350,9 +324,81 @@
         font-size: 20px;
       }
     }
+
+    @media (max-width: 480px) {
+      .splash-container {
+        padding: 15px 10px;
+        width: 98%;
+        max-width: 300px;
+      }
+
+      .professional-header {
+        margin-bottom: 20px;
+      }
+
+      .name-title {
+        font-size: 22px;
+      }
+
+      .role-subtitle {
+        font-size: 13px;
+      }
+
+      .experience-badge {
+        font-size: 11px;
+        padding: 5px 12px;
+      }
+
+      .loading-center {
+        margin: 20px 0;
+      }
+
+      .main-circle {
+        width: 90px;
+        height: 90px;
+      }
+
+      .inner-logo {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+      }
+
+      .progress-label {
+        font-size: 15px;
+      }
+
+      .story-progress {
+        margin: 20px 0;
+      }
+
+      .tech-showcase {
+        margin-top: 15px;
+        gap: 10px;
+      }
+
+      .tech-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 9px;
+      }
+    }
   </style>
-  <script
-    id="splash-screen-script">        function removeSplashFromWeb() { document.getElementById("splash")?.remove(); document.body.style.background = "transparent"; }    </script>
+
+  <script id="splash-screen-script">
+    function removeSplashFromWeb() {
+      const splash = document.getElementById("splash");
+      if (splash) {
+        splash.style.opacity = "0";
+        splash.style.transition = "opacity 0.3s ease-out";
+        setTimeout(() => {
+          splash.remove();
+          document.body.style.background = "transparent";
+        }, 300);
+      }
+    }    
+  </script>
+
 </head>
 
 <body>
@@ -360,7 +406,7 @@
     <div class="professional-header">
       <div class="name-title">Md Imam Hossain</div>
       <div class="role-subtitle">SENIOR SOFTWARE ENGINEER</div>
-      <div class="experience-badge">5+ Years • Mobile Architecture Expert</div>
+      <div class="experience-badge">5+ Years • Mobile App Wizard & Code Ninja</div>
     </div>
     <div class="loading-center">
       <div class="main-circle">
@@ -372,12 +418,6 @@
       <div class="progress-bar">
         <div class="progress-fill"></div>
       </div>
-      <div class="story-stage">🎓 Graduated in Information & Communication Engineering</div>
-      <div class="story-stage">🚀 Started career journey at Brain Station 23</div>
-      <div class="story-stage">📱 Mastered Android, Flutter & iOS development</div>
-      <div class="story-stage">🏆 Delivered apps with 50M+ downloads</div>
-      <div class="story-stage">🧠 Published AI research & technical articles</div>
-      <div class="story-stage">✨ Ready to showcase innovation!</div>
     </div>
     <div class="tech-showcase">
       <div class="tech-icon">KT</div>
@@ -386,7 +426,9 @@
       <div class="tech-icon">🍎</div>
     </div>
   </div>
+
   <script src="flutter_bootstrap.js?v=1" async=""></script>
+
 </body>
 
 </html>
