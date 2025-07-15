@@ -1,38 +1,20 @@
-<!DOCTYPE html><html lang="en"><head>
-    <!--
-      If you are serving your web app in a path other than the root, change the
-      href value below to reflect the base path you are serving from.
+<!DOCTYPE html>
+<html lang="en">
 
-      The path provided below has to start and end with a slash "/" in order for
-      it to work correctly.
-
-      For more details:
-      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-      This is a placeholder for base href that will be replaced by the value of
-      the `--base-href` argument provided to `flutter build`.
-    -->
-    <base href="$FLUTTER_BASE_HREF">
-
-    <meta charset="UTF-8">
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    <meta name="description" content="A personal portfolio project for Imam Hossain">
-
-    <!-- iOS meta tags & icons -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="imam_hossain">
-    <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-
-    <title>Md Imam Hossain</title>
-    <link rel="manifest" href="manifest.json">
-  
-  
+<head>
+  <!--      If you are serving your web app in a path other than the root, change the      href value below to reflect the base path you are serving from.      The path provided below has to start and end with a slash "/" in order for      it to work correctly.      For more details:      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base      This is a placeholder for base href that will be replaced by the value of      the `--base-href` argument provided to `flutter build`.    -->
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A personal portfolio project for Imam Hossain"> <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="imam_hossain">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png"> <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Md Imam Hossain</title>
+  <link rel="manifest" href="manifest.json">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-
   <style id="splash-screen-style">
     html {
       height: 100%
@@ -43,98 +25,368 @@
       min-height: 100%;
       background: linear-gradient(135deg, #4496E0 0%, #2c5aa0 100%);
       background-size: 100% 100%;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
     }
 
-    .center {
-      margin: 0;
+    .splash-container {
       position: absolute;
       top: 50%;
       left: 50%;
-      -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
-      color: white;
       text-align: center;
+      color: white;
+      width: 90%;
+      max-width: 500px;
     }
 
-    .loading-text {
-      font-size: 24px;
-      font-weight: 300;
-      margin-bottom: 30px;
+    .professional-header {
+      margin-bottom: 40px;
+    }
+
+    .name-title {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+      animation: gentle-glow 3s ease-in-out infinite alternate;
+    }
+
+    .role-subtitle {
+      font-size: 16px;
       opacity: 0.9;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: #13B9FD;
+      text-shadow: 0 0 10px rgba(19, 185, 253, 0.4);
     }
 
-    .spinner {
+    .experience-badge {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .loading-center {
+      margin: 40px 0;
+      position: relative;
+    }
+
+    .main-circle {
+      width: 120px;
+      height: 120px;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      margin: 0 auto;
+      position: relative;
+      animation: smooth-spin 8s linear infinite;
+    }
+
+    .main-circle::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      border: 3px solid transparent;
+      border-top: 3px solid #13B9FD;
+      border-radius: 50%;
+      animation: smooth-spin 3s linear infinite reverse;
+    }
+
+    .inner-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 60px;
       height: 60px;
-      border: 4px solid rgba(255, 255, 255, 0.3);
+      background: linear-gradient(45deg, #02569B, #0175C2, #13B9FD);
       border-radius: 50%;
-      border-top: 4px solid #ffffff;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(19, 185, 253, 0.5);
+      animation: gentle-pulse 2s ease-in-out infinite;
     }
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .story-progress {
+      margin: 40px 0;
     }
 
-    .loading-dots {
-      display: inline-block;
+    .progress-label {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: 400;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
     }
 
-    .loading-dots::after {
-      content: '';
-      animation: dots 1.5s infinite;
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 25px;
     }
 
-    @keyframes dots {
-      0%, 20% { content: ''; }
-      40% { content: '.'; }
-      60% { content: '..'; }
-      80%, 100% { content: '...'; }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #13B9FD, #0175C2, #02569B);
+      border-radius: 4px;
+      animation: story-progress 12s ease-in-out infinite;
+      box-shadow: 0 0 15px rgba(19, 185, 253, 0.5);
     }
 
-    .subtitle {
+    .story-stage {
       font-size: 14px;
-      opacity: 0.7;
-      margin-top: 10px;
+      opacity: 0;
+      margin: 8px 0;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      animation: story-fade 12s ease-in-out infinite;
+      text-align: left;
+      padding: 8px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
     }
 
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: linear-gradient(135deg, #3a7bc8 0%, #4496E0 100%);
+    .story-stage:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .story-stage:nth-child(2) {
+      animation-delay: 2s;
+    }
+
+    .story-stage:nth-child(3) {
+      animation-delay: 4s;
+    }
+
+    .story-stage:nth-child(4) {
+      animation-delay: 6s;
+    }
+
+    .story-stage:nth-child(5) {
+      animation-delay: 8s;
+    }
+
+    .story-stage:nth-child(6) {
+      animation-delay: 10s;
+    }
+
+    .tech-showcase {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .tech-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      animation: tech-float 3s ease-in-out infinite;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .tech-icon:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .tech-icon:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .tech-icon:nth-child(3) {
+      animation-delay: 1s;
+    }
+
+    .tech-icon:nth-child(4) {
+      animation-delay: 1.5s;
+    }
+
+    @keyframes gentle-glow {
+      from {
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
+      }
+
+      to {
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3), 0 0 30px rgba(19, 185, 253, 0.3);
+      }
+    }
+
+    @keyframes smooth-spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes gentle-pulse {
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+    }
+
+    @keyframes story-progress {
+      0% {
+        width: 0%;
+      }
+
+      17% {
+        width: 20%;
+      }
+
+      34% {
+        width: 40%;
+      }
+
+      51% {
+        width: 60%;
+      }
+
+      68% {
+        width: 80%;
+      }
+
+      85% {
+        width: 95%;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+
+    @keyframes story-fade {
+
+      0%,
+      12% {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      17%,
+      25% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      30%,
+      100% {
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes tech-float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
       }
     }
 
     @media (max-width: 768px) {
-      .loading-text {
-        font-size: 20px;
+      .name-title {
+        font-size: 26px;
       }
-      .spinner {
+
+      .progress-label {
+        font-size: 16px;
+      }
+
+      .story-stage {
+        font-size: 12px;
+        padding: 6px 15px;
+      }
+
+      .tech-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 10px;
+      }
+
+      .main-circle {
+        width: 100px;
+        height: 100px;
+      }
+
+      .inner-logo {
         width: 50px;
         height: 50px;
+        font-size: 20px;
       }
     }
   </style>
-  
-  <script id="splash-screen-script">
-    function removeSplashFromWeb() {
-      document.getElementById("splash")?.remove();
-      document.body.style.background = "transparent";
-    }
-  </script>
-
+  <script
+    id="splash-screen-script">        function removeSplashFromWeb() { document.getElementById("splash")?.remove(); document.body.style.background = "transparent"; }    </script>
 </head>
 
 <body>
-
-  <div id="splash" class="center">
-    <div class="spinner"></div>
-    <h2 class="loading-text">Loading<span class="loading-dots"></span></h2>
-    <p class="subtitle">Preparing your experience</p>
+  <div id="splash" class="splash-container">
+    <div class="professional-header">
+      <div class="name-title">Md Imam Hossain</div>
+      <div class="role-subtitle">SENIOR SOFTWARE ENGINEER</div>
+      <div class="experience-badge">5+ Years • Mobile Architecture Expert</div>
+    </div>
+    <div class="loading-center">
+      <div class="main-circle">
+        <div class="inner-logo">IH</div>
+      </div>
+    </div>
+    <div class="story-progress">
+      <div class="progress-label">Compiling Professional Journey...</div>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <div class="story-stage">🎓 Graduated in Information & Communication Engineering</div>
+      <div class="story-stage">🚀 Started career journey at Brain Station 23</div>
+      <div class="story-stage">📱 Mastered Android, Flutter & iOS development</div>
+      <div class="story-stage">🏆 Delivered apps with 50M+ downloads</div>
+      <div class="story-stage">🧠 Published AI research & technical articles</div>
+      <div class="story-stage">✨ Ready to showcase innovation!</div>
+    </div>
+    <div class="tech-showcase">
+      <div class="tech-icon">KT</div>
+      <div class="tech-icon">🤖</div>
+      <div class="tech-icon">🦋</div>
+      <div class="tech-icon">🍎</div>
+    </div>
   </div>
-
-<script src="flutter_bootstrap.js?v=1" async=""></script>
-
+  <script src="flutter_bootstrap.js?v=1" async=""></script>
 </body>
+
 </html>
