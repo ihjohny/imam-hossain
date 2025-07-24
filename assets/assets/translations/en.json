@@ -288,33 +288,6 @@
       ]
     },
     {
-      "name": "Longshot",
-      "projectUrl": "https://www.longshotcameras.com/pages/longshotapp",
-      "cover": {
-        "assetName": "assets/images/project-longshot.jpg"
-      },
-      "descriptionData": "Longshot app connects to Longshot cameras, providing live target viewing and tracking tools for precise shooting analysis.",
-      "responsibilityData": "Implemented core features, including support for new camera models and camera detection through IP-based ping. Added a grid overlay option on the video feed to enhance precision in target tracking and analysis.",
-      "technologyData": "Flutter, Bloc Architecture, Fijkplayer, Video Player, Screen Recording, Geolocator, Camera, etc.",
-      "tags": [
-        {
-          "type": "flutter",
-          "title": "Flutter",
-          "logo": {
-            "assetName": "assets/images/flutter_logo.jpg"
-          }
-        },
-        {
-          "type": "external_link",
-          "title": "Link",
-          "link": "https://www.longshotcameras.com/pages/longshotapp",
-          "logo": {
-            "assetName": "assets/images/link_icon.jpg"
-          }
-        }
-      ]
-    },
-    {
       "name": "Offers, Usage & More!",
       "projectUrl": "https://play.google.com/store/apps/details?id=net.omobio.robisc",
       "cover": {
