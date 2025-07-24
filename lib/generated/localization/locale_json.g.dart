@@ -277,6 +277,33 @@ class CodegenLoader extends AssetLoader{
   "projectsTitleSection": "Projects",
   "projectsData": [
     {
+      "name": "JetCode - Interactive Learning Platform",
+      "projectUrl": "https://github.com/ihjohny/jetcode",
+      "cover": {
+        "assetName": "assets/images/project-jetcode.jpg"
+      },
+      "descriptionData": "An Interactive Mobile Application for mastering Kotlin and Android Development through curated flashcard-style content, comprehensive quizzes, and progress tracking. An initiative to demonstrate modern Android development.",
+      "responsibilityData": "Architected and developed the open source app from scratch with modern Android development practices using Clean Architecture, MVI pattern, and Jetpack Compose.",
+      "technologyData": "Android SDK, Jetpack Compose, Clean Architecture, MVI Pattern, Kotlin Coroutines, Room Database, Ktor Client, Navigation Compose, Koin DI, WorkManager, DataStore, Coil Image Loading, JUnit, MockK, Detekt, etc.",
+      "tags": [
+        {
+          "type": "android",
+          "title": "Android",
+          "logo": {
+            "assetName": "assets/images/android_logo.jpg"
+          }
+        },
+        {
+          "type": "code_link",
+          "title": "GitHub",
+          "link": "https://github.com/ihjohny/jetcode",
+          "logo": {
+            "iconType": "code"
+          }
+        }
+      ]
+    },
+    {
       "name": "Offer, Recharge, Sports",
       "projectUrl": "https://play.google.com/store/apps/details?id=com.portonics.mygp",
       "cover": {
