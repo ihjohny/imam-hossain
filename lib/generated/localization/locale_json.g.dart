@@ -144,20 +144,24 @@ class CodegenLoader extends AssetLoader{
       ]
     },
     {
-      "title": "Frameworks",
+      "title": "Development",
       "colorTheme": "FFD6EAF8",
       "data": [
         {
-          "name": "Android SDK",
-          "type": "android_sdk"
+          "name": "Android",
+          "type": "android"
         },
         {
-          "name": "Flutter SDK",
-          "type": "flutter_sdk"
+          "name": "Kotlin Multiplatform",
+          "type": "kmp"
         },
         {
-          "name": "iOS SDK",
-          "type": "ios_sdk"
+          "name": "Flutter",
+          "type": "flutter"
+        },
+        {
+          "name": "iOS",
+          "type": "ios"
         }
       ]
     },
