@@ -113,8 +113,7 @@ class _NavItemWidgetState extends State<NavItemWidget>
                     child: Text(
                       widget.text,
                       style: context.themeData.textTheme.titleMedium?.copyWith(
-                        fontWeight:
-                            _hovering ? FontWeight.w600 : FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                         color: _hovering
                             ? context.colorScheme.primary
                             : context.colorScheme.onSurface,
