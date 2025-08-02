@@ -87,7 +87,7 @@ class AppDrawerWidget extends StatelessWidget {
                     }
                   },
                 ),
-                const VerticalSpacing(Sizes.px16),
+                const VerticalSpacing(Sizes.px8),
               ],
             ))
         .toList();
