@@ -308,60 +308,6 @@ class CodegenLoader extends AssetLoader{
       ]
     },
     {
-      "name": "Offer, Recharge, Sports",
-      "projectUrl": "https://play.google.com/store/apps/details?id=com.portonics.mygp",
-      "cover": {
-        "assetName": "assets/images/project-myp.jpg"
-      },
-      "descriptionData": "All-in-one self-service telecommunications app with 50 million downloads on Play Store.",
-      "responsibilityData": "As an Android Engineer, focused on developing features, conducting code reviews, and engaging in solution-oriented discussions. Played a key role in the R&D team, exploring and implementing best practices and innovative ideas to enhance the user experience.",
-      "technologyData": "Android SDK, Multi-Module, MVVM Architecture, Kotlin, Java, Dagger Hilt, Coroutines, Jetpack Compose, Retrofit, Socket.IO, Room, Play Feature Delivery, JUnit, Mockito, Jenkins, Fastlane, etc.",
-      "tags": [
-        {
-          "type": "android",
-          "title": "Android",
-          "logo": {
-            "assetName": "assets/images/android_logo.jpg"
-          }
-        },
-        {
-          "type": "play_store_link",
-          "title": "Play Store",
-          "link": "https://play.google.com/store/apps/details?id=com.portonics.mygp",
-          "logo": {
-            "assetName": "assets/images/play_store_logo.jpg"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Offers, Usage & More!",
-      "projectUrl": "https://play.google.com/store/apps/details?id=net.omobio.robisc",
-      "cover": {
-        "assetName": "assets/images/project-myb.jpg"
-      },
-      "descriptionData": "A one-stop self-service app for telecommunications with 10 million downloads on Play Store.",
-      "responsibilityData": "Part of the software engineering team that was responsible for redesigning the My Robi app with a new UI and architecture to accommodate a large user base.",
-      "technologyData": "Android SDK, MVVM Architecture, Kotlin, Coroutines, Retrofit, WorkManager, Room, Datastore, Google Maps SDK, Material Design etc.",
-      "tags": [
-        {
-          "type": "android",
-          "title": "Android",
-          "logo": {
-            "assetName": "assets/images/android_logo.jpg"
-          }
-        },
-        {
-          "type": "play_store_link",
-          "title": "Play Store",
-          "link": "https://play.google.com/store/apps/details?id=net.omobio.robisc",
-          "logo": {
-            "assetName": "assets/images/play_store_logo.jpg"
-          }
-        }
-      ]
-    },
-    {
       "name": "HungryNaki - Food Delivery",
       "projectUrl": "https://docs.google.com/document/d/11ALH_duhMO7sIRUiw33RMdeK25AB7ZZOQIT1CZtue-E/edit?usp=sharing",
       "cover": {
